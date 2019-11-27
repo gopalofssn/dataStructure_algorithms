@@ -24,16 +24,12 @@ public class TwoSum {
 
 private static int[] twosumOneCombination(int[] array, int target) {
 	
-	int[] result =  new int[2];
 	HashMap<Integer,Integer> map = new HashMap<Integer,Integer>(); // ;[what i have , where i have]
-	
 	for(int i=0 ; i<array.length;i++) {
 		int diff = target-array[i]; // 9-1 = 8
 		
 		if(map.containsKey(diff)) {
-			result[0]= map.get(diff); // get position of previous one
-			result[1]=i; 
-			return result;
+			return new int[] {map.get(diff),i};
 			
 		}else {
 			map.put(array[i], i); //  [1,0] , [2,1], [5,3] etc
@@ -53,11 +49,7 @@ private static List<int[]> twosumAllCombination(int[] array, int target) {
 		int diff = target-array[i]; // 9-1 = 8
 		
 		if(map.containsKey(diff)) {
-			int[] result =  new int[2];
-			result[0]= map.get(diff); // get position of previous one
-			result[1]=i; 
-			
-			results.add(result);
+			results.add(new int[] {map.get(diff),i});
 			
 		}else {
 			map.put(array[i], i); //  [1,0] , [2,1], [5,3] etc

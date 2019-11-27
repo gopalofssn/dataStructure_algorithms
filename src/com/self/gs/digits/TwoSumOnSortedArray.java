@@ -7,31 +7,31 @@ import java.util.Arrays;
 // COND - list is sorted
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-    	int[] result = {-1,-1};
-    	int l_pointer = 0;
-    	int r_pointer = nums.length-1;
-    	while(l_pointer<r_pointer) {
-    		int sum = nums[l_pointer] + nums[r_pointer];
+   
+    	
+    	int l = 0;
+    	int r = nums.length -1 ;
+    	while(l<r) {
+    		System.out.println("doing");
+    		int sum = nums[l] + nums[r];
     		if(sum>target) {
-    			r_pointer--;
+    			r--;
     		}else if(sum<target) {
-    			l_pointer++;
+    			l++;
     		}else {
-    			result[0] = l_pointer;
-    			result[1] = r_pointer;
-    			return result;
+    			return new int[] { l,r };
     		}
     	}
-		return result;
-        
+    	
+    	return null;
     }
 }
 
 		
 public class TwoSumOnSortedArray {
 	public static void main(String[] args) {
-		int[] nums = {2, 7, 11, 15};
-		int[] sol = new Solution().twoSum(nums, 34);
+		int[] nums = {2,3,7,8,9,10};
+		int[] sol = new Solution().twoSum(nums, 120);
 		System.out.println(Arrays.toString(sol));
 	}
 }
