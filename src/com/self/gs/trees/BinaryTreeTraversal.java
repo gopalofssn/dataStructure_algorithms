@@ -17,7 +17,7 @@ public class BinaryTreeTraversal {
 			if(node==null) {
 				return;
 			}
-			list.add(node.data);
+			list.add(node.val);
 			PreOrderTraversal(node.left,list);
 			PreOrderTraversal(node.right,list);
 		}
@@ -27,7 +27,7 @@ public class BinaryTreeTraversal {
 				return;
 			}
 			InOrderTraversal(node.left,list);
-			list.add(node.data);
+			list.add(node.val);
 			InOrderTraversal(node.right,list);
 		}
 		// L R N
@@ -37,8 +37,8 @@ public class BinaryTreeTraversal {
 			
 			PostOrderTraversal(node.left,list);
 			PostOrderTraversal(node.right,list);
-			System.out.println("post order " + node.data);
-			list.add(node.data);
+			System.out.println("post order " + node.val);
+			list.add(node.val);
 		}
 		
 	
@@ -57,7 +57,7 @@ public class BinaryTreeTraversal {
 				int n=queue.size();
 				for(int i=0;i<n;i++) {
 					TreeNode current = queue.poll();
-					levelElements.add(current.data);
+					levelElements.add(current.val);
 					if(current.left!=null)
 						queue.add(current.left);
 					if(current.right!=null)
@@ -84,7 +84,7 @@ public class BinaryTreeTraversal {
 				int n=queue.size();
 				for(int i=0;i<n;i++) {
 					TreeNode current = queue.poll();
-					levelElements.add(current.data);
+					levelElements.add(current.val);
 					if(current.left!=null)
 						queue.add(current.left);
 					if(current.right!=null)

@@ -24,14 +24,14 @@ public static boolean isValidSudoku(char[][] board) {
         		}
         	}
         }
-        PreetyPrint.print(seen);
+        System.err.println(seen);
 	return true;
     }
 public static void main(String[] args) {
 	
 	char[][] board = new char[][] {
 		 
-		  {'7','3','.','.','7','.','.','.','.'},
+		  {'7','3','.','.','.','.','.','.','.'},
 		  {'6','.','.','1','9','5','.','.','.'},
 		  {'.','9','8','.','.','.','.','6','.'},
 		  {'8','.','.','.','6','.','.','.','3'},

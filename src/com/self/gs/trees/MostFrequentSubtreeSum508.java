@@ -36,8 +36,8 @@ public class MostFrequentSubtreeSum508 {
     public static int dfs(TreeNode node) {
         if(node == null)
         	return 0;
-        int sum = dfs(node.left) + dfs(node.right) + node.data;
-        System.out.println("node.data " + node.data + " & its bubble up sum " + sum);
+        int sum = dfs(node.left) + dfs(node.right) + node.val;
+        System.out.println("node.data " + node.val + " & its bubble up sum " + sum);
         
         if(holder.containsKey(sum)) {
         	int incrementer = holder.get(sum)+1;

@@ -1,13 +1,17 @@
 package com.self.gs.trees;
 
 public class TreeNode {
-	int data;
+	int val;
 	public TreeNode left;
 	public TreeNode right;
 	
-	public TreeNode(int data) {
-		this.data = data;
+	public TreeNode(int val) {
+		this.val = val;
 		left = null;
 		right = null;
+	}
+	
+	public String toString() {
+		return Integer.toString(val);
 	}
 }

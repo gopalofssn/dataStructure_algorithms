@@ -54,15 +54,15 @@ public class FindSubtreeSum {
     	   List<Map<Integer,Integer>> levelSum = new ArrayList<Map<Integer,Integer>>();
     	   for(int i=0;i<sz;i++) {
     		   TreeNode current = queue.poll();
-    		   int sum = current.data ;
+    		   int sum = current.val ;
     		   
     		   if(current.left!=null) {
     			   queue.add(current.left);
-    			   sum += current.left.data;
+    			   sum += current.left.val;
     		   }
     		   if(current.right!=null) {
     			   queue.add(current.right);
-    			   sum += current.right.data;
+    			   sum += current.right.val;
     		   }
     		   if(map.containsKey(sum)) {
     			 int temp = map.get(sum)+1;
@@ -77,7 +77,7 @@ public class FindSubtreeSum {
     			   map.put(sum,1);  
     		   
     		   Map<Integer,Integer> element = new HashMap<Integer,Integer>();
-    		   element.put(current.data, sum);
+    		   element.put(current.val, sum);
     		   levelSum.add(element);
     	   }
     	   treeSumresult.add(levelSum);

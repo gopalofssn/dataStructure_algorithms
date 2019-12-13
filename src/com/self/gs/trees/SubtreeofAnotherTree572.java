@@ -15,10 +15,10 @@ public class SubtreeofAnotherTree572 {
 			int n = queue.size();
 			for(int i=0;i<n;i++) {
 				TreeNode current = queue.poll();
-				System.out.println("Node data is - " + current.data);
+				System.out.println("Node data is - " + current.val);
 				TreeNode s1 = current;
 				 TreeNode t1 = t;
-				if( (s1.data == t1.data) && isSameBFS(s1, t1)) {
+				if( (s1.val == t1.val) && isSameBFS(s1, t1)) {
 					
 					System.err.println("return...true");
 					 return true;
@@ -34,7 +34,7 @@ public class SubtreeofAnotherTree572 {
 	}
 
 	private static boolean isSameBFS(TreeNode s1, TreeNode t1) {
-		System.err.println("calling for " + s1.data + "&" + t1.data);
+		System.err.println("calling for " + s1.val + "&" + t1.val);
 		 Queue<TreeNode> s1Queue = new LinkedList<TreeNode>();
 		 s1Queue.add(s1);
 		 Queue<TreeNode> t1Queue = new LinkedList<TreeNode>();
@@ -42,7 +42,7 @@ public class SubtreeofAnotherTree572 {
 		 while(!s1Queue.isEmpty() && !t1Queue.isEmpty()) {
 			 TreeNode s2 = s1Queue.poll();
 			 TreeNode t2 = t1Queue.poll();
-		     if(s2.data!=t2.data) {
+		     if(s2.val!=t2.val) {
 		    	 break;
 		     }
 		     if(s2.left!=null)
@@ -73,7 +73,7 @@ public class SubtreeofAnotherTree572 {
         if (s == null && t == null) return true;
         if (s == null || t == null) return false;
         
-        if (s.data != t.data) return false;
+        if (s.val != t.val) return false;
         
         return isSame(s.left, t.left) && isSame(s.right, t.right);
     }

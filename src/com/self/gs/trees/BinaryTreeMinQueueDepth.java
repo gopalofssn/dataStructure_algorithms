@@ -19,7 +19,7 @@ public class BinaryTreeMinQueueDepth {
 		int left = minQDepthRecurssive(node.left);
 		int right = minQDepthRecurssive(node.right);
 		System.out.println("**********************");
-		System.out.println("Node data is - " + node.data);
+		System.out.println("Node data is - " + node.val);
 		System.out.println("left len " + left);
 		System.out.println("right len " + right);
 		if(left==0)
@@ -44,7 +44,7 @@ public class BinaryTreeMinQueueDepth {
 			int n = queue.size();
 			for(int i=0;i<n;i++) {
 				TreeNode current = queue.poll();
-				System.out.println("Node data is - " + current.data);
+				System.out.println("Node data is - " + current.val);
 				if(current.left == null && current.right == null)
 					return depth;
 				
