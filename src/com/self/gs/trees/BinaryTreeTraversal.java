@@ -22,7 +22,7 @@ public class BinaryTreeTraversal {
 			PreOrderTraversal(node.right,list);
 		}
 		// L N R 
-		public static void InOrderTraversal(TreeNode node,ArrayList<Integer> list) {
+		public static void InOrderTraversal(TreeNode node,List<Integer> list) {
 			if(node==null) {
 				return;
 			}

@@ -9,76 +9,74 @@ Come up with an asymptotically optimal solution and analyze the time and space c
 
 Example:
 
-input:  arr = ['x','y','z'], str = "xyyzyznyx"
+input:  pattern = ['x','y','z'], str = "xyyzyznyx"
 
 output: "znyx"
  */
 public class ShortestUniqueSubstring {
 	
-
-   private static String getShortestUniqueSubstring(char[] patternArray, String input) {
-	   if(patternArray==null || input==null)
-		   throw new IllegalArgumentException("Either pattern or search string is/are null !!!");
-	   Map<Character,Integer> pattern = new HashMap<Character,Integer>();
-	   for(char ch:patternArray) {
-		   addToMap(pattern, ch);
-	   }
-
-	   Map<Character,Integer> holder = new HashMap<Character,Integer>();
-	   String result=input+input;
-	   int l=0,r=0;
-	   while(r<input.length()){
-		   addToMap(holder, input.charAt(r));
-		   
-		   if(isMatch(pattern,holder)) {
-			 result = calculateMinString(input, result, l, r);
-			   while(l<r) {
-				   removeMapValueByOneIfPresent(holder,input.charAt(l));
-				   l++;
-				   if(isMatch(pattern,holder)) {
-					   result = calculateMinString(input, result, l, r);
-				   }else {
-					   break;
-				   } 
-			   }
-		   }
-		   r++;
-	   }
-	   return (result.equals(input+input))?"":result;
-	 }
-
-	private static String calculateMinString(String input, String result, int l, int r) {
-		String tmp = input.substring(l,r+1); 
-		   if(tmp.length()<result.length()) {
-			   result = tmp;
-		       System.err.println("possible result  - " + result );
-		   }
-		return result;
-	}
-
-	private static void removeMapValueByOneIfPresent(Map<Character, Integer> map, char ch) {
-		if(map.containsKey(ch)) 
-	       map.put(ch,map.get(ch)-1);
-    }
-
-	private static boolean isMatch(Map<Character, Integer> pattern, Map<Character, Integer> holder) {
-	 for(Entry<Character, Integer> p:pattern.entrySet()) {
-		   Character pKey = p.getKey();
-		   Integer pValue = p.getValue();
-		   if(!holder.containsKey(pKey) || holder.get(pKey) < pValue)
-			   return false;
-	 }
-	 return true;
-    }
-
-	private static void addToMap(Map<Character, Integer> map, char ch) {
-		map.merge(ch, 1, (a,b)->(a+b));
-	}
+/*
+ xyaoyz - has x y z
+ zyx   - has x y z
+ 
+ so shortestUniqueSubstring is zyx
+ 
+ approach 
+   Store pattern char and it's total count in hashmap 
+   perform sliding window on string and keep gathering char and increment counts
+   compare two hashmap
    
-	
-	  
-	   public static void main(String[] args) {
-		   System.err.println("Result : " + getShortestUniqueSubstring( new char[]{'x','y','z'},"xyaoyzyzyx"));
+ */
+   private static String getShortestUniqueSubstring(char[] p, String s) {
+	   if(p == null || p.length==0 || s==null )
+	        return null;
+	     Map<Character,Integer> pMap = new HashMap<Character,Integer>();
+	     Map<Character,Integer> sMap = new HashMap<Character,Integer>();
+	     for(char c:p){
+	       addToMap(c,pMap);
+	     }
+	     int l=0,r=0;
+	     String result=s+s;
+	     while(r<s.length()){
+	       Character c = s.charAt(r);
+	       System.err.println(c);
+	       if(pMap.containsKey(c)){
+	         addToMap(c,sMap);
+	       }
+	       while(isMatch(pMap,sMap)){
+	         String tmp = s.substring(l,r+1);  
+	         if(tmp.length()<result.length())
+	           result = tmp;
+	         removeFromMap(s.charAt(l++),sMap);
+	       }  
+	       r++;
+	     }
+	    
+	    return (result.equals(s+s)?"":result);
+	  }
+
+	  private static boolean isMatch(Map<Character,Integer> pMap, Map<Character,Integer> sMap){
+	    if(pMap.size()!=sMap.size())
+	      return false;
+	    for(char c:pMap.keySet()){
+	      if(!sMap.containsKey(c) || sMap.get(c) < pMap.get(c))
+	        return false;
+	    }
+	    return true;
+	  }
+	  private static void addToMap(char c, Map<Character,Integer> map){
+	    map.merge(c,1,(a,b)->a+b);
+	  }
+	  private static void removeFromMap(char c, Map<Character,Integer> map){
+	    if(map.containsKey(c)){
+	      int count= Math.max(map.get(c)-1,0);
+	      map.put(c,count);
+	    }
+	  }
+    
+	public static void main(String[] args) {
+		   System.err.println("Result : " + getShortestUniqueSubstring( new char[]{'x','y','z'},"xyaoyzyziyxz"));
+		   System.err.println("Result : " + getShortestUniqueSubstring( new char[]{'x','y','z','y'},"xyaoyzyzy"));
 	}
 
    

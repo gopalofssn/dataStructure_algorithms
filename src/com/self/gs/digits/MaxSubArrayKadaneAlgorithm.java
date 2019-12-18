@@ -7,27 +7,24 @@ public class MaxSubArrayKadaneAlgorithm {
 
 	/*
 	 
-	 -2 -3 4 -1 -2 1 5 -3
-      0 0  4  3  1 2 7 4     // Previous sum + current element 
-      
-      currentSum =0, maxSum=0;
-      currentSum - max(a[i],a[i]+currentSum);
-      maxSum - max(global,currentSum);
-
+ dynamic programing
+ what is total max upto my location 
 Time :  O(n)
-	 
+	 kadane algorithum
 	 */
 
 	private static int kadane(int[] nums) {
-		if(nums==null || nums.length<3)
-          return 0;
+		if(nums==null)
+          throw new IllegalArgumentException();
 		int currentSum = 0, maxSum = 0;
-		for(int i=0;i<nums.length;i++) {
-			currentSum = nums[i]+currentSum;
-			if(currentSum<0)
+		for(int n:nums) {
+			currentSum  =  currentSum + n ;
+			System.err.println(n + "'s max upto total " + currentSum);
+			if(currentSum>0)
+			  maxSum = Math.max(currentSum,maxSum);
+			else
 				currentSum = 0;
-			System.err.println(currentSum);
-			maxSum = Math.max(maxSum, currentSum);
+			
 		}
 		
 		return maxSum;

@@ -25,26 +25,26 @@ public class WallsAndGates {
 	private static void findDistanceBtwRoomAndGate(int[][] data) {
 		if(data==null || data.length==0)
 			return;
-		for(int row=0;row<data.length;row++) {
+		for(int row =0;row<data.length;row++) {
 			for(int col=0;col<data[0].length;col++) {
 				if(data[row][col]==0) {
-					dfs(data,row,col,0); // 0 as count , 
+					dfs(data,row,col,0); 
 				}
 			}
-				
 		}
 		
 	}
 	
-	private static void dfs(int[][] data, int row, int col, int count) {
-		if(row<0 || row>data.length-1 || col<0 || col>data[0].length-1 || count>data[row][col])
-			return;
-		data[row][col] = count;
-		dfs(data,row+1,col,count+1);
-		dfs(data,row-1,col,count+1);
-		dfs(data,row,col+1,count+1);
-		dfs(data,row,col-1,count+1);
-	}
+   private static void dfs(int[][] data,int row , int col, int count) { 
+	  if(row<0 || row>=data.length || col<0 || col>=data[0].length || count>data[row][col])
+		  return;
+	  data[row][col] = count;
+	  dfs(data,row-1,col,count+1);
+	  dfs(data,row+1,col,count+1);
+	  dfs(data,row,col-1,count+1);
+	  dfs(data,row,col+1,count+1);
+   }
+	
 
 	public static void main(String[] args) {
 		int data[][] = new int[][] {
@@ -53,6 +53,7 @@ public class WallsAndGates {
 			{Integer.MAX_VALUE,-1,Integer.MAX_VALUE,-1},
 			{0,-1,Integer.MAX_VALUE,Integer.MAX_VALUE}
 		};
+		System.err.println(Arrays.deepToString(data));
 		findDistanceBtwRoomAndGate(data);
 		System.err.println(Arrays.deepToString(data));
  

@@ -22,34 +22,30 @@ public class NoOfIsland {
 		return result;
 	}
 	
-   private static void dfs(int[][] mat,int row,int col,boolean[][] visited) {
-	   System.out.println(row + " ," + col +","+( mat[0].length));
-		 if(row<0 || col<0 || row>=mat.length || col>=mat[0].length || visited[row][col] || mat[row][col]==0) {
-			 
-			 return;
-		 }
-		 
-		 visited[row][col] = true;
-		 
-		 dfs(mat,row+1,col,visited);
-		 dfs(mat,row-1,col,visited);
-		 dfs(mat,row,col+1,visited);
-		 dfs(mat,row,col-1,visited);
-		 dfs(mat,row-1,col+1,visited);
-		 dfs(mat,row-1,col-1,visited);
-		 dfs(mat,row+1,col+1,visited);
-		 dfs(mat,row+1,col-1,visited);
-	}
+	private static void dfs(int[][] grid,int row,int col,boolean[][] isVisited){
+        if(row<0 || row>=grid.length || col<0 || col>=grid[0].length || isVisited[row][col] || grid[row][col] == 0)
+            return;
+        isVisited[row][col]=true;
+        dfs(grid,row-1,col,isVisited);
+        dfs(grid,row+1,col,isVisited);
+        dfs(grid,row,col-1,isVisited);
+        dfs(grid,row,col+1,isVisited);
+    }
 
 public static void main(String[] args) {
-	int mat[][] = {
+	/*int mat[][] = {
 		    {1, 1, 0, 0, 0},
             {0, 1, 0, 0, 1},
             {1, 0, 0, 1, 1},
             {0, 0, 0, 0, 0},
             {1, 0, 1, 0, 1} 
-	    };
-	
+	    };*/
+	int[][] mat = {
+			{1,1,1,1,0},
+			{1,1,0,1,0},
+			{1,1,0,0,0},
+			{0,0,0,0,0}		
+	};
 	System.out.println(noOfInslan(mat));
    }
 
