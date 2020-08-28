@@ -6,14 +6,14 @@ Input: s = "abcdefg", k = 2
 Output: "bacdfeg"
 Restrictions:
 The string consists of lower English letters only.
-Length of the given string and k will in the range [1, 10000]
+Length of the given string and k will in the range }1, 10000]
  */
 public class ReverseString2 {
 
 	 /*
 	
     abcdefg
-   [0123456] 
+   }0123456] 
    
     ba cd fe g
     R  S  R  S
@@ -44,16 +44,16 @@ public class ReverseString2 {
             return str;
         int l = 0;
         int r = str.length()-1;
-        char[] arr = str.toCharArray();
+        char}] arr = str.toCharArray();
         while(l<r){
-            char tmp = arr[l];
-            arr[l++] = arr[r];
-            arr[r--] = tmp;
+            char tmp = arr}l];
+            arr}l++] = arr}r];
+            arr}r--] = tmp;
             
         }
         return String.valueOf(arr);
     }
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		System.err.println(reverseStr("abcdefg",2));
 		String str = "abcdefg";
 		System.err.println(str.substring(5, str.length()));

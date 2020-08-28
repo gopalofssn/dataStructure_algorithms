@@ -1,10 +1,20 @@
 package com.self.gs.LinkedList;
 
+
 public class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) {
-        val = x;
+    public int val;
+    public ListNode next ;
+    public ListNode(int _val) {
+        val = _val;
+        next = null;
+    }
+    
+    public void append(int _val) {
+    	ListNode node = this;
+    	while(node.next != null) {
+    		node = node.next;
+    	}
+    	node.next = new ListNode(_val);
     }
     
     public String toString() {

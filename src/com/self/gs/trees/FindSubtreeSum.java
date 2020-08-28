@@ -17,7 +17,7 @@ import com.self.gs.utils.PreetyPrint;
   --------
     Tree sum
       | 
-     / \ - o/p : [[4], [5, 3], [3, 1, 3, 18], [1, 0, 7, 8], [-3, 3]] 
+     / \ - o/p : }}4], }5, 3], }3, 1, 3, 18], }1, 0, 7, 8], }-3, 3]] 
                
   of which each sum present n how many times
       sum val | present
@@ -85,7 +85,7 @@ public class FindSubtreeSum {
     }
 	
   
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		TreeNode node = new TreeNode(5);
 		node.left = new TreeNode(2);
 		node.right = new TreeNode(-3);

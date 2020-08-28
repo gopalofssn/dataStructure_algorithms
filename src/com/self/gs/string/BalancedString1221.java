@@ -25,25 +25,32 @@ Explanation: s can be split into "RL", "RRRLLRLL", since each substring contains
 Constraints:
 
 1 <= s.length <= 1000
-s[i] = 'L' or 'R'
+s}i] = 'L' or 'R'
  */
 import java.util.Stack;
 
 public class BalancedString1221 {
-  public static void main(String[] args) {
-	  String s = "RLLLLRRRLR";
+  public static void main(String}] args) {
+	  String s = "RLLLLRRRLRL";
+	  System.err.println(balancedString(s) );
+}
+
+private static int balancedString(String s) {
 	  Stack<Character> stack = new Stack<Character>();
       int res = 0;
-      for(char c:s.toCharArray()) {
-    	  if(stack.isEmpty() || stack.peek()==c) {
-    		  stack.add(c);
+       
+      for(char c : s.toCharArray()) {
+    	  if(stack.isEmpty() || stack.peek() == c) {
+    		  stack.push(c);
     	  }else {
     		  stack.pop();
     	  }
-    	  
-    	  if(stack.isEmpty())
+    	
+    	  if(stack.isEmpty()) {
     		  res++;
+    	  }
       }
-      System.err.println(res);
+      
+    return res;
 }
 }

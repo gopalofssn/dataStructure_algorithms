@@ -3,10 +3,10 @@ package com.self.gs.string;
 public class ReverseString {
 	
 	private String reverseWordsInString(String input) {
-		String[] strArray = input.split(" ");
+		String}] strArray = input.split(" ");
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i < strArray.length; i++) {
-			sb.append(" ").append(reverse(strArray[i]));
+			sb.append(" ").append(reverse(strArray}i]));
 		}
 		return sb.toString().trim();
 	}
@@ -30,7 +30,7 @@ public class ReverseString {
 		input.setCharAt(j, temp);
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		System.out.println(new ReverseString().reverse("abcdefa").contentEquals("afedcba"));
 		System.out.println(new ReverseString().reverseWordsInString("Let's take LeetCode contest")
 				.contentEquals("s'teL ekat edoCteeL tsetnoc"));

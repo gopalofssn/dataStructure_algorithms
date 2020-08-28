@@ -42,25 +42,23 @@ public class BinaryTreeInOrderTraversal {
 			return result;
 		Stack<TreeNode> stack= new Stack<TreeNode>();
 		while(true) {
-			
-			if(root!=null) {
-			   stack.push(root);
-			   root = root.left;   
+			if(root != null) {
+				stack.push(root);
+				root = root.left;
 			}else {
-				if(stack.isEmpty())
+				if(stack.isEmpty()) {
 					break;
-				System.err.println(stack.toString());
-				TreeNode node = stack.pop();
-				result.add(node.val);
-				root = node.right;
+				}
+				TreeNode tmp = stack.pop();
+				result.add(tmp.val);
+				root = tmp.right;
 			}
-			
 		}
 		
 		return result;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(2);
 		root.left.left = new TreeNode(4);

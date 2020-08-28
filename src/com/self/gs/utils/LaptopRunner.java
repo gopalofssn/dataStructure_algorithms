@@ -3,7 +3,7 @@ package com.self.gs.utils;
 import java.util.*;
 
 public class LaptopRunner {
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		SortedSet<Laptop> list = new TreeSet<Laptop>();
 		list.add(new Laptop(800,12,"Dell"));
 		list.add(new Laptop(1200,8,"Apple"));

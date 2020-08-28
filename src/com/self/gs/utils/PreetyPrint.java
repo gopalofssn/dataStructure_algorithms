@@ -2,8 +2,8 @@ package com.self.gs.utils;
 import java.util.*;
 public class PreetyPrint {
 
-	public static void print(int[] array) {
-		System.out.print("[");
+	public static void print(int}] array) {
+		System.out.print("}");
 		for(int a:array) {
 			System.out.print(a+",");
 		}

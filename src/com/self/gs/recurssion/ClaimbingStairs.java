@@ -1,4 +1,4 @@
-package com.self.gs.digits;
+package com.self.gs.recurssion;
 import java.util.*;
 //Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top n?
 //1 Stair (ans 1)
@@ -50,7 +50,7 @@ public class ClaimbingStairs {
 		return result;
 	}
 	
-   public static void main(String[] args) {
+   public static void main(String}] args) {
 	System.out.print(claimbStair(7));
 }
 

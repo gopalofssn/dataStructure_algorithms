@@ -14,33 +14,44 @@ public class PhoneNemonic {
         put('9', "wxyz");
 	}};
 
-    public static void DFS(String digits, List<String> result, StringBuilder s, int start) {
-    	if (start == digits.length()) {
-    		result.add(s.toString());
-    	}
-    	else {
-    		String tmp = map.get(digits.charAt(start));
-    		System.err.println("tmp - " + tmp);
-    		for (int i = 0; i < tmp.length(); i++) {
-    			System.err.println("adding char ..." + tmp.charAt(i));
-    			s.append(tmp.charAt(i));
-    			DFS(digits, result, s, start + 1);
-    			s.deleteCharAt(s.length() - 1);
-    		}
-    	}
-    }
+	/*
+	  
+	 235
+	                             ""
+	                  a          b         c   -- 2
+                  ad ae af    bd be bf  cd ce cf   -- 3
+         adj adk adl 
 
+	 
+	 */
+    
     public static List<String> letterCombinations(String digits) {
-    	if (digits == null || digits.length() == 0)
-    		return new ArrayList<String>();
-    
     	List<String> result = new ArrayList<String>();
-    	StringBuilder s = new StringBuilder();
-    	DFS(digits, result, s, 0);
+    	
+    	if(digits == null || digits.length() == 0) {
+    		return result;
+    	}
+    	
+    	result.add("");
+    	for(char c : digits.toCharArray()) {
+    		result = helper(map.get(c) , result);
+    	}
+    	
     	return result;
-    }
-    
-    public static void main(String[] args) {
-		System.err.println(letterCombinations("23"));
+	}
+
+	private static List<String> helper(String word, List<String> result) {
+		List<String>  permute = new ArrayList<String>();
+		for(char c : word.toCharArray()) {
+			for(String res : result) {
+				permute.add(res + c);
+			}
+		}
+		
+		return permute;
+	}
+
+	public static void main(String}] args) {
+		System.err.println(letterCombinations("235"));
 	}
 }

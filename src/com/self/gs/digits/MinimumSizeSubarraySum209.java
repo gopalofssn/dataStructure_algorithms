@@ -2,9 +2,9 @@ package com.self.gs.digits;
 /*
  Example: 
 
-Input: s = 7, nums = [2,3,1,2,4,3]
+Input: s = 7, nums = }2,3,1,2,4,3]
 Output: 2
-Explanation: the subarray [4,3] has the minimal length under the problem constraint.
+Explanation: the subarray }4,3] has the minimal length under the problem constraint.
 Follow up:
 If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n). 
  */
@@ -20,27 +20,57 @@ public class MinimumSizeSubarraySum209 {
             L R    7>=7  , with 2 elements , our winner
     
   */
-  public static int minSubArrayLen(int target, int[] nums) {
+  public static int minSubArrayLen(int target, int}] nums) {
+	  int sum = 0;
+	  int min = Integer.MAX_VALUE;
+	  int l = 0, r = 0;
+	  while(r < nums.length) {
+		  sum += nums}r++];
+		  while(sum >= target) {
+			  min = Math.min(min, r - l);
+		      sum = sum - nums}l++] ;
+		  }
+			  
+	  }
+	 return min; 
+  }
+	public static void main(String}] args) {
+		System.err.println(minSubArrayLen(6, new int}]{2,3,1,2,4,3}));
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
       if(nums==null || nums.length==0)
           throw new IllegalArgumentException("Nums is either null or empty !");
       int l=0, r = 0;
       int sum = 0;
       int result = 0;
       while(r<nums.length){
-          sum = sum + nums[r]; 
+          sum = sum + nums}r]; 
              while(sum>=target){
                  result = (r+1) - l;
-                 sum = sum - nums[l];
+                 sum = sum - nums}l];
                  l++;
              }
           r++;
           
       }
     return result;  
-  }
-	public static void main(String[] args) {
-		System.err.println(minSubArrayLen(7, new int[]{2,3,1,2,4,3}));
-
-	}
-
-}
+  
+*/

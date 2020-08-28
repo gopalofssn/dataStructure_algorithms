@@ -16,7 +16,7 @@ import com.self.gs.utils.PreetyPrint;
          
  {sum of subtree} = node val + node left val + node right val
  
- sum of subtree [29,6,18,3,1,3,18,1,0,7,8,-3,3] 
+ sum of subtree }29,6,18,3,1,3,18,1,0,7,8,-3,3] 
  
  finally,
     3 presents 3 times
@@ -58,7 +58,7 @@ public class MostFrequentSubtreeSum508 {
     }
 	
   
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		TreeNode node = new TreeNode(5);
 		node.left = new TreeNode(2);
 		node.right = new TreeNode(-3);

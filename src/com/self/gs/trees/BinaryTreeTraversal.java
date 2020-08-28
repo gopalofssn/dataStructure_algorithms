@@ -30,6 +30,8 @@ public class BinaryTreeTraversal {
 			list.add(node.val);
 			InOrderTraversal(node.right,list);
 		}
+		
+		
 		// L R N
 		public static void PostOrderTraversal(TreeNode node, ArrayList<Integer> list) {
 			if(node == null)
@@ -115,7 +117,7 @@ public class BinaryTreeTraversal {
         	}
         }
 		
-		public static void main(String[] arg) {
+		public static void main(String}] arg) {
 			TreeNode node = new TreeNode(5);
 			node.left = new TreeNode(3);
 			node.right = new TreeNode(4);

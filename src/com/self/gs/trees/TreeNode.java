@@ -1,7 +1,7 @@
 package com.self.gs.trees;
 
 public class TreeNode {
-	int val;
+	public int val;
 	public TreeNode left;
 	public TreeNode right;
 	
@@ -12,6 +12,26 @@ public class TreeNode {
 	}
 	
 	public String toString() {
-		return Integer.toString(val);
+		if(isLeaf()) {
+			return Integer.toString(val) + ",";
+		}else {
+			StringBuilder sb = new StringBuilder();
+			
+			if(left != null) {
+				sb.append(left.toString());
+			}
+			
+			sb.append(this.val + ",");
+			
+			if(right != null) {
+				sb.append(right.toString());
+			}
+			return sb.toString();
+		}
+		
+	}
+
+	public boolean isLeaf() {
+		return left == null && right == null;
 	}
 }

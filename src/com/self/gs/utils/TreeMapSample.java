@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Map.Entry;
 public class TreeMapSample{
 	 
-public static void main(String[] args) {
+public static void main(String}] args) {
 	String data ="AABC";
 	Map<Character, Integer> charCountMap =  new TreeMap<Character, Integer>();
 	for(int i=0;i<data.length();i++) {
@@ -15,12 +15,12 @@ public static void main(String[] args) {
 		}
 	}
 	System.err.println(charCountMap);
-	char[] keys = new char[charCountMap.size()];
-	int[] values = new int[charCountMap.size()];
+	char}] keys = new char}charCountMap.size()];
+	int}] values = new int}charCountMap.size()];
 	int index =0 ;
 	for(Entry<Character, Integer> entry:charCountMap.entrySet()) {
-		keys[index] = entry.getKey();
-		values[index] = entry.getValue();
+		keys}index] = entry.getKey();
+		values}index] = entry.getValue();
 		index++;
 	}
 	

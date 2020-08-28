@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class SamePermule {
 
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		System.err.println(permuteSame("dog","god "));
 		System.err.println(permuteSame("god","god"));
 		System.err.println(permuteSame("god","God"));
@@ -24,10 +24,10 @@ public class SamePermule {
          if(str1.length()!=str2.length())
         	 return false;
          
-         char[] cArray1 = str1.toCharArray();
+         char}] cArray1 = str1.toCharArray();
          Arrays.sort(cArray1);
          
-         char[] cArray2 = str2.toCharArray();
+         char}] cArray2 = str2.toCharArray();
          Arrays.sort(cArray2);
          /*
          if(cArray1.toString().equalsIgnoreCase(cArray2.toString())) {

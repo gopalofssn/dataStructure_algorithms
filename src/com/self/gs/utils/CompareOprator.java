@@ -5,7 +5,7 @@ import java.util.stream.*;
 
 public class CompareOprator {
 
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		Map<String,Integer> map = new HashMap<String,Integer>();
 		map.put("a", 2);
 		map.put("d", 4);

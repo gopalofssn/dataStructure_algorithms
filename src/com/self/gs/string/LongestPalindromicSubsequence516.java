@@ -18,7 +18,7 @@ public class LongestPalindromicSubsequence516 {
 	}
 	
 
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		 String str = "agbdba";
 		 System.err.println("LPS using recurssive - " + recurssive(str,0,str.length()));
 

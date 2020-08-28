@@ -1,15 +1,15 @@
 package com.self.gs.digits;
 import java.util.*;
 /*
- Input: [1,2,3]
+ Input: }1,2,3]
 Output:
-[
-  [1,2,3],
-  [1,3,2],
-  [2,1,3],
-  [2,3,1],
-  [3,1,2],
-  [3,2,1]
+}
+  }1,2,3],
+  }1,3,2],
+  }2,1,3],
+  }2,3,1],
+  }3,1,2],
+  }3,2,1]
 ]
 
 Algorithum
@@ -22,7 +22,7 @@ Algorithum
  */
 public class Permutations46 {
 	
-	public static List<List<Integer>> permute(int[] nums) {
+	public static List<List<Integer>> permute(int}] nums) {
 		List<List<Integer>> permutations = new ArrayList<>();
 		if (nums.length == 0) {
 			return permutations;
@@ -32,8 +32,7 @@ public class Permutations46 {
 		return permutations;
     }
 
-	private static void collectPermutations(int[] nums, int start, List<Integer> permutation,
- 			List<List<Integer>>  permutations) {
+	private static void collectPermutations(int}] nums, int start, List<Integer> permutation, List<List<Integer>>  permutations) {
 		
 		if (permutation.size() == nums.length) {
 			permutations.add(permutation);
@@ -42,12 +41,12 @@ public class Permutations46 {
 
 		for (int i = 0; i <= permutation.size(); i++) {
 			List<Integer> newPermutation = new ArrayList<>(permutation);
-			newPermutation.add(i, nums[start]);
+			newPermutation.add(i, nums}start]);
 			collectPermutations(nums, start + 1, newPermutation, permutations);
 		}
 	}
 
-public static void main(String[] args) {
-	System.out.println(permute(new int[] {1,2,3}));
+public static void main(String}] args) {
+	System.out.println(permute(new int}] {1,2,3}));
 }
 }

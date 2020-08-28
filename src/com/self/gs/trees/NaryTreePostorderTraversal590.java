@@ -47,7 +47,7 @@ public class NaryTreePostorderTraversal590 {
 
 	
 	
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		Node node = new Node(1);
 		List<Node> list = new ArrayList<Node>() {{ 
 			add(new Node(5));

@@ -20,11 +20,36 @@ Explanation:
  */
 public class FindDiff {
 	
-  public static void main(String[] args) {
-	System.err.println(diff("abcdeg","abcde"));
+  public static void main(String}] args) {
+	System.err.println(diff("abcdegl","abcde"));
 }
 
-private static char diff(String s, String t) {
+private static String diff(String s, String t) {
+	
+	 int sLen = s.length();
+	 int tLen = t.length();
+	 int}] diff = new int}26];
+	
+	 for(int i =0 ; i < sLen || i < tLen; i++) {
+		 if(i < sLen) {
+			 diff}s.charAt(i) -'a']++;
+		 }
+		 if(i < tLen) {
+			 diff}t.charAt(i) -'a']--;
+		 }
+	 }
+	
+	 StringBuilder sb = new StringBuilder();
+	 for(int i = 0; i < diff.length; i++) {
+		 for(int j = 0; j < diff}i]; j++) {
+			 char c = (char) ('a' + i);
+		     sb.append(c);
+		 }
+	 }
+	 
+	 return sb.toString();
+	 
+	 /*
 	 int charCodeS = 0;
 	 int charCodeT = 0;
 	 for(char c:s.toCharArray()) {
@@ -33,7 +58,10 @@ private static char diff(String s, String t) {
 	 for(char c:t.toCharArray()) {
 		 charCodeT += c;
 	 }
-	 
+	 System.err.println(charCodeS);
+	 System.err.println(charCodeT);
+
 	 return (char)(Math.abs(charCodeS-charCodeT));
+	 */
 }
 }

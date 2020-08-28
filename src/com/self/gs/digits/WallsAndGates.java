@@ -22,12 +22,12 @@ After running your function, the 2D grid should be:
 public class WallsAndGates {
 
 
-	private static void findDistanceBtwRoomAndGate(int[][] data) {
+	private static void findDistanceBtwRoomAndGate(int}]}] data) {
 		if(data==null || data.length==0)
 			return;
 		for(int row =0;row<data.length;row++) {
-			for(int col=0;col<data[0].length;col++) {
-				if(data[row][col]==0) {
+			for(int col=0;col<data}0].length;col++) {
+				if(data}row]}col]==0) {
 					dfs(data,row,col,0); 
 				}
 			}
@@ -35,10 +35,10 @@ public class WallsAndGates {
 		
 	}
 	
-   private static void dfs(int[][] data,int row , int col, int count) { 
-	  if(row<0 || row>=data.length || col<0 || col>=data[0].length || count>data[row][col])
+   private static void dfs(int}]}] data,int row , int col, int count) { 
+	  if(row<0 || row>=data.length || col<0 || col>=data}0].length || count>data}row]}col])
 		  return;
-	  data[row][col] = count;
+	  data}row]}col] = count;
 	  dfs(data,row-1,col,count+1);
 	  dfs(data,row+1,col,count+1);
 	  dfs(data,row,col-1,count+1);
@@ -46,8 +46,8 @@ public class WallsAndGates {
    }
 	
 
-	public static void main(String[] args) {
-		int data[][] = new int[][] {
+	public static void main(String}] args) {
+		int data}]}] = new int}]}] {
 			{Integer.MAX_VALUE,-1,0,Integer.MAX_VALUE},
 			{Integer.MAX_VALUE,Integer.MAX_VALUE,Integer.MAX_VALUE,-1},
 			{Integer.MAX_VALUE,-1,Integer.MAX_VALUE,-1},

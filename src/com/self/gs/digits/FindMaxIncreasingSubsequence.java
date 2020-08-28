@@ -1,6 +1,5 @@
 package com.self.gs.digits;
 
-import java.util.Arrays;
 
 /*
  
@@ -12,59 +11,38 @@ public class FindMaxIncreasingSubsequence {
 	
 	/*   dynamic programming
 	 
-	 [  1   1  1  1  1  1   1   1  ]
-	    10  9  2  5  3  7  101  18
-	 l,r
-	   [10, 9 ] - 1 
-	     1  1
-	   [10 9 2 ] - 1
-	    1  1  1
-	   [10 9 2 5] - 2  ,, already 5 has 1 and less than 5 within l&r 1, so 1+1 = 2
-	     1 1 1 2
-	   [10 9 2 5 3] - 2  ,,, already 3 has 1 and less than 5 within l&r 1, so 1+1 = 2
-	     1 1 1 2 2
-	   [10 9 2 5 3 7 ] - [2 5 7] / [2 3 7] ,, ans 3 
-	     l         r
-	     1 1 1 2 2 1
-	       l  
-	     1 1 1 2 2 1
-	         l
-	     1 2 1 2 2 2    ,  yes 2 & 7 makes 2 increase sub seq
-	           l 
-	     1 2 1 2 2 3   ,, yes 2 5 & 7
-	            
-	       
-	   [10 9 2 5 3 7 101] - 
-	   
-	
-	           
-	                            
- 
+
+	                 10  9  2  5  3  7  101  18
+approach 1 : holder  1 	 1  1  2  1  2   3    1 
+   * Initialize holder array with 1, because max is 1 at any point , if next num is big , increase , 
+	 Time O(n) , Space O(n) - holder array
+	 
+Approach 2 : tmp variable , if(prev val < next val ) , keep increase , else default to 1. and keep compare with max
+   Time O(n) , Space O(1)
+
 
 	 */
-	private static int LIS(int[] nums) {
+	private static int LIS(int}] nums) {
 		if(nums==null || nums.length==0)
 	          return Integer.MIN_VALUE;
-		
-		int holder[] = new int[nums.length+1];
-		Arrays.fill(holder, 1);
-		Arrays.sort(holder);
-		System.err.println(Arrays.toString(holder));
-		
-		int result = Integer.MIN_VALUE;
-		int l=0,r=0;
-		while(r<nums.length) {
+		int max = 1;
+		int prevMax = 1;
+		for(int i=1; i<nums.length; i++) {
+			if(nums}i] > nums}i-1]) {
+				prevMax++;
+			}else {
+				prevMax = 1;
+			}
 			
-			
-			result = Math.max(result, holder[r]);
+			max = Math.max(max, prevMax);
 		}
-		
-		return result;
+
+		return max; 
 	}
 	
 	
-  public static void main(String[] args) {
-	  System.err.println(LIS(new int[] {10,9,2,5,3,7,101,18}));
+  public static void main(String}] args) {
+	  System.err.println(LIS(new int}] {10,9,2,5,6,7,1,188}));
 }
 
 

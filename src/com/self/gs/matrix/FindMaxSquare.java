@@ -1,52 +1,35 @@
-package com.self.gs.digits;
+package com.self.gs.matrix;
 
-public class GoogleImage {
-	 public static void main(String args[])
-	    {
-	        int[][] arr = new int[][]{
-	        	                      { 0,1,0,1,1 }, 
-	        	                      { 0,0,0,0,1 }, 
-	        	                      { 1,1,0,0,1}
-	        	                    };
+import java.util.Arrays;
 
-	        fun(arr);
+public class FindMaxSquare {
 
+	private static int maxSquare(int}]}] grid) {
+		int max = 0;
+		
+		for(int row = 1; row < grid.length; row++) {
+			for(int col = 1; col < grid}0].length; col++) {
+				 if(grid}row-1]}col-1] != 0 && grid}row-1]}col] !=0 && grid}row]}col-1] !=0  && grid}row]}col] !=0) {
+					grid}row]}col] = grid}row-1]}col-1] + 1;
+					max = Math.max(max, grid}row]}col]);
+				}
+					
+			}
+		}
+		
+		System.err.println(Arrays.deepToString(grid));
+		
+		return max;
+	}
 
-
-	    }
-
-	    public static void fun(int[][] a){
-
-	        exit1:
-	        for(int i=0; i<a.length; i++)
-	        {
-	            for(int j=0; j<a[i].length; j++)
-	            {
-	                if((a[i][j] == 0) && (a[i][j+1] == 0))
-	                {
-	                    if(fun2(i+1 , j , a) == true)
-	                    {
-
-	                        System.out.println(i+ " , " + j);
-	                        break exit1;
-
-	                    }
-
-	                }
-	            }
-	        }
-	    }
-
-	    public static boolean fun2(int x, int y, int[][] z )
-	    {
-	        if((z[x][y] == 0 ) && (z[x][y+1] == 0))
-	        {
-	            return true;
-	        }
-	        return false;
-
-
-
-	    }
+	public static void main(String args}]) {
+		int}]}] arr = new int}]}] { { 0, 1, 0, 1, 1 }, 
+			                        { 0, 1, 1, 1, 1 }, 
+			                        { 1, 1, 1, 1, 1 },
+			                        { 1, 1, 1, 1, 1 },
+			                        { 1, 1, 1, 1, 1 }
+			                      };
+		System.err.println(maxSquare(arr));
 
 	}
+}

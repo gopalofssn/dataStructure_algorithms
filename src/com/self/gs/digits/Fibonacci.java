@@ -13,14 +13,14 @@ public class Fibonacci {
 		int result = (memo.containsKey(n-1)?memo.get(n-1):fib(n-1,memo))
 				     +
 				     (memo.containsKey(n-2)?memo.get(n-2):fib(n-2,memo));
-        memo.put(n, result);
-		System.out.println(n);
+       
+		System.err.println(result);
 		return result;
 	}
 	
-  public static void main(String[] args) {
+  public static void main(String}] args) {
 	  Hashtable<Integer, Integer>  memo =  new Hashtable<Integer, Integer>();
-	System.out.print(fib(20,memo)); // 0 1 1 2 3 5 8 13
+	System.out.print(fib(5,memo)); // 0 1 1 2 3 5 8 13
 }
 
 

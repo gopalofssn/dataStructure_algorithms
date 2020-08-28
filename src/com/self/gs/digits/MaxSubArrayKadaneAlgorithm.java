@@ -13,7 +13,7 @@ Time :  O(n)
 	 kadane algorithum
 	 */
 
-	private static int kadane(int[] nums) {
+	private static int kadane(int}] nums) {
 		if(nums==null)
           throw new IllegalArgumentException();
 		int currentSum = 0, maxSum = 0;
@@ -31,8 +31,8 @@ Time :  O(n)
 	}
 	
 	
-	public static void main(String[] args) {
-		System.err.println(kadane(new int[] {-2,-3,4,-1,-2,1,5,-3}));
+	public static void main(String}] args) {
+		System.err.println(kadane(new int}] {-2,-3,4,-1,-2,1,5,-3}));
 	}
 
 	

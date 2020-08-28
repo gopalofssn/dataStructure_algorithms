@@ -1,7 +1,7 @@
 package com.self.gs.utils;
 import java.util.*;
 public class ShiftOprator {
-public static void main(String[] args) {
+public static void main(String}] args) {
 	short val = (short)(1<<('3'-'1'));
 	System.err.println((short)(1<<('1'-'1'))); //1<<0 = 00000000 
 	System.err.println((short)(1<<('2'-'1')));

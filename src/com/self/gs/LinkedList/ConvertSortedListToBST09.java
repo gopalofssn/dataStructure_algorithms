@@ -4,9 +4,9 @@ import com.self.gs.trees.BinaryTreeTraversal;
 import com.self.gs.trees.TreeNode;
 
 /*
- Given the sorted linked list: [-10,-3,0,5,9],
+ Given the sorted linked list: }-10,-3,0,5,9],
 
-One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:
+One possible answer is: }0,-3,9,-10,null,5], which represents the following height balanced BST:
 
        0
      /  \
@@ -35,7 +35,7 @@ public class ConvertSortedListToBST09 {
 		node.left = sortedListToBST(head);
 		return node;
 	}
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		 ListNode root = new ListNode(-10);
 		  root.next = new ListNode(-3);
 		  root.next.next = new ListNode(-1);

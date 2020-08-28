@@ -26,7 +26,7 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
     a b c a b c b b
     L   R            - abc , 3 char
     L     R          -  seen a already , move L
-      L   R          - bca , still 3 char
+      L   R          - bca , still 3 char 
       L     R        -- seen b already , move L
         L   R		 - cab , still 3 char
         L     R      - seen c already , move L
@@ -37,31 +37,34 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
               L   R   - seen b already ,
     */
 	private static int solution(String s) {
-		if(s==null)
-			return 0;
-		Set<Character> set = new HashSet<Character>();
-		Map<Integer,Integer> map= new HashMap<Integer,Integer>();
-		System.err.println(map.put(1, 2));
-		int l=0,r=0;
-		int result = 0;
-		while(l<s.length()) {
-			if(!set.contains(s.charAt(l))) {
-				set.add(s.charAt(l));
-				result = Math.max(result, set.size());
-				System.err.println(set);
-				l++;
-			}else {
-				set.remove(s.charAt(r));
-				r++;
-			}
-			System.err.println(set);
-		}
+
+		 if(s == null || s.length() == 0) {
+			 return 0;
+		 }
+		 
+		 int l = 0;
+		 int r = 0;
+		 int max = 0;
+		 Set<Character> uniqueSet = new HashSet<Character>();
+		 
+		 while(r < s.length()) {
+			 char c = s.charAt(r);
+			 if(uniqueSet.add(c)) {
+				 r++;
+				 max = Math.max(max, uniqueSet.size());
+			 }else {
+				 uniqueSet.remove(s.charAt(l));
+				 l++;
+			 }
+		 }
+		 
+		 
+		 return max;
 		
-		return result;
 	}
 	
-	public static void main(String[] args) {
-		System.err.println(solution("abcabcbb")); //pwwkew  abcabcbb
+	public static void main(String}] args) {
+		System.err.println(solution("abacaecbb")); //pwwkew  abcabcbb
 
 	}
 

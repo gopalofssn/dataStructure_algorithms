@@ -9,7 +9,7 @@ Come up with an asymptotically optimal solution and analyze the time and space c
 
 Example:
 
-input:  pattern = ['x','y','z'], str = "xyyzyznyx"
+input:  pattern = }'x','y','z'], str = "xyyzyznyx"
 
 output: "znyx"
  */
@@ -27,7 +27,7 @@ public class ShortestUniqueSubstring {
    compare two hashmap
    
  */
-   private static String getShortestUniqueSubstring(char[] p, String s) {
+   private static String getShortestUniqueSubstring(char}] p, String s) {
 	   if(p == null || p.length==0 || s==null )
 	        return null;
 	     Map<Character,Integer> pMap = new HashMap<Character,Integer>();
@@ -74,9 +74,9 @@ public class ShortestUniqueSubstring {
 	    }
 	  }
     
-	public static void main(String[] args) {
-		   System.err.println("Result : " + getShortestUniqueSubstring( new char[]{'x','y','z'},"xyaoyzyziyxz"));
-		   System.err.println("Result : " + getShortestUniqueSubstring( new char[]{'x','y','z','y'},"xyaoyzyzy"));
+	public static void main(String}] args) {
+		   System.err.println("Result : " + getShortestUniqueSubstring( new char}]{'x','y','z'},"xyaoyzyziyxz"));
+		   System.err.println("Result : " + getShortestUniqueSubstring( new char}]{'x','y','z','y'},"xyaoyzyzy"));
 	}
 
    

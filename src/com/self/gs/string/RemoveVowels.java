@@ -15,19 +15,19 @@ public class RemoveVowels {
 
 	
 	public static void option1(String input) {
-		input = input.replaceAll("["+vowelsString+"]", SPACE);
-		print(Thread.currentThread().getStackTrace()[1].getMethodName(),input);
+		input = input.replaceAll("}"+vowelsString+"]", SPACE);
+		print(Thread.currentThread().getStackTrace()}1].getMethodName(),input);
 	}
 
 	private static void option2(String str) {
-		char[] charArray = str.toCharArray();
+		char}] charArray = str.toCharArray();
 		StringBuilder builder = new StringBuilder(); // I choose string builder , because it is faster than SB
 		for(char c : charArray) {
 			builder = builder.append(
 					vowelsList.contains(c)?SPACE:c
 					);
 		}
-		print(Thread.currentThread().getStackTrace()[1].getMethodName() , builder.toString());
+		print(Thread.currentThread().getStackTrace()}1].getMethodName() , builder.toString());
 		
 	}
 	
@@ -35,7 +35,7 @@ public class RemoveVowels {
 		System.out.println(opt +" -" + input);
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		String str = " I am Legend";
 		option1(str);
 		option2(str);

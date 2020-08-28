@@ -60,7 +60,7 @@ public class BinaryTreeMinQueueDepth {
 		
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String}] args) {
 		TreeNode node = new TreeNode(5);
 		node.left = new TreeNode(3);
 		node.right = new TreeNode(4);
