@@ -2,7 +2,7 @@ package com.self.gs.trees;
 
 import java.util.*;
 
-public class SerializeandDeserializeBinaryTree297 {
+public class SerializeandDeserializeBinaryTree {
 
 	// Encodes a tree to a single string.
     public static String serialize(TreeNode root) {
@@ -40,17 +40,17 @@ public class SerializeandDeserializeBinaryTree297 {
     public static TreeNode deserialize(String data) {
 		if(data==null)
 			return null;
-	    String}] vals = data.split(","); 
-        TreeNode node = new TreeNode(Integer.valueOf(vals}0]));
+	    String[] vals = data.split(","); 
+        TreeNode node = new TreeNode(Integer.valueOf(vals[0]));
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(node);
         for(int i=1;i<vals.length;) {
         	TreeNode tmp = queue.poll();
-        	tmp.left = (vals}i].equals("X"))?null:new TreeNode(Integer.valueOf(vals}i]));
+        	tmp.left = (vals[i].equals("X"))?null:new TreeNode(Integer.valueOf(vals[i]));
         	i++;
         	if(tmp.left!=null)
               queue.add(tmp.left);
-        	tmp.right = (vals}i].equals("X"))?null:new TreeNode(Integer.valueOf(vals}i]));
+        	tmp.right = (vals[i].equals("X"))?null:new TreeNode(Integer.valueOf(vals[i]));
         	i++;
         	if(tmp.right!=null)
               queue.add(tmp.right);
@@ -63,12 +63,12 @@ public class SerializeandDeserializeBinaryTree297 {
 
 	
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		TreeNode node = new TreeNode(1);
 		node.left = new TreeNode(2);
-		node.right = new TreeNode(3);
-		node.right.left = new TreeNode(4);
-		node.right.right = new TreeNode(5);
+		node.right = new TreeNode(5);
+		node.left.right = new TreeNode(3);
+		node.left.right.left = new TreeNode(4);
 		String str = serialize(node);
 		System.err.println(str);
 		node = deserialize(str);
