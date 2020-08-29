@@ -1,23 +1,9 @@
-package com.gs.self.linkedlist;
+package com.gs.self.cache;
 
 import java.util.*;
 
 public class LRUCache {
 
-  private class Node{
-    private int key;
-    private int val;
-    private Node prev;
-    private Node next;
-    public Node(int key, int val){
-        this.key = key;
-        this.val = val;
-    }
-    
-    public String toString() {
-      return "["+key +" ," + val + "] -> " + prev;
-    }
-}
 
 private Node head;  
 private Node tail; 

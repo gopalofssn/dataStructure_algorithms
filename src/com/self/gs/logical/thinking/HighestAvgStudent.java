@@ -1,89 +1,87 @@
 package com.self.gs.logical.thinking;
 import java.util.*;
-import java.util.Map.Entry;
+
+class Student{
+	private String name;
+	private int totalMarks;
+	private int totalSubjects;
+	public Student(String name) {
+		this.name = name;
+		this.totalMarks = 0;
+		this.totalSubjects = 0;
+	}
+	public void addMark(int mark) {
+		this.totalMarks += mark;
+		this.totalSubjects++;
+	}
+	public float averageMark() {
+		return (float)totalMarks / (float) totalSubjects;
+	}
+	public String getName() {
+		return name;
+	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", totalMarks=" + totalMarks + ", totalSubjects=" + totalSubjects + "]";
+	}
+	
+}
 
 
+class StudentMarkComparator implements Comparator<Student>{
+	public int compare(Student a, Student b) {
+		int diff = (int)( Math.ceil( a.averageMark() - b.averageMark())); 
+		if(diff == 0) return b.getName().compareTo(a.getName()); // in case if we want name in alphabetical order
+		return diff;
+	}
+}
 
 public class HighestAvgStudent {
-	
 
+	final Comparator<Student> STUDENT_MARK_ASC  = new StudentMarkComparator();
+	
 	private  String highest(String[][] students) {
 		
+		Map<String, Student> studentMap = new HashMap<String, Student>();
+		populateStudentMap(students, studentMap);
 
-		/*Comparator<Map.Entry<String, List<Integer>>> cmp = new Comparator<Map.Entry<String, List<Integer>>>(){
-
-			@Override
-			public int compare(Entry<String, List<Integer>> o1, Entry<String, List<Integer>> o2) {
-				// TODO Auto-generated method stub
-				return 0;
-			}
-			
-		};
-		*/
+		PriorityQueue<Student> minHeap = new PriorityQueue<Student>(STUDENT_MARK_ASC);
 		
-		Comparator<String> cmp = null;
-		Map<String, List<Integer>> map = new TreeMap<String, List<Integer>>(cmp);
-		
-		
-		cmp = new Comparator<String>() {
-
-			@Override
-			public int compare(String o1, String o2) {
-				return calculateAvg(map.get(o2)) - calculateAvg(map.get(o1));
-			}
-			
-		};
-		
-		for(String[] student : students) {
-			String name = student}0];
-			Integer mark = Integer.valueOf(student}1]);
-
-			if(map.containsKey(name)) {
-				map.get(name).add(mark);
-			}else {
-				map.put(name , new ArrayList<Integer>(Arrays.asList(mark)));
-			}
-			
+		for(Map.Entry<String, Student> entry : studentMap.entrySet()) {
+			minHeap.offer(entry.getValue());
+			if(minHeap.size() > 1)  minHeap.poll();  // maintain only top one student in heap
 		}
 		
-		String name = "";
-		int highestAvg = Integer.MIN_VALUE;
-		
-		for(Map.Entry<String, List<Integer>> entry : map.entrySet()) {
-			int avg = calculateAvg(entry.getValue());
-			if(avg > highestAvg) {
-				highestAvg = avg;
-				name = entry.getKey();
-			}
-		}
-		 
-		System.err.println(map);
-		
-		return name;
+		return minHeap.poll().getName();
 	}
 	
  
-	private int calculateAvg(List<Integer> values) {
-		int sum = 0;
-		for(int value : values) {
-			sum += value;
+
+	private void populateStudentMap(String[][] students, Map<String, Student> studentMap) {
+		for(String[] student : students) {
+			String name = student[0];
+			int mark = Integer.parseInt(student[1]);
+			studentMap.putIfAbsent(name, new Student(name));
+			studentMap.get(name).addMark(mark);
 		}
-		return Math.floorDiv(sum, values.size());
+		
 	}
+
 
 
 	public static void main(String[] args) {
 		String[][] students = 
 			   { 
-				
-				{"B","12"},
-				{"C","10"},
-				{"B","2"},
-				{"A","8"}
+				{"Dave","10"},
+				{"Ben","12"},
+				{"Charles","11"},
+				{"Ben","8"},
+				{"Adam","8"},
+				{"Evan","8"},
 		      };
 	
 		
-		System.err.println(new HighestAvgStudent().highest(students));
+		System.err.println("Highest Avg Student - " + new HighestAvgStudent().highest(students));
 
 	}
 
