@@ -35,8 +35,11 @@ public class PermuteAllSubSets {
 	}
 
 	public static void main(String[] args) {
-		char[] nums = { 'A', 'B', 'C'};
-		System.err.println(subSets(nums));
+		char[] nums = { 'A', 'B', 'C', 'D'};
+		List<List<Character>> result = subSets(nums);
+		for(List<Character> l : result) {
+			System.err.println(l);
+		}
 	}
 
 }
