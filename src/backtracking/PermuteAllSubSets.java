@@ -3,38 +3,40 @@ package backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _78SubSets {
-
-  public static void main(String[] args) {
-    
-   int n =  "abcd".indexOf("ced");
-    System.err.println(n);
-    
-    int[] nums = { 1, 2, 3};
-    System.err.println(subSets(nums));
-
-  }
-
-  private static List<List<Integer>> subSets(int[] nums) {
-    
-    List<List<Integer>> subsets = new ArrayList<List<Integer>>();
-    generateSub(0, nums, new ArrayList<Integer>(), subsets);
-    
-    return subsets;
-  }
-
-  private static void generateSub(int index, int[] nums, ArrayList<Integer> current, List<List<Integer>> subsets) {
-    
-   
-    subsets.add(new ArrayList<Integer>(current)); // must do copy, beacuse we are doing add and delete in below for loop
-    
-      for(int i = index; i < nums.length; i++) {
-        current.add(nums[i]);
-        generateSub(i + 1, nums, current, subsets);
-        current.remove(current.size() - 1);
-      }
+/*
+      [ A, B, C]
       
-      System.err.println(current); 
-  }
+                []
+        [A]         [B]   [C]    l1   index :          0...2
+    [A,B] [A,C]   [B,C]          l2   index : 1..2 on 0   2 on 1  just 2     
+ [A,B,C]                         l2   index   2                  
+ 
+     - Generate all , recursive call
+     - 
+     
+ */
+public class PermuteAllSubSets {
+
+	private static List<List<Character>> subSets(char[] nums) {
+           if(nums == null || nums.length == 0) return null;
+           List<List<Character>> result = new ArrayList<List<Character>>();
+           helper(nums, new ArrayList<Character>(), result, 0);
+           return result;
+	}
+
+	private static void helper(char[] nums, ArrayList<Character> current, List<List<Character>> result, int start) {
+		result.add(new ArrayList<Character>(current));  
+		for(int index = start; index < nums.length; index++) {
+			current.add(nums[index]);  
+			helper(nums, current, result, index + 1);
+			current.remove(current.size() - 1); 
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		char[] nums = { 'A', 'B', 'C'};
+		System.err.println(subSets(nums));
+	}
 
 }
