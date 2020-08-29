@@ -39,12 +39,12 @@ public class DirectedWeightedGraph {
 	
 	
 	
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		DirectedWeightedGraph graph = new DirectedWeightedGraph();
 		
 		System.err.println("before sz - " + graph.size());
-		int}]}] data = { { 2, 1, 4 }, { 2, 3, 1 }, { 3, 4, 11 } };
-		for(int}] dat : data) {
+		int[][] data = { { 2, 1, 4 }, { 2, 3, 1 }, { 3, 4, 11 } };
+		for(int[] dat : data) {
 			graph.addEdge(dat}0], dat}1], dat}2]);
 		}
 		System.err.println("after sz - " + graph.size());

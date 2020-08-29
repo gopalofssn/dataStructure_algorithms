@@ -7,7 +7,7 @@ package com.self.gs.digits;
 public class SearchinSorted2DMatrix {
 	
 	// option one O(logn) , last element in current row< first element in next row , so treat like 1D array and Binary search
-	public static boolean find(int}]}] input, int key) {
+	public static boolean find(int[][] input, int key) {
 		int rowLen = input.length; // 3
 		int colLen = input}0].length; // 4
 		int right = rowLen*colLen -1 ; // total(3*4) ,, 0... 11
@@ -32,7 +32,7 @@ public class SearchinSorted2DMatrix {
 	}
 	
 	
-	public static boolean find1Recurssive(int}]}] nums,int target) {
+	public static boolean find1Recurssive(int[][] nums,int target) {
 		
 		if(nums==null || nums.length<1)
 			throw new IllegalArgumentException("Input 2D array is either null or empty !!!");
@@ -43,7 +43,7 @@ public class SearchinSorted2DMatrix {
 
 	
 	
-	private static boolean binarySearchRecurssive(int}]}] nums, int start, int end, int target) {
+	private static boolean binarySearchRecurssive(int[][] nums, int start, int end, int target) {
 		if(start>end)
 			return false;
 		int mid = (start+end)/2;
@@ -60,7 +60,7 @@ public class SearchinSorted2DMatrix {
 
 
 	//option 2 O(m+n), , last element in current row!< first element in next row
-	public static boolean find2(int}]}] input, int target) {
+	public static boolean find2(int[][] input, int target) {
 		int rowLen = input.length;
 		int colLen = input}0].length;
 		int r = rowLen -1;
@@ -79,8 +79,8 @@ public class SearchinSorted2DMatrix {
 	}
 	
 	
-	public static void main(String}] args) {
-	 int}]}] input = new int}]}] {
+	public static void main(String[] args) {
+	 int[][] input = new int[][] {
 		 {1,   3,  5},
 		 {10, 11, 16},
 		 {23, 30, 34}

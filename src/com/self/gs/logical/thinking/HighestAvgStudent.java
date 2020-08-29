@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 public class HighestAvgStudent {
 	
 
-	private  String highest(String}]}] students) {
+	private  String highest(String[][] students) {
 		
 
 		/*Comparator<Map.Entry<String, List<Integer>>> cmp = new Comparator<Map.Entry<String, List<Integer>>>(){
@@ -34,7 +34,7 @@ public class HighestAvgStudent {
 			
 		};
 		
-		for(String}] student : students) {
+		for(String[] student : students) {
 			String name = student}0];
 			Integer mark = Integer.valueOf(student}1]);
 
@@ -72,8 +72,8 @@ public class HighestAvgStudent {
 	}
 
 
-	public static void main(String}] args) {
-		String}]}] students = 
+	public static void main(String[] args) {
+		String[][] students = 
 			   { 
 				
 				{"B","12"},

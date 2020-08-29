@@ -8,7 +8,7 @@ package com.self.gs.digits;
 
 public class TotalOccranceOfKInSortedArray {
   
-	public static int findKOcccurence(int}] input, int k) {
+	public static int findKOcccurence(int[] input, int k) {
 
 		int first_occurence_loc = findKLoc(input , k ,0,input.length,"FIRST");
 		System.out.println("first_occurence_loc at " + first_occurence_loc);
@@ -20,7 +20,7 @@ public class TotalOccranceOfKInSortedArray {
 	    return (last_occurence_loc - first_occurence_loc) + 1;
 	}
 	
-	private static int findKLoc(int}] input, int k, int left, int right, String str) {
+	private static int findKLoc(int[] input, int k, int left, int right, String str) {
 		if(left>right)
 			return -1;
 		
@@ -47,9 +47,9 @@ public class TotalOccranceOfKInSortedArray {
 		}
 	}
 	
-  public static void main(String}] args) {
+  public static void main(String[] args) {
 	  
-	  int}] input = {0,0,2,3,3,3,4,5,5,5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 9};
+	  int[] input = {0,0,2,3,3,3,4,5,5,5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 9};
 	               //0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 	  System.out.print(findKOcccurence(input,5));
 	

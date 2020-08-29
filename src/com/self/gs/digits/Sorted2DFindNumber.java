@@ -2,8 +2,8 @@ package com.self.gs.digits;
 
 public class Sorted2DFindNumber {
 
-	public static void main(String}] args) {
-		int}]}] nums = new int}]}] {
+	public static void main(String[] args) {
+		int[][] nums = new int[][] {
 			{1,2,3},
 			{4,5,6},
 			{7,8,9}

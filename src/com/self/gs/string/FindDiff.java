@@ -20,7 +20,7 @@ Explanation:
  */
 public class FindDiff {
 	
-  public static void main(String}] args) {
+  public static void main(String[] args) {
 	System.err.println(diff("abcdegl","abcde"));
 }
 
@@ -28,7 +28,7 @@ private static String diff(String s, String t) {
 	
 	 int sLen = s.length();
 	 int tLen = t.length();
-	 int}] diff = new int}26];
+	 int[] diff = new int}26];
 	
 	 for(int i =0 ; i < sLen || i < tLen; i++) {
 		 if(i < sLen) {

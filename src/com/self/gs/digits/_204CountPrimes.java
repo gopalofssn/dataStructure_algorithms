@@ -9,7 +9,7 @@ public class _204CountPrimes {
 	 public int countPrimes(int n) {
 	        if(n <= 1) return 0;
 	        
-	        boolean}] primeStatusHolders = new boolean}n];
+	        boolean[] primeStatusHolders = new boolean}n];
 	        Arrays.fill(primeStatusHolders, 2, n, true);
 
 	        for(int i = 2; i < n;){
@@ -29,7 +29,7 @@ public class _204CountPrimes {
 	        return counter;
 	    }
 	    
-	    private void markNonPrimeElementOfFactor(boolean}] primeStatusHolders, int prime){
+	    private void markNonPrimeElementOfFactor(boolean[] primeStatusHolders, int prime){
 	        int multipleBy = 2;
 	        int index = multipleBy * prime;
 	        while(index < primeStatusHolders.length){
@@ -39,7 +39,7 @@ public class _204CountPrimes {
 	        }
 	    }
 	    
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		_204CountPrimes c= new _204CountPrimes();
 		System.err.println(c.countPrimes(10));
 	}

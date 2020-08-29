@@ -48,7 +48,7 @@ public class ZombieinMatrix {
 		}
 	}
 	
-	private int minHour(int}]}] grid) {
+	private int minHour(int[][] grid) {
 		int hour = 0;
 		Queue<Point> queue = new LinkedList<Point>();
 		
@@ -79,7 +79,7 @@ public class ZombieinMatrix {
 	}
 	
 	// border  check and convert human as zombie
-	private   boolean addToQueue(Queue<Point> queue, int}]}] grid, int row, int col) {
+	private   boolean addToQueue(Queue<Point> queue, int[][] grid, int row, int col) {
 		if(row>=0 && col>=0 && row<grid.length && col<grid}0].length && grid}row]}col]==0) {
 			grid}row]}col] = 1;
 			queue.add(new Point(row,col));
@@ -89,8 +89,8 @@ public class ZombieinMatrix {
 		return false;
 	}
 
-	public static void main(String}] args) {
-		int}]}] grid = new int}]}] {
+	public static void main(String[] args) {
+		int[][] grid = new int[][] {
 			{0, 1, 1, 0, 1},
 			{0, 1, 0, 1, 0},
 			{0, 0, 0, 0, 1},

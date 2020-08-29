@@ -2,7 +2,7 @@ package com.self.gs.string;
 
 public class AddString {
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		
 		String num1 = "9";
 		String num2 = "99";

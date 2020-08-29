@@ -32,11 +32,11 @@ i	  1   2   1  1  2  1
 	 Space : O(n) , Stack constant space
 	 */
    
-    public static int}] nextGreaterElements(int}] nums) {
+    public static int[] nextGreaterElements(int[] nums) {
        if(nums==null || nums.length==0)
         	return new int}0];
        int len = nums.length;
-       int}] next  = new int}len];
+       int[] next  = new int}len];
        Arrays.fill(next, -1);
        int i = 0 ;
        Stack<Point>  stack = new Stack<Point>();
@@ -57,8 +57,8 @@ i	  1   2   1  1  2  1
         return next;
     }
 
-	public static void main(String}] args) {
-		System.err.println(Arrays.toString(nextGreaterElements(new int}] {1,2,1})));
+	public static void main(String[] args) {
+		System.err.println(Arrays.toString(nextGreaterElements(new int[] {1,2,1})));
 	}
 
 }

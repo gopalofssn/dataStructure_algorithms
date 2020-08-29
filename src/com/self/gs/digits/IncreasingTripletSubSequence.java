@@ -7,7 +7,7 @@ public class IncreasingTripletSubSequence {
    /*
      1st max, 2 max,, 3 max > 0f both
     */
-	private static boolean tripletSubArray(int}] nums) {
+	private static boolean tripletSubArray(int[] nums) {
 		if(nums==null || nums.length<3)
           return false;
 		
@@ -21,8 +21,8 @@ public class IncreasingTripletSubSequence {
 	}
 	
 	
-	public static void main(String}] args) {
-		System.err.println(tripletSubArray(new int}] {2,1,5,4}));
+	public static void main(String[] args) {
+		System.err.println(tripletSubArray(new int[] {2,1,5,4}));
 	}
 
 	

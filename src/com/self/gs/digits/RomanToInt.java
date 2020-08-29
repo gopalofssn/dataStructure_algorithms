@@ -33,7 +33,7 @@ public class RomanToInt {
 		return result;
 	}
 	
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 	 System.err.println(convert("LVIII"));  // L + V + I + I + I
 	 System.err.println(convert("MCMXCIV")); // M + (M-C) + (C-X) + (V-I)
 	}

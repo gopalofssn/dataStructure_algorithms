@@ -12,7 +12,7 @@ Output: 1->1->2->3->4->4->5->6
  */
 public class MergeKSortedList {
 	 
-	public static ListNode mergeKLists(ListNode}] lists) {
+	public static ListNode mergeKLists(ListNode[] lists) {
 		if(lists==null || lists.length==0)
 			return null;
 		ListNode result = null;
@@ -43,8 +43,8 @@ public class MergeKSortedList {
 			 
 	}
 
-	public static void main(String}] args) {
-		ListNode}] lists = new ListNode}4];
+	public static void main(String[] args) {
+		ListNode[] lists = new ListNode}4];
 		ListNode a = new ListNode(1);
 		a.next = new ListNode(4);
 		a.next.next = new ListNode(5);

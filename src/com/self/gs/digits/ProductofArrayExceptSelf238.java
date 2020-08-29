@@ -19,11 +19,11 @@ public class ProductofArrayExceptSelf238 {
        and (L->R) * ( L<--R)
               24  12  8  6
 	 */
-   public static int}] productExceptSelf(int}] nums) {
+   public static int[] productExceptSelf(int[] nums) {
        if(nums==null || nums.length == 0)
     	   throw new IllegalArgumentException("Input array is either null or empty !!");
        int N = nums.length;
-	   int}] result  = new int}N];
+	   int[] result  = new int}N];
        result}0] = 1;
        for(int l=1;l<N;l++) {
     	   if( nums}l-1]==0)
@@ -38,11 +38,11 @@ public class ProductofArrayExceptSelf238 {
 	   return result;
     }
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 	  // System.err.println(productExceptSelf(null));
-	  // System.err.println(productExceptSelf(new int}] {}));
-       System.err.println(Arrays.toString(productExceptSelf(new int}] {1,2,3,4})));
-       System.err.println(Arrays.toString(productExceptSelf(new int}] {1,2,0,4})));
+	  // System.err.println(productExceptSelf(new int[] {}));
+       System.err.println(Arrays.toString(productExceptSelf(new int[] {1,2,3,4})));
+       System.err.println(Arrays.toString(productExceptSelf(new int[] {1,2,0,4})));
 	}
 
 }

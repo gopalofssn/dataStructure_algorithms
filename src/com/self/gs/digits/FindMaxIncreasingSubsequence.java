@@ -22,7 +22,7 @@ Approach 2 : tmp variable , if(prev val < next val ) , keep increase , else defa
 
 
 	 */
-	private static int LIS(int}] nums) {
+	private static int LIS(int[] nums) {
 		if(nums==null || nums.length==0)
 	          return Integer.MIN_VALUE;
 		int max = 1;
@@ -41,8 +41,8 @@ Approach 2 : tmp variable , if(prev val < next val ) , keep increase , else defa
 	}
 	
 	
-  public static void main(String}] args) {
-	  System.err.println(LIS(new int}] {10,9,2,5,6,7,1,188}));
+  public static void main(String[] args) {
+	  System.err.println(LIS(new int[] {10,9,2,5,6,7,1,188}));
 }
 
 

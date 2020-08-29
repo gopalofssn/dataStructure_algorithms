@@ -54,7 +54,7 @@ public class AddBinaryNumbers {
 		return sb.reverse().toString();
     }
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		System.err.println(addBinary("1010","1011"));
 		System.err.println(addBinary("11"," "));
 	}

@@ -20,7 +20,7 @@ public class MinimumSizeSubarraySum209 {
             L R    7>=7  , with 2 elements , our winner
     
   */
-  public static int minSubArrayLen(int target, int}] nums) {
+  public static int minSubArrayLen(int target, int[] nums) {
 	  int sum = 0;
 	  int min = Integer.MAX_VALUE;
 	  int l = 0, r = 0;
@@ -34,8 +34,8 @@ public class MinimumSizeSubarraySum209 {
 	  }
 	 return min; 
   }
-	public static void main(String}] args) {
-		System.err.println(minSubArrayLen(6, new int}]{2,3,1,2,4,3}));
+	public static void main(String[] args) {
+		System.err.println(minSubArrayLen(6, new int[]{2,3,1,2,4,3}));
 
 	}
 

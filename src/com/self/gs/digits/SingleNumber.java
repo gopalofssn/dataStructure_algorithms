@@ -12,7 +12,7 @@ Output: 4
  */
 public class SingleNumber {
 
-	 static int singleNumber(int A}]) {
+	 static int singleNumber(int A[]) {
 	    int result = 0;
 	    for (int i = 0; i<A.length; i++)
 	    {
@@ -20,7 +20,7 @@ public class SingleNumber {
 	    }
 		return result;
 	}
-	 public static void main(String}] args) {
-		System.err.println(singleNumber(new int}] {4,4,5,1,2,1,2}));
+	 public static void main(String[] args) {
+		System.err.println(singleNumber(new int[] {4,4,5,1,2,1,2}));
 	}
 }

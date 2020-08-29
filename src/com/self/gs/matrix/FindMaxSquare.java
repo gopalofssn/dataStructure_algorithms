@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FindMaxSquare {
 
-	private static int maxSquare(int}]}] grid) {
+	private static int maxSquare(int[][] grid) {
 		int max = 0;
 		
 		for(int row = 1; row < grid.length; row++) {
@@ -22,8 +22,8 @@ public class FindMaxSquare {
 		return max;
 	}
 
-	public static void main(String args}]) {
-		int}]}] arr = new int}]}] { { 0, 1, 0, 1, 1 }, 
+	public static void main(String args[]) {
+		int[][] arr = new int[][] { { 0, 1, 0, 1, 1 }, 
 			                        { 0, 1, 1, 1, 1 }, 
 			                        { 1, 1, 1, 1, 1 },
 			                        { 1, 1, 1, 1, 1 },

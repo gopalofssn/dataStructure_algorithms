@@ -30,7 +30,7 @@ public class Array3Sum15 {
 	 * 
 	 * 
 	 */
-	private static List<List<Integer>> threeSum(int}] nums, int threeSum) {
+	private static List<List<Integer>> threeSum(int[] nums, int threeSum) {
 
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(nums == null || nums.length == 0)
@@ -67,7 +67,7 @@ public class Array3Sum15 {
         return result;
     }
     
-    private static boolean findTarget(int}] nums, int left, int right, int target){
+    private static boolean findTarget(int[] nums, int left, int right, int target){
         if(left > right)
             return false;
         int mid  = left + (right - left)/2;
@@ -81,13 +81,13 @@ public class Array3Sum15 {
     }
 	 
 
-	public static void main(String}] args) {
-		int}] input = new int}] { 1, 2, 2, -1, -1, 0, -2 };
+	public static void main(String[] args) {
+		int[] input = new int[] { 1, 2, 2, -1, -1, 0, -2 };
 		System.out.println(threeSum(input, 0));
-		input = new int}] {-1, 0, 1, 2, -1, -4};
+		input = new int[] {-1, 0, 1, 2, -1, -4};
 		System.out.println(threeSum(input, 0));
 		
-		input = new int}] {0, 0, 0, 0};
+		input = new int[] {0, 0, 0, 0};
 		System.out.println(threeSum(input, 0));
 		
 		//Arrays.sort(input);

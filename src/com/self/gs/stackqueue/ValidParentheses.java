@@ -3,8 +3,8 @@ package com.self.gs.stackqueue;
 import java.util.*;
 public class ValidParentheses {
 
-	public static void main(String}] args) {
-		String str= "{}]}()";
+	public static void main(String[] args) {
+		String str= "{[]}()";
 		System.err.println(isValid(str));
 
 	}

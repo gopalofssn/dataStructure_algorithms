@@ -2,12 +2,12 @@ package com.self.gs.digits;
 
 public class SortedListKsTotalOccurance {
 
-	public static void main(String}] args) {
-		int}] nums = {3}; // {3} 
+	public static void main(String[] args) {
+		int[] nums = {3}; // {3} 
 		System.err.println(find(nums, 3));
 	}
 
-	private static int find(int}] nums, int k) {
+	private static int find(int[] nums, int k) {
 		
 		int firstOccurance = findOccurance(nums, k, true);
 		 
@@ -17,7 +17,7 @@ public class SortedListKsTotalOccurance {
 		return (lastOccurance - firstOccurance ) + 1;
 	}
 
-	private static int findOccurance(int}] nums, int k, boolean isFirst) {
+	private static int findOccurance(int[] nums, int k, boolean isFirst) {
 		
 		int loc = Integer.MIN_VALUE;
 		

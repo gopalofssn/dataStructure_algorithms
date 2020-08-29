@@ -4,8 +4,8 @@ import java.util.*;
 
 
 public class ListSortJava8 {
-	public static void main(String}] args) {
-		String data}] = new String}3];
+	public static void main(String[] args) {
+		String data[] = new String}3];
 		data}0] = ("bob");
 		data}1] = ("abe");
 		data}2] = ("cob");

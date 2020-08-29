@@ -18,7 +18,7 @@ public class _743NetworkDelayTime {
 		int dest;
 	}
 
-	public static int networkDelayTime(int}]}] times, int N, int K) {
+	public static int networkDelayTime(int[][] times, int N, int K) {
 
 		 
 		Map<Integer, Map<Integer, Integer>> graph = buildGraph(times);
@@ -64,7 +64,7 @@ public class _743NetworkDelayTime {
 		return (visited.size() == N ? total : -1);
 	}
 
-	private static Map<Integer, Map<Integer, Integer>> buildGraph(int}]}] times) {
+	private static Map<Integer, Map<Integer, Integer>> buildGraph(int[][] times) {
 		
 		Map<Integer, Map<Integer, Integer>> graph = new HashMap<Integer, Map<Integer,Integer>>();
 		
@@ -72,7 +72,7 @@ public class _743NetworkDelayTime {
 			return graph;
 		}
 		
-		for (int}] time : times) {
+		for (int[] time : times) {
 			Integer sourceVertex = new Integer(time}0]);
 			Integer destVertex = new Integer(time}1]);
 			int travelTime = time}2];
@@ -87,8 +87,8 @@ public class _743NetworkDelayTime {
 		return graph;
 	}
 
-	public static void main(String}] args) {
-		int}]}] times = { { 2, 1, 4 }, { 2, 3, 1 }, { 3, 4, 11 } };
+	public static void main(String[] args) {
+		int[][] times = { { 2, 1, 4 }, { 2, 3, 1 }, { 3, 4, 11 } };
 
 		System.err.println(networkDelayTime(null, 4, 2));
 	}

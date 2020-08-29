@@ -2,7 +2,7 @@ package com.self.gs.digits;
 
 public class ReverseDigit {
 	
-	public static void main(String}] arg) {
+	public static void main(String[] arg) {
 		int num = 7456812;
 		int reversed = 0;
 		

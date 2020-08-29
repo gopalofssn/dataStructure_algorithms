@@ -3,7 +3,7 @@ package com.self.gs.string;
 import java.util.*;
 
 public class _953AlientDictionary {
-	 public static boolean isAlienSorted(String}] words, String order) {
+	 public static boolean isAlienSorted(String[] words, String order) {
 	     
 			 Map<Character ,Integer> orderMap = new HashMap<Character ,Integer>();
 			 int index = 0;
@@ -39,12 +39,12 @@ public class _953AlientDictionary {
 			return len1 > len2;
 			
 		}
-	public static void main(String}] args) {
-		String}] words = {"hello","leetcode"};
+	public static void main(String[] args) {
+		String[] words = {"hello","leetcode"};
 		String order = "hlabcdefgijkmnopqrstuvwxyz";
 		System.err.println(isAlienSorted(words, order));
 		
-		String}] words2 = {"app","apple"};
+		String[] words2 = {"app","apple"};
 		System.err.println(isAlienSorted(words2, order));
 		
 		int m = words2}0].length();

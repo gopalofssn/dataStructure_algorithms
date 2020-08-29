@@ -2,7 +2,7 @@ package com.self.gs.digits;
 
 public class _121BuySellStock {
 
-  public static int maxProfit(int}] nums) {
+  public static int maxProfit(int[] nums) {
 
 	  int buyprice = 0;
 	  int sellPrice = 0;
@@ -18,8 +18,8 @@ public class _121BuySellStock {
 	  return  sellPrice - buyprice;
   }
 
-	public static void main(String}] args) {
-		int nums}] = new int}] {7,1,5,3,6,4};
+	public static void main(String[] args) {
+		int nums[] = new int[] {7,1,5,3,6,4};
 		System.err.println(maxProfit(nums));
 	
 

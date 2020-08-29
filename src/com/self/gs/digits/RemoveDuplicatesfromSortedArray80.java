@@ -18,7 +18,7 @@ It doesn't matter what values are set beyond the returned length.
 public class RemoveDuplicatesfromSortedArray80 {
 
 	// dup allowded once 
-	private static int remove(int}] nums) {
+	private static int remove(int[] nums) {
 		if(nums==null || nums.length ==0)
 			return 0;
 		int index = 0;
@@ -37,8 +37,8 @@ public class RemoveDuplicatesfromSortedArray80 {
 		return index+1;
 	}
 	
-	public static void main(String}] args) {
-		 int}] a = new int}] {1,1,1,2,2,3};//{0,0,1,1,1,1,2,3,3};//
+	public static void main(String[] args) {
+		 int[] a = new int[] {1,1,1,2,2,3};//{0,0,1,1,1,1,2,3,3};//
 		 int k = remove(a);
         for(int i=0;i<k;i++)
         	System.err.println(a}i]);

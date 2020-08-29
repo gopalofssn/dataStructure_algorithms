@@ -2,11 +2,11 @@ package com.self.gs.digits;
 
 public class NoOfIsland {
 	
-	private static int noOfInslan(int}]}] mat) {
+	private static int noOfInslan(int[][] mat) {
 		// TODO Auto-generated method stub
 		int rowLen = mat.length;
 		int colLen = mat}0].length;
-		boolean}]}] isVisited = new boolean}rowLen]}colLen];
+		boolean[][] isVisited = new boolean}rowLen]}colLen];
 	 
 		int result = 0;
 		
@@ -22,7 +22,7 @@ public class NoOfIsland {
 	}
 
 	
-   private static void dfs(int}]}] mat, int row, int col, boolean}]}] isVisited) {
+   private static void dfs(int[][] mat, int row, int col, boolean[][] isVisited) {
 	   if(row >= mat.length || row < 0 || col < 0 || col >= mat}row].length || isVisited}row]}col] || mat}row]}col] == 0) {
 		   return;
 	   }
@@ -35,15 +35,15 @@ public class NoOfIsland {
 	}
 
 
-public static void main(String}] args) {
-	int mat}]}] = {
+public static void main(String[] args) {
+	int mat[][] = {
 		    {1, 1, 0, 0, 0},
             {0, 1, 0, 0, 1},
             {1, 0, 0, 1, 1},
             {0, 0, 0, 0, 0},
             {1, 0, 1, 0, 1} 
 	    };
-	int}]}] mat2 = {
+	int[][] mat2 = {
 			{1,1,1,1,0},
 			{1,1,0,1,0},
 			{1,1,0,0,0},
@@ -60,11 +60,11 @@ public static void main(String}] args) {
 
 
 /*
-private static int noOfInslan(int}]}] mat) {
+private static int noOfInslan(int[][] mat) {
 		if(mat==null || mat.length<1)
 			return 0;
         int result = 0; 
-        boolean visited}]}] = new boolean}mat.length]}mat}0].length];
+        boolean visited[][] = new boolean}mat.length]}mat}0].length];
         for(int row=0 ; row<mat.length ; row++) {
         	for(int col=0; col<mat}row].length; col++) {
         		if(mat}row]}col]==1 && !visited}row]}col]) {
@@ -77,7 +77,7 @@ private static int noOfInslan(int}]}] mat) {
 		return result;
 	}
 	
-	private static void dfs(int}]}] grid,int row,int col,boolean}]}] isVisited){
+	private static void dfs(int[][] grid,int row,int col,boolean[][] isVisited){
         if(row<0 || row>=grid.length || col<0 || col>=grid}0].length || isVisited}row]}col] || grid}row]}col] == 0)
             return;
         isVisited}row]}col]=true;

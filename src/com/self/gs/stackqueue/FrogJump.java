@@ -10,7 +10,7 @@ public class FrogJump {
 	 * 
 	 * 
 	 */
-	 public static boolean canCross(int}] stones) {
+	 public static boolean canCross(int[] stones) {
 	     for(int i = 3; i < stones.length; i++) {
 	    	 if(stones}i] > stones}i-1] * 2) {
 	    		 System.err.println(stones}i]);
@@ -53,10 +53,10 @@ public class FrogJump {
 		 return false;
 	    }
 	 
-	public static void main(String}] args) {
-		int nums}] = new int}] {0,1,3,5,6,8,12,17};
+	public static void main(String[] args) {
+		int nums[] = new int[] {0,1,3,5,6,8,12,17};
 		System.err.println(canCross(nums));
-		nums = new int}] {0,1,2,3,4,8,9,11};
+		nums = new int[] {0,1,2,3,4,8,9,11};
 		//System.err.println(canCross(nums));
 		
 	}

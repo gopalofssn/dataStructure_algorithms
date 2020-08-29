@@ -16,10 +16,10 @@ public class SparseMatrixMultiplication {
 	 (2X3)*(3X3) = (2X3)
 	  -       -
 	 */
-	private static int}]}] multiplayOption1(int}]}] a, int}]}] b) {
+	private static int[][] multiplayOption1(int[][] a, int[][] b) {
 		if(a==null || a.length ==0 || b==null || b.length==0 || a}0].length!=b.length)
 			throw new IllegalArgumentException("Either one matrix is null / empty or matrix A's row length is not equal to matrix B's column length");
-		int}]}] result = new int}a.length]}b}0].length];
+		int[][] result = new int}a.length]}b}0].length];
 		for(int row=0;row<result.length;row++) {
 			for(int col=0;col<result}0].length;col++) {
 					 result}row]}col] = calculateCellValue(a,b,row,col);
@@ -30,7 +30,7 @@ public class SparseMatrixMultiplication {
 		return result;
 	}
 	static int incre =0;
-	private static int calculateCellValue(int}]}] a, int}]}] b, int row, int col) {
+	private static int calculateCellValue(int[][] a, int[][] b, int row, int col) {
         int val =0;
         for(int i=0;i<b.length;i++) {
         	if(a}row]}i] != 0 && b}i]}col] !=0 ) {
@@ -41,7 +41,7 @@ public class SparseMatrixMultiplication {
 		return val;
 	}
 
-	private static int}]}] multiplayOption2(int}]}] a, int}]}] b) {
+	private static int[][] multiplayOption2(int[][] a, int[][] b) {
 		if(a==null || a.length ==0 || b==null || b.length==0 )
 			throw new IllegalArgumentException("Either one of the Matrices is null / empty");
 		if(a}0].length!=b.length)
@@ -52,7 +52,7 @@ public class SparseMatrixMultiplication {
 		int n = a}0].length;
 		int l = b}0].length;
 		
-		int}]}] result = new int}m]}l];
+		int[][] result = new int}m]}l];
 		
 		Map<Integer, Map<Integer, Integer>> denseA =  matrixToDense(a,m,n);
 		Map<Integer, Map<Integer, Integer>> denseB =  matrixToDense(b,n,l);
@@ -80,7 +80,7 @@ public class SparseMatrixMultiplication {
 		return result;
 	}
 	
-	public static Map<Integer,Map<Integer,Integer>> matrixToDense(int}]}] matrix,int row,int col){
+	public static Map<Integer,Map<Integer,Integer>> matrixToDense(int[][] matrix,int row,int col){
         Map<Integer, Map<Integer, Integer>> dense = new HashMap<>();
         for (int i = 0; i < row; i++) {
             for (int j = 0; j <col; j++) {
@@ -95,13 +95,13 @@ public class SparseMatrixMultiplication {
         
         return dense;
 	}
-	public static void main(String}] args) {
-		int}]}] a = new int}]}] {
+	public static void main(String[] args) {
+		int[][] a = new int[][] {
 			{1 ,0,0},
 			{-1,0,3}
 		};  // Dense - {0={0=1}, 1={0=-1, 2=3}}
 		
-		int}]}] b = new int}]}] {
+		int[][] b = new int[][] {
 			{7,0,0},
 			{0,0,3},
 			{0,1,0}

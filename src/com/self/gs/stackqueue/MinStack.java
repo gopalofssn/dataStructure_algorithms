@@ -80,9 +80,9 @@ If y is less than minEle, the minimum element now becomes (2*minEle – y), so u
 		return this.stack;
 	}
 	
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		MinStack s =new MinStack();
-		int}] data = new int}] {3,5,2,1,-1};
+		int[] data = new int[] {3,5,2,1,-1};
 		for(int d:data) {
 			System.out.println(s.push(d));
 		}

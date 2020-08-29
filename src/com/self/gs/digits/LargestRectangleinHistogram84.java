@@ -23,13 +23,13 @@ public class LargestRectangleinHistogram84 {
 	       }1 4 5 ]       max (9,10)
 	       }1 4]          max 12,10 = 12
 	       }1 ]           max 12 14(2*7)  = 14   , stack.peek() = 1
-	       }]             max 12 9 
+	       []             max 12 9 
 	   
 	   
 	
 	// https://www.youtube.com/watch?v=RVIh0snn4Qc
 	*/
-   public static int largestRectangleArea(int}] heights) {
+   public static int largestRectangleArea(int[] heights) {
 	 if(heights==null || heights.length==0)
 		 return 0;
 	 int max = 0;
@@ -66,12 +66,12 @@ public class LargestRectangleinHistogram84 {
 	return Math.max(t,c);
 }
 
-	public static void main(String}] args) {
-		System.err.println(largestRectangleArea(new int}] {2,1,5,6,3,3,3,3,3}));
-		//System.err.println(largestRectangleArea(new int}] {100}));
-		//System.err.println(largestRectangleArea(new int}] {1,1}));
+	public static void main(String[] args) {
+		System.err.println(largestRectangleArea(new int[] {2,1,5,6,3,3,3,3,3}));
+		//System.err.println(largestRectangleArea(new int[] {100}));
+		//System.err.println(largestRectangleArea(new int[] {1,1}));
 
-		/*int}] a= new int}20000];
+		/*int[] a= new int}20000];
 		for(int i=0;i<=19999;i++) {
 			a}i] = i;
  		}

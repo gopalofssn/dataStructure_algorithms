@@ -30,7 +30,7 @@ public class ReverseLinkedLisingroupsofgivensize {
     	return result.next;
 	}
 	
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		SinglyLinkedList<String>  Llist = new SinglyLinkedList<String>();
 		Llist.append("a");
 		Llist.append("b");

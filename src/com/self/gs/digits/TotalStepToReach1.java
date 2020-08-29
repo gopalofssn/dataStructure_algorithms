@@ -26,7 +26,7 @@ public class TotalStepToReach1 {
 	           further 1 4.
 	           
 	 */
-   public static void main(String}] args) {
+   public static void main(String[] args) {
 	   
 	   int a = 13; // 1101 
 	   

@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Stack;
 import java.util.Arrays;
 public class NextGreaterElements496 {
-	public static int}] nextGreaterElement(int}] nums1, int}] nums2) {
+	public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
         if(nums1==null || nums2==null || nums1.length==0 || nums2.length==0)
             return new int}0];
         Map<Integer,Integer> map = new LinkedHashMap<Integer,Integer>();
@@ -33,8 +33,8 @@ public class NextGreaterElements496 {
         
     }
 
-	public static void main(String}] args) {
-		System.out.println(Arrays.toString(nextGreaterElement(new int}]{4,1,2}, new int}] {1,3,4,2})));
+	public static void main(String[] args) {
+		System.out.println(Arrays.toString(nextGreaterElement(new int[]{4,1,2}, new int[] {1,3,4,2})));
 
 	}
 

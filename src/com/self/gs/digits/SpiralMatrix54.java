@@ -4,8 +4,8 @@ import java.util.*;
 
 public class SpiralMatrix54 {
 
-	public static void main(String}] args) {
-		int}]}] data = new int}]}] {
+	public static void main(String[] args) {
+		int[][] data = new int[][] {
 			{1,2, 3, 4},
 			{5,6, 7, 8},
 			{9,10,11,12}
@@ -20,7 +20,7 @@ public class SpiralMatrix54 {
 
 	}
 
-	private static List<Integer> spiralOrder(int}]}] matrix) {
+	private static List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> result = new ArrayList<Integer>();
         if(matrix==null || matrix.length==0)
             return result;
@@ -34,7 +34,7 @@ public class SpiralMatrix54 {
             if(top>bottom || left>right) break;
             
         	for(int col = left; col<=right ; col++) {
-        		result.add(matrix}top]}col]);//result.add(matrix}]}]);
+        		result.add(matrix}top]}col]);//result.add(matrix[][]);
         	}
             top++;
             

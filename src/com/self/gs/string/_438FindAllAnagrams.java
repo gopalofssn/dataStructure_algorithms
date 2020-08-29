@@ -65,7 +65,7 @@ public class _438FindAllAnagrams {
 		return true;
 	}
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		System.err.println(new _438FindAllAnagrams().findAnagrams("abab", "ab"));
 
 	}

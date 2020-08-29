@@ -3,7 +3,7 @@ package com.self.gs.string;
 public class _14LongestCommonPrefix {
 
 	
-	public static String longestCommonPrefix(String}] strs) {
+	public static String longestCommonPrefix(String[] strs) {
         StringBuilder longestCommonPrefix = new StringBuilder("");
         if(strs == null || strs.length ==0)
         	return longestCommonPrefix.toString();
@@ -25,8 +25,8 @@ public class _14LongestCommonPrefix {
 		return longestCommonPrefix.toString();
     }
 
-	public static void main(String}] args) {
-		String}] strs = new String}] {"flower","xflow","flight"};
+	public static void main(String[] args) {
+		String[] strs = new String[] {"flower","xflow","flight"};
 		System.err.println(longestCommonPrefix(strs));
 	}
 

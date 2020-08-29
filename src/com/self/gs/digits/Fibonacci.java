@@ -18,7 +18,7 @@ public class Fibonacci {
 		return result;
 	}
 	
-  public static void main(String}] args) {
+  public static void main(String[] args) {
 	  Hashtable<Integer, Integer>  memo =  new Hashtable<Integer, Integer>();
 	System.out.print(fib(5,memo)); // 0 1 1 2 3 5 8 13
 }

@@ -26,9 +26,9 @@ Output: (2*2)
  */
 public class MaximalSquare221 {
 
-	private static int max(char}]}] data) {
+	private static int max(char[][] data) {
 		int max = 0;
-		int}]}] holder = new int}data.length]}data}0].length];
+		int[][] holder = new int}data.length]}data}0].length];
 		for(int row=0; row<data.length; row++) {
 			holder}row]}0] = Character.getNumericValue(data}row]}0]);
 		}
@@ -54,8 +54,8 @@ public class MaximalSquare221 {
 		return Math.min(t, Character.getNumericValue(c));
 	}
 	
-	public static void main(String}] args) {
-		char}]}] data = new char}]}] {
+	public static void main(String[] args) {
+		char[][] data = new char[][] {
 			{'1', '0', '1', '0', '0'},
 			{'1', '0', '1', '1', '1'},
 			{'1', '1', '1', '1', '1'},

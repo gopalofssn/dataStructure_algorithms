@@ -94,7 +94,7 @@ public class ZombieinMatrixII {
 		}
 		return false;
 	}
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 
 		List<List<Character>> grid = new ArrayList<List<Character>>() {{
 			add(new ArrayList<Character>(Arrays.asList('0', '1', '1', '0', '1')));

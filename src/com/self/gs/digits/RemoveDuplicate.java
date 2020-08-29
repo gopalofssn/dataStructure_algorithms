@@ -12,7 +12,7 @@ public class RemoveDuplicate {
 	                   i  
 	            idx
 	 */
-	private static int remove(int}] nums) {
+	private static int remove(int[] nums) {
         if(nums==null || nums.length==0)
         	return 0;
         int index = 0;
@@ -25,8 +25,8 @@ public class RemoveDuplicate {
 		return index+1;
 	}
 	
-	public static void main(String}] args) {
-		 int}] a = new int}] {0,2,2,3,3,4,5,7};
+	public static void main(String[] args) {
+		 int[] a = new int[] {0,2,2,3,3,4,5,7};
 		 int k = remove(a);
         for(int i=0;i<k;i++)
         	System.err.println(a}i]);

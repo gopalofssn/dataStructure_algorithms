@@ -7,7 +7,7 @@ import java.util.*;
 
 public class DefangIPAddress {
     
-public static void main(String}] args) {
+public static void main(String[] args) {
 	String address = "255.100.50.0";          
     StringBuilder sb = new StringBuilder();
     

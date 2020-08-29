@@ -6,7 +6,7 @@ import java.util.Arrays;
 //Because nums}0] + nums}1] = 2 + 7 = 9, return }0, 1].
 // COND - list is sorted
 class Solution {
-    public int}] twoSum(int}] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
    
     	
     	int l = 0;
@@ -19,7 +19,7 @@ class Solution {
     		}else if(sum<target) {
     			l++;
     		}else {
-    			return new int}] { l,r };
+    			return new int[] { l,r };
     		}
     	}
     	
@@ -29,9 +29,9 @@ class Solution {
 
 		
 public class TwoSumOnSortedArray {
-	public static void main(String}] args) {
-		int}] nums = {2,3,7,8,9,10};
-		int}] sol = new MergeIntervals().twoSum(nums, 120);
+	public static void main(String[] args) {
+		int[] nums = {2,3,7,8,9,10};
+		int[] sol = new MergeIntervals().twoSum(nums, 120);
 		System.out.println(Arrays.toString(sol));
 	}
 }

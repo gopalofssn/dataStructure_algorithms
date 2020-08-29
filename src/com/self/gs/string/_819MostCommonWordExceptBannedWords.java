@@ -9,13 +9,13 @@ public class _819MostCommonWordExceptBannedWords {
 	 * Split paragraph with \\W+ - split by space & ignore special chars etc 
 	 * 
 	 */
-	 public static String mostCommonWord(String paragraph, String}] banned) {
+	 public static String mostCommonWord(String paragraph, String[] banned) {
 	        if(paragraph == null || paragraph =="")
 	            return "";
 	        
 	        Set<String> bannedWords = new HashSet<String>(Arrays.asList(banned));
 	       
-	        String}] words = paragraph.split("\\W+");
+	        String[] words = paragraph.split("\\W+");
 	        
 	        
 	        Map<String ,Integer> pat = new HashMap<String , Integer>();
@@ -62,9 +62,9 @@ public class _819MostCommonWordExceptBannedWords {
 	       return commonWord;
 	    }
 	
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		String paragraph = "Bob's hit a ball, the hit $ BALL flew far b after it was hit";
-		String}] banned = new String}] {"hit",null};
+		String[] banned = new String[] {"hit",null};
 		
 		System.err.println(mostCommonWord(paragraph, banned));
 	}

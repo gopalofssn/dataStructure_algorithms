@@ -4,7 +4,7 @@ import java.util.*;
 
 public class _304RangeSum2DImmutable {
 	
-	private int}]}] T; 
+	private int[][] T; 
 	
 	/*
 	 
@@ -17,9 +17,9 @@ public class _304RangeSum2DImmutable {
 	 
 	 */
 	
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		
-		final int}]}]  matrix= new int}]}] {
+		final int[][]  matrix= new int[][] {
 			  {3, 0, 1, 4, 2},
 			  {5, 6, 3, 2, 1},
 			  {1, 2, 0, 1, 5},
@@ -30,7 +30,7 @@ public class _304RangeSum2DImmutable {
 		_304RangeSum2DImmutable obj = new _304RangeSum2DImmutable(matrix);
 		System.err.println(obj.sumRegion(1,1,2,2));
 	}
-	public _304RangeSum2DImmutable(int}]}] matrix) {
+	public _304RangeSum2DImmutable(int[][] matrix) {
 		
 		if( matrix == null || matrix.length == 0) {
 			throw new IllegalArgumentException("Matrix can not be null !!!");

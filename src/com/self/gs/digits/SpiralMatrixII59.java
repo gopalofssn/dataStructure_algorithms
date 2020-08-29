@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class SpiralMatrixII59 {
 
 	
-   public static int}]}] generateMatrix(int n) {
+   public static int[][] generateMatrix(int n) {
         if(n==0)
         	return null;
-       int matrix}]}] = new int}n]}n];
+       int matrix[][] = new int}n]}n];
        int top =0;
        int bottom = n-1;
        int left =0;
@@ -39,7 +39,7 @@ public class SpiralMatrixII59 {
        return matrix;
     }
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		System.out.println(Arrays.deepToString(generateMatrix(3)));
 	}
 

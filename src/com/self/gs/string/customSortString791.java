@@ -32,7 +32,7 @@ public class customSortString791 {
 	 
 	 
 	 */
-	private static String sort(char}] pattern, char}] input) {
+	private static String sort(char[] pattern, char[] input) {
 		
 		
 		Map<Character ,Integer> patternMap = new LinkedHashMap<Character , Integer>();
@@ -66,7 +66,7 @@ public class customSortString791 {
 		
 		return sb1.append(sb).toString();
 	}
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		String pat = "xba";
 		String input = "dazbcd";
 	

@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class _957PrisonCellAfterNDays {
 
-	 public static int}] prisonAfterNDays(int}] cells, int N) {
+	 public static int[] prisonAfterNDays(int[] cells, int N) {
 	      
-		 int}] org = cells;
+		 int[] org = cells;
 		 
 		 int LEN = cells.length;
 		 
-		 int}] tmp = new int}cells.length];
+		 int[] tmp = new int}cells.length];
 		 while(N>0) {
 			 
 			 for(int i = 0; i < LEN; i++) {
@@ -37,7 +37,7 @@ public class _957PrisonCellAfterNDays {
 		 return cells;
 	 }
 	 
-	private static boolean isSame(int}] org, int}] tmp) {
+	private static boolean isSame(int[] org, int[] tmp) {
 		for(int i = 0; i < org.length; i++) {
 			if(org}i] != tmp}i]) {
 				return false;
@@ -46,8 +46,8 @@ public class _957PrisonCellAfterNDays {
 		return true;
 	}
 
-	public static void main(String}] args) {
-		int}] cells = new int}] {0,1,0,1,1,0,0,1};
+	public static void main(String[] args) {
+		int[] cells = new int[] {0,1,0,1,1,0,0,1};
 		int N = 7;
 		System.err.println(Arrays.toString(prisonAfterNDays(cells, N)));
 	}

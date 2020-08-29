@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class _63UniquePath {
 
-	 public static int uniquePathsWithObstacles(int}]}] obstacleGrid) {
+	 public static int uniquePathsWithObstacles(int[][] obstacleGrid) {
 	        if ( obstacleGrid == null  || obstacleGrid.length == 0 || obstacleGrid}0]}0] == 1 ){
 	            return 0;
 	        }
@@ -52,8 +52,8 @@ public class _63UniquePath {
 	        System.err.println(Arrays.deepToString(obstacleGrid));
 	        return obstacleGrid}obstacleGrid.length -1 ]}obstacleGrid}0].length -1];
 	    }
-	public static void main(String}] args) {
-		int}]}] grid = {{0,0,0}
+	public static void main(String[] args) {
+		int[][] grid = {{0,0,0}
 				       ,{0,1,0},
 				        {0,0,0}};
 		System.err.println(uniquePathsWithObstacles(grid));

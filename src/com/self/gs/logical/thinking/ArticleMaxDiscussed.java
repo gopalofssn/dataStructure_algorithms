@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class ArticleMaxDiscussed {
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		List<String> toys = new ArrayList<String>(Arrays.asList("elmo", "elsa", "legos", "drone", "tablet", "warcraft"));
 		List<String> comments = new ArrayList<String>(Arrays.asList("Elmo is the hottest of the season! Elmo will be on every kid's wishlist!",
 		          "The new Elmo dolls are super high quality",
@@ -19,12 +19,12 @@ public class ArticleMaxDiscussed {
 	}
 
 	private static List<String> topNFinder(List<String> toys, List<String> quotes,int top) {
-		 Map<String, int}]> freq =  new HashMap<String, int}]>(); // int}0] - unique article, int}1] - total word present regardless of article
+		 Map<String, int[]> freq =  new HashMap<String, int[]>(); // int}0] - unique article, int}1] - total word present regardless of article
 		 for(String toy : toys) {
-			 freq.put(toy.toLowerCase(), new int}]{0,0});
+			 freq.put(toy.toLowerCase(), new int[]{0,0});
 		 }
 		 for(String quote : quotes) {
-			 String}] wordList = quote.split("\\W+");
+			 String[] wordList = quote.split("\\W+");
 			 Set<String> seen = new HashSet<String>();
 			 for(String word : wordList) {
 				 word = word.toLowerCase();
@@ -32,7 +32,7 @@ public class ArticleMaxDiscussed {
 					 continue;
 				 }
 				 
-				 int}] stat = freq.get(word);
+				 int[] stat = freq.get(word);
 				 if(!seen.contains(word)) {
 				  stat}0]++;
 				 }
@@ -41,9 +41,9 @@ public class ArticleMaxDiscussed {
 			 }
 		 }
 		 /*
-		 Comparator<Entry<String, int}]>> cmp = new Comparator<Entry<String, int}]>>() {
+		 Comparator<Entry<String, int[]>> cmp = new Comparator<Entry<String, int[]>>() {
 			@Override
-			public int compare(Entry<String, int}]> o1, Entry<String, int}]> o2) {
+			public int compare(Entry<String, int[]> o1, Entry<String, int[]> o2) {
 				
 				if(o1.getValue()}0] == o2.getValue()}0]) {
 					return o1.getValue()}1] - o2.getValue()}1];
@@ -53,13 +53,13 @@ public class ArticleMaxDiscussed {
 			}
 			 
 		 };
-		 PriorityQueue<Entry<String, int}]>> queue = new PriorityQueue<Entry<String, int}]>>(cmp);*/
+		 PriorityQueue<Entry<String, int[]>> queue = new PriorityQueue<Entry<String, int[]>>(cmp);*/
 		 
-		PriorityQueue<Entry<String, int}]>> queue = new PriorityQueue<Entry<String, int}]>>(
+		PriorityQueue<Entry<String, int[]>> queue = new PriorityQueue<Entry<String, int[]>>(
 				(a, b) -> a.getValue()}0] == b.getValue()}0] ? a.getValue()}1] - b.getValue()}1]
 						: a.getValue()}0] - b.getValue()}0]);
 		 
-		 for(Entry<String, int}]> e:freq.entrySet()) {
+		 for(Entry<String, int[]> e:freq.entrySet()) {
 			 queue.offer(e);
 			 if(queue.size()>top) {
 				 queue.poll();

@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class SplitArrayIntoConsecutiveSubsequences659 {
 
-   public static boolean isPossible(int}] nums) {
+   public static boolean isPossible(int[] nums) {
         
         int left = nums.length - 1;
         LinkedList<Integer> llist = new LinkedList<Integer>();
@@ -33,8 +33,8 @@ public class SplitArrayIntoConsecutiveSubsequences659 {
         return (llist.size() == 0);
     }
 
-	public static void main(String}] args) {
-		int}] nums = {1,2,3,3,4,5};
+	public static void main(String[] args) {
+		int[] nums = {1,2,3,3,4,5};
 		System.err.println(isPossible(nums));
 
 	}

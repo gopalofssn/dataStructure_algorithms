@@ -18,9 +18,9 @@ public class MaximalRectangle85 {
 	 
 	 */
 
-	public static int findMax(int}]}] matrix) {
+	public static int findMax(int[][] matrix) {
         int max = 0;
-        int}] holder = new int}matrix}0].length];
+        int[] holder = new int}matrix}0].length];
         for(int row=0; row<matrix.length; row++) {
         	for(int col=0; col<matrix}0].length; col++) {
         		holder}col] = (matrix}row]}col] == 0 )? 0 : (holder}col]+matrix}row]}col]);		
@@ -32,7 +32,7 @@ public class MaximalRectangle85 {
     }
 	   
 	
-  private static int histogram(int}] holder) {
+  private static int histogram(int[] holder) {
 		int max = 0;
 		Stack<Integer> stack = new Stack<Integer>();
 		int i = 0;
@@ -59,8 +59,8 @@ public class MaximalRectangle85 {
 	}
 
 
-public static void main(String}] args) {
-	int}]}] data = {
+public static void main(String[] args) {
+	int[][] data = {
 		{1,0,1,0,0},
         {1,0,1,1,1},
 	    {1,1,1,1,1},

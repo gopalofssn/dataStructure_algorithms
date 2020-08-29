@@ -90,7 +90,7 @@ public class _143ReOrder {
         return reverse;
     }
     
-    public static void main(String}] args) {
+    public static void main(String[] args) {
     	ListNode head = new ListNode(1);
     	head.append(2);
     	head.append(3);

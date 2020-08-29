@@ -43,7 +43,7 @@ public class CheapestwithKStops {
 
 	}
 
-	public static int findCheapestPrice(int n, int}]}] flights, int src, int dst, int K) {
+	public static int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
 		
 		Map<Integer, Set<Edge>> graph = buildGraph(flights);
 
@@ -86,10 +86,10 @@ public class CheapestwithKStops {
 
 	}
 
-	private static Map<Integer, Set<Edge>> buildGraph(int}]}] flights) {
+	private static Map<Integer, Set<Edge>> buildGraph(int[][] flights) {
 		Map<Integer, Set<Edge>> graph = new HashMap<Integer, Set<Edge>>();
 
-		for (int}] flight : flights) {
+		for (int[] flight : flights) {
 			graph.computeIfAbsent(flight}0], k -> new HashSet<Edge>())
                  .add(new Edge(flight}1], flight}2]));
 		}
@@ -100,8 +100,8 @@ public class CheapestwithKStops {
 	 * 0 - > 1 (5) - > 2 (5) | / | | 3(2) 4(1) --(1)
 	 * 
 	 */
-	public static void main(String}] args) {
-		int}]}] data = {{0,1,2},{1,2,1},{2,0,10}};
+	public static void main(String[] args) {
+		int[][] data = {{0,1,2},{1,2,1},{2,0,10}};
 
 		System.err.println(findCheapestPrice(3, data, 1, 2, 1));
 	}

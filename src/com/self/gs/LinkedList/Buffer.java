@@ -65,7 +65,7 @@ public class Buffer {
 		return capacity;
 	}
 
-	public int write(char}] src) {
+	public int write(char[] src) {
 		System.err.println("sz - " + ll.sz);
 		if(ll.size() == this.capacity) {
 			return 0;
@@ -80,22 +80,22 @@ public class Buffer {
 	public int write(String src) {
 		return write(src.toCharArray());
 	}
-	public char}] read(int n) {
+	public char[] read(int n) {
 		if(ll.size() == 0) {
 			throw new NoSuchElementException();
 		}
 		int sz = Math.min(n, ll.size());
-		char}] element = new char}sz];
+		char[] element = new char}sz];
 		for(int i = 0; i < sz; i++) {
 			element}i] = ll.removeFirst();
 		}
 		return element;
     }
 	
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		Buffer buf = new Buffer(5); // }. . . . .]
 		System.err.println(buf.write("abc")); // => 3 }abc . .]
-		System.err.println(buf.write(new char}]{'d','e','f'})); // => 2 because the buffer is full, you can only write two chars }abcde]
+		System.err.println(buf.write(new char[]{'d','e','f'})); // => 2 because the buffer is full, you can only write two chars }abcde]
 		System.err.println(buf.read(3)); // => }abc] }. . . de]
 		System.err.println(buf.write("xyzabc")); // => 3 }xyzde]
 		System.err.println(buf.read(8)); //returns }dexyz] becuase 'de' was written first }. . . . .]

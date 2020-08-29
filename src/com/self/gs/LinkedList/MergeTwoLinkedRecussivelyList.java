@@ -16,7 +16,7 @@ public class MergeTwoLinkedRecussivelyList {
       }
 
 	
-  public static void main(String}] args) {
+  public static void main(String[] args) {
 	  SinglyLinkedList<Integer>  Llist1 = new SinglyLinkedList<Integer>();
 		Llist1.append(1);
 		Llist1.append(2);

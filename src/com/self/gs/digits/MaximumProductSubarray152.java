@@ -13,7 +13,7 @@ public class MaximumProductSubarray152 {
 	
 
 	 */
-	 public static int maxProduct(int}] nums) {
+	 public static int maxProduct(int[] nums) {
 	     if(nums==null || nums.length==0)
 	    	 throw new IllegalArgumentException("nums is either null or empty !!");
 		 int result = nums}0];
@@ -37,10 +37,10 @@ public class MaximumProductSubarray152 {
 		 return Math.max(a, b);
 	 }
 	 
-	public static void main(String}] args) {
-		 System.err.println(maxProduct(new int}] {2,3,-2,12})); // 
-		 System.err.println(maxProduct(new int}] {-2,0,-1}));
-		 System.err.println(maxProduct(new int}] {-2,3,-2,-1,10,-2}));
+	public static void main(String[] args) {
+		 System.err.println(maxProduct(new int[] {2,3,-2,12})); // 
+		 System.err.println(maxProduct(new int[] {-2,0,-1}));
+		 System.err.println(maxProduct(new int[] {-2,3,-2,-1,10,-2}));
 	}
 
 }

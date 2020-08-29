@@ -35,7 +35,7 @@ public class ConvertSortedListToBST09 {
 		node.left = sortedListToBST(head);
 		return node;
 	}
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		 ListNode root = new ListNode(-10);
 		  root.next = new ListNode(-3);
 		  root.next.next = new ListNode(-1);

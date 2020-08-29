@@ -5,7 +5,7 @@ import java.util.*;
 public class AbsoluteValueSort {
 
 
-		static int}] absSort(int}] nums) {
+		static int[] absSort(int[] nums) {
 	   
 	    
 	    Comparator<Integer> absoluteValueSortComparator = new Comparator<Integer>(){
@@ -31,7 +31,7 @@ public class AbsoluteValueSort {
 	    return nums;
 		}
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		
 		Stack<Integer> stk = new Stack<Integer>();
 		//stk.

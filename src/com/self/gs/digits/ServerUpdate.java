@@ -36,7 +36,7 @@ public class ServerUpdate {
 	     all 1s
 	     
 	 */
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		List<List<Integer>> data = new ArrayList<List<Integer>>();
 		data.add(new ArrayList<Integer>(Arrays.asList(0, 1, 0, 0, 0)));
 		data.add(new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0)));
@@ -57,11 +57,11 @@ public class ServerUpdate {
 		
 		int days = 0;
 		int unUpdated = 0;
-		Queue<int}]> queue = new LinkedList<int}]>();
+		Queue<int[]> queue = new LinkedList<int[]>();
 		for(int row = 0; row < rows; row++) {
 			for(int col = 0; col < cols; col++) {
 				if(grid.get(row).get(col) == 1) {
-					queue.offer(new int}]{row ,col});
+					queue.offer(new int[]{row ,col});
 				}else {
 					unUpdated++;
 				}
@@ -80,7 +80,7 @@ public class ServerUpdate {
 			int sz = queue.size();
 			
 			for(int i = 0; i < sz; i++) {
-				int}] point = queue.poll();
+				int[] point = queue.poll();
 				if(isAdjacentServerupdate(point}0] - 1, point}1], grid, queue)) {
 					unUpdated--;
 				}
@@ -101,12 +101,12 @@ public class ServerUpdate {
 		return days;
 	}
 
-	private static boolean isAdjacentServerupdate(int row, int col, List<List<Integer>> grid, Queue<int}]> queue) {
+	private static boolean isAdjacentServerupdate(int row, int col, List<List<Integer>> grid, Queue<int[]> queue) {
 		if(row < 0 || row >= grid.size() || col < 0 || col >= grid.get(row).size() || grid.get(row).get(col) == 1) {
 			return false;
 		}else {
 		  grid.get(row).set(col, 1);
-		  queue.offer(new int}]{row ,col});
+		  queue.offer(new int[]{row ,col});
 		  return true;
 		}
 	}

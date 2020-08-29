@@ -22,7 +22,7 @@ Algorithum
  */
 public class Permutations46 {
 	
-	public static List<List<Integer>> permute(int}] nums) {
+	public static List<List<Integer>> permute(int[] nums) {
 		List<List<Integer>> permutations = new ArrayList<>();
 		if (nums.length == 0) {
 			return permutations;
@@ -32,7 +32,7 @@ public class Permutations46 {
 		return permutations;
     }
 
-	private static void collectPermutations(int}] nums, int start, List<Integer> permutation, List<List<Integer>>  permutations) {
+	private static void collectPermutations(int[] nums, int start, List<Integer> permutation, List<List<Integer>>  permutations) {
 		
 		if (permutation.size() == nums.length) {
 			permutations.add(permutation);
@@ -46,7 +46,7 @@ public class Permutations46 {
 		}
 	}
 
-public static void main(String}] args) {
-	System.out.println(permute(new int}] {1,2,3}));
+public static void main(String[] args) {
+	System.out.println(permute(new int[] {1,2,3}));
 }
 }

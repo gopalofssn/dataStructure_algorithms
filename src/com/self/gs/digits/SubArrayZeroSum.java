@@ -4,8 +4,8 @@ import java.util.*;
 
 public class SubArrayZeroSum {
 
-	public static void main(String}] args) {
-		int nums}] = {1, 4, -2, -2, 5, -4, 3};
+	public static void main(String[] args) {
+		int nums[] = {1, 4, -2, -2, 5, -4, 3};
 		System.err.println(isSubArraySumZero(nums));
 		
 		System.err.println(Arrays.toString(findSubArrayPos(nums)) );
@@ -18,13 +18,13 @@ public class SubArrayZeroSum {
 // pos 0 1 2 3 4 5 6
 //       
 	
-	private static int}] longest(int}] nums) {
+	private static int[] longest(int[] nums) {
 		
 		Map<Integer, Integer> holder = new HashMap<Integer, Integer>();
 		
 		int sum = 0;
 		
-		int}] result = {0, 0};
+		int[] result = {0, 0};
 		System.err.println(result);
 		
 		for(int i = 0 ; i < nums.length; i++) {
@@ -48,7 +48,7 @@ public class SubArrayZeroSum {
 	/*
 	  sum from beginning : 1 5 3 2 1
 	 */
-	private static int}] findSubArrayPos(int}] nums) {
+	private static int[] findSubArrayPos(int[] nums) {
 		 Map<Integer, Integer> holder = new HashMap<Integer, Integer>();
 		 
 		int sum = 0;
@@ -57,16 +57,16 @@ public class SubArrayZeroSum {
 			sum += nums}i];
 			
 			if(holder.containsKey(sum)) {
-				return new int}]{ holder.get(sum) + 1, i};
+				return new int[]{ holder.get(sum) + 1, i};
 			}
 			holder.put(sum, i);
 		}
 		
 		
-		return new int}]{};
+		return new int[]{};
 	}
 
-	private static boolean isSubArraySumZero(int}] nums) {
+	private static boolean isSubArraySumZero(int[] nums) {
 
 		Set<Integer> ha = new LinkedHashSet<Integer>();
 		

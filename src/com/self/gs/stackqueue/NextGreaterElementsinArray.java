@@ -24,11 +24,11 @@ public class NextGreaterElementsinArray {
 	 N = Ineger.Max_value
 	 */
 
-	private static int}] nextGreater(int}] nums) {
+	private static int[] nextGreater(int[] nums) {
 		if(nums==null || nums.length==0)
 			return nums;
 		int len = nums.length;
-		int}] result = new int}len];
+		int[] result = new int}len];
 		int i =1;
 		Stack<Meta> stack = new Stack<Meta>();
 		stack.add(new Meta(0,nums}0]));
@@ -52,8 +52,8 @@ public class NextGreaterElementsinArray {
 		return result;
 	}
 	
-	public static void main(String}] args) {
-       int}] input = new int}] {98,23,54,12,20,7,27};
+	public static void main(String[] args) {
+       int[] input = new int[] {98,23,54,12,20,7,27};
        System.out.println(Arrays.toString(input));
        System.out.println(Arrays.toString(nextGreater(input)));
 	}

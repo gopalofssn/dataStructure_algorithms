@@ -8,8 +8,8 @@ public class MatrixMultiplication {
 	 (2X3)*(3X3) = (2X3)
 	  -       -
 	 */
-	private static int}]}] multiplay(int}]}] a, int}]}] b) {
-		int}]}] result = new int}a.length]}b}0].length];
+	private static int[][] multiplay(int[][] a, int[][] b) {
+		int[][] result = new int}a.length]}b}0].length];
 		
 		for(int row=0;row<result.length;row++) {
 			for(int col=0;col<result}0].length;col++) {
@@ -19,7 +19,7 @@ public class MatrixMultiplication {
 		return result;
 	}
 	
-	private static int calculateCellValue(int}]}] a, int}]}] b, int row, int col) {
+	private static int calculateCellValue(int[][] a, int[][] b, int row, int col) {
         int val =0;
         for(int i=0;i<b.length;i++) {
         	val += a}row]}i]*b}i]}col];
@@ -27,13 +27,13 @@ public class MatrixMultiplication {
 		return val;
 	}
 
-	public static void main(String}] args) {
-		int}]}] a = new int}]}] {
+	public static void main(String[] args) {
+		int[][] a = new int[][] {
 			{1 ,2,-3},
 			{-1,5, 3}
 		};
 		
-		int}]}] b = new int}]}] {
+		int[][] b = new int[][] {
 			{7,0,9},
 			{9,3,0},
 			{7,0,1}

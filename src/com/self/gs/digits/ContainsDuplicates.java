@@ -16,7 +16,7 @@ Output: true
  */
 public class ContainsDuplicates {
 
-	 public boolean containsDuplicate(int}] nums) {
+	 public boolean containsDuplicate(int[] nums) {
 	     Set<Integer> numbers =  new HashSet<Integer>();
 	     for(int n : nums) {
 	    	 if(!numbers.add(n))
@@ -26,8 +26,8 @@ public class ContainsDuplicates {
 		 return false;
 	    }
 	 
-	 public static void main(String}] args) {
-		int}] nums = {1,2,3,3,4};
+	 public static void main(String[] args) {
+		int[] nums = {1,2,3,3,4};
 		System.out.print(new ContainsDuplicates().containsDuplicate(nums));
 	}
 	

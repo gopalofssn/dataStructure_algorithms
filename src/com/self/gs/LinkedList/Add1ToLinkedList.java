@@ -67,7 +67,7 @@ public class Add1ToLinkedList {
        return head;
 	}
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		
 		ListNode root = new ListNode(9);
 		root.append(9);

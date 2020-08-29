@@ -10,7 +10,7 @@ public class RemoveDuplicateSortedByRecursion {
 		
 	}
 
-  public static void main(String}] args) {
+  public static void main(String[] args) {
 	  SinglyLinkedList<Integer>  Llist = new SinglyLinkedList<Integer>();
 		Llist.append(1);
 		Llist.append(2);

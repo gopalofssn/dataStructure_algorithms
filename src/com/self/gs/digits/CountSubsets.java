@@ -5,18 +5,18 @@ import java.util.Arrays;
 public class CountSubsets {
 	
  	
-  public static void main(String}] args) {
+  public static void main(String[] args) {
 	  System.err.println((int)Math.pow(2, 3));
 	
-	  int nums}] = {2, 3, 4, 7};
+	  int nums[] = {2, 3, 4, 7};
 	  System.err.println("o/p : " + countSubsets(nums, 8));
   }
 /*} 2 3 4   = when loosing 7,  {}  
  *} 3 4 ] =   , when loosing 2  ,,,     o/p {2}, {2,3} , {2, 4} 
  *}4] =  when loosing 3,  o/p  {3} , {3, 4} , {2 3 4}
- * }] = when loosing 4 , {4} , 
+ * [] = when loosing 4 , {4} , 
  */
-private static int countSubsets(int}] nums, int k) {
+private static int countSubsets(int[] nums, int k) {
 	 Arrays.sort(nums);
 	 
 	 int left = 0;

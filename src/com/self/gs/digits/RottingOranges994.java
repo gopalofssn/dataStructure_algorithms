@@ -30,7 +30,7 @@ public class RottingOranges994 {
 			return this.col;
 		}
 	}
-  public int orangesRotting(int}]}] grid) {
+  public int orangesRotting(int[][] grid) {
 
 	if(grid == null || grid.length == 0)
            return 0;
@@ -75,7 +75,7 @@ public class RottingOranges994 {
            return minNum;
    }
    
-   private boolean isAdjacentRotted(int}]}] grid, int row, int col, Queue<Point> queue){
+   private boolean isAdjacentRotted(int[][] grid, int row, int col, Queue<Point> queue){
        if(row < 0 || col < 0 || row >= grid.length || col >= grid}0].length || grid}row]}col] != 1){
            return  false;
        }else{
@@ -85,24 +85,24 @@ public class RottingOranges994 {
        }
    }
 
-	public static void main(String}] args) {
-		int}]}] grid1 = new int}]}] {
+	public static void main(String[] args) {
+		int[][] grid1 = new int[][] {
 			{2,1,1},
 			{1,1,0},
 			{0,1,1}
 		};
-		int}]}] grid2 = new int}]}] {
+		int[][] grid2 = new int[][] {
 			{2,1,1},
 			{1,1,0},
 			{0,1,1}
 		};
-		int}]}] grid3 = new int}]}] {
+		int[][] grid3 = new int[][] {
 			{2,1,1},
 			{0,1,1},
 			{1,0,1}
 		};
 		
-		int}]}] grid4 = new int}]}] { {1}};
+		int[][] grid4 = new int[][] { {1}};
 		System.err.println(new RottingOranges994().orangesRotting(grid4));
 
 		

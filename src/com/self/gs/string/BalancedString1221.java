@@ -30,7 +30,7 @@ s}i] = 'L' or 'R'
 import java.util.Stack;
 
 public class BalancedString1221 {
-  public static void main(String}] args) {
+  public static void main(String[] args) {
 	  String s = "RLLLLRRRLRL";
 	  System.err.println(balancedString(s) );
 }

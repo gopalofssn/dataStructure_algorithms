@@ -28,7 +28,7 @@ public class ThreeSum {
 	        -1 -1 2
 	        -1  0 1 
 	 */
-	private static List<List<Integer>> find(int}] nums) {
+	private static List<List<Integer>> find(int[] nums) {
 		 
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
 		
@@ -60,7 +60,7 @@ public class ThreeSum {
 		return result;
 	}
 	
-	private static boolean binarySearch(int}] nums, int left, int right,int search) {
+	private static boolean binarySearch(int[] nums, int left, int right,int search) {
 		if(left>right) {
 			return false;
 		}
@@ -76,9 +76,9 @@ public class ThreeSum {
 		}
 	}
 
-	public static void main(String}] args) {
-		  System.err.println(find(new int}] {-1, 0, 1, 2, -1, -4}));
-		  System.err.println(find(new int}] {0,0,0,0}));
+	public static void main(String[] args) {
+		  System.err.println(find(new int[] {-1, 0, 1, 2, -1, -4}));
+		  System.err.println(find(new int[] {0,0,0,0}));
 
 	}
 

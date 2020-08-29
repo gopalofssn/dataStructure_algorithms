@@ -10,7 +10,7 @@ public class QueueOfferAdd {
 	 input :  } 1,-2,2,0,-2,-7 ]
 	 output : } 0,1,-2,-2,2,-7 ]
 	 */
-  public static int}] sortWithoutSign(int}] nums) {
+  public static int[] sortWithoutSign(int[] nums) {
 	  if(nums==null)
 		  return null;
 
@@ -21,15 +21,15 @@ public class QueueOfferAdd {
 		  queue.offer(i);
 		  System.err.println(queue);
 	  }
-	  int}] result = new int}queue.size()];
+	  int[] result = new int}queue.size()];
 	  int counter = 0;
 	  while(!queue.isEmpty()) {
 		  result}counter++] = queue.poll();
 	  }
 	  return result;
   }
-  public static void main(String}] args) {
-	int}] array = new int}] {1,-2,2,0,-2,-7};
+  public static void main(String[] args) {
+	int[] array = new int[] {1,-2,2,0,-2,-7};
 
 	System.err.println(Arrays.toString(sortWithoutSign(array)));
   }

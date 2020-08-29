@@ -10,7 +10,7 @@ import java.util.*;
    
  */
 public class SubSets90 {
-	public static List<List<Integer>> subsetsWithDup(int}] nums) {
+	public static List<List<Integer>> subsetsWithDup(int[] nums) {
        /* List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(nums!=null && nums.length!=0){
         	backtrack(result,new ArrayList<>(),nums,0);
@@ -25,7 +25,7 @@ public class SubSets90 {
 	    
     }
     
-	/*  private static void findSubSets(int}] nums,List<List<Integer>> list, List<Integer> tempList, int start){
+	/*  private static void findSubSets(int[] nums,List<List<Integer>> list, List<Integer> tempList, int start){
     	list.add(new ArrayList<>(tempList));
 	    for(int i = start; i < nums.length; i++){
 	        if(i > start && nums}i] == nums}i-1]) 
@@ -35,14 +35,14 @@ public class SubSets90 {
 	        tempList.remove(tempList.size() - 1);
 	    }
     }
-	/*public static List<List<Integer>> subsetsWithDup(int}] nums) {
+	/*public static List<List<Integer>> subsetsWithDup(int[] nums) {
 	    List<List<Integer>> list = new ArrayList<>();
 	    Arrays.sort(nums);
 	    backtrack(list, new ArrayList<>(), nums, 0);
 	    return list;
 	}
 */
-	private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int }] nums, int start){
+	private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int start){
 	    list.add(new ArrayList<>(tempList));
 	    for(int i = start; i < nums.length; i++){
 	        if(i > start && nums}i] == nums}i-1]) 
@@ -53,7 +53,7 @@ public class SubSets90 {
 	    }
 	} 
 	
-	public static void main(String}] args) {
-		System.err.println(subsetsWithDup(new int}] {4,4,4,1,4}));
+	public static void main(String[] args) {
+		System.err.println(subsetsWithDup(new int[] {4,4,4,1,4}));
 	}
 }

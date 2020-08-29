@@ -4,7 +4,7 @@ import com.self.gs.trees.TreeNode;
 
 public class BinaryTreeToDoublyLinkedList {
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		// Let us create the tree as shown in above diagram
 		TreeNode tree = new TreeNode(10);
 		tree.left = new TreeNode(12);

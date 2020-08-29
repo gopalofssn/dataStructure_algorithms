@@ -30,7 +30,7 @@ public class RottingOranges994 {
 			}
 	   };
 
-   public int orangesRotting(int}]}] grid) {
+   public int orangesRotting(int[][] grid) {
 
         int min = 0;
         boolean isAnyFresh = false;
@@ -76,7 +76,7 @@ public class RottingOranges994 {
         return min;
     }
 
-    private  boolean addToQueue(Queue<Point> queue, int}]}] grid, int row, int col) {
+    private  boolean addToQueue(Queue<Point> queue, int[][] grid, int row, int col) {
 		if(row>=0 && col>=0 && row<grid.length && col<grid}0].length && grid}row]}col]==1) {
 			grid}row]}col] = 2;
 			queue.add(new Point(row,col));
@@ -86,18 +86,18 @@ public class RottingOranges994 {
 		return false;
 	}
    
-	public static void main(String}] args) {
-		int}]}] grid1 = new int}]}] {
+	public static void main(String[] args) {
+		int[][] grid1 = new int[][] {
 			{2,1,1},
 			{1,1,0},
 			{0,1,1}
 		};
-		int}]}] grid2 = new int}]}] {
+		int[][] grid2 = new int[][] {
 			{2,1,1},
 			{0,1,1},
 			{1,0,1}
 		};
-		int}]}] grid3 = new int}]}] {
+		int[][] grid3 = new int[][] {
 			{0,2}
 		};
 		System.err.println(new RottingOranges994().orangesRotting(grid1));

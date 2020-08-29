@@ -33,14 +33,14 @@ public class SurroundedRegions130 {
 			c = _c;
 		}
 	}
-	 public  void solve(char}]}] grid) {
+	 public  void solve(char[][] grid) {
 	      if(grid==null || grid.length==0)
 	    	  return;
 	      int rowLen = grid.length;
 	      int colLen = grid}0].length;
 	      
 	      Queue<Point> queue = new LinkedList<Point>();
-	      boolean}]}] isVisited = new boolean}rowLen]}colLen];
+	      boolean[][] isVisited = new boolean}rowLen]}colLen];
 	      for(int col=0;col<colLen;col++) {
 	    	  if(grid}0]}col]=='o') 
 	    		  addToQueue(grid,queue,0,col,isVisited);
@@ -77,7 +77,7 @@ public class SurroundedRegions130 {
 	      }
 	    }
 
-	private void addToQueue(char}]}] grid,Queue<Point> queue, int row, int col,boolean}]}] isVisited) {
+	private void addToQueue(char[][] grid,Queue<Point> queue, int row, int col,boolean[][] isVisited) {
 		if(row<0 || row>=grid.length || col<0 || col>=grid}row].length || isVisited}row]}col] || grid}row]}col] =='x') { 
 			return;
 		}else{
@@ -86,8 +86,8 @@ public class SurroundedRegions130 {
 			queue.offer(new Point(row,col));
 		}
 	}
-	public static void main(String}] args) {
-		char}]}] board = new char}]}] {
+	public static void main(String[] args) {
+		char[][] board = new char[][] {
 			{'x','x','x','x'},	
 			{'x','o','o','x'},	
 			{'x','x','o','x'},	
@@ -96,7 +96,7 @@ public class SurroundedRegions130 {
 		new SurroundedRegions130().solve(board);
 		System.err.println(Arrays.deepToString(board));
 		
-		board = new char}]}] {
+		board = new char[][] {
 			{'o','o','o'},	
 			{'o','o','o'},
 			{'o','o','o'}
@@ -104,7 +104,7 @@ public class SurroundedRegions130 {
 		new SurroundedRegions130().solve(board);
 		System.err.println(Arrays.deepToString(board));
 		
-		board = new char}]}] {
+		board = new char[][] {
 			{'o','x','x','o','x'},
 			{'x','o','o','x','o'},
 			{'x','o','x','o','x'},

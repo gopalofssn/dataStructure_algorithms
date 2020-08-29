@@ -11,7 +11,7 @@ public class TribonacciNumber {
 			 return 1;
 		 
 			 
-		 int}] result = new int}n+1];   // 0 1 2 3  -- for 4s
+		 int[] result = new int}n+1];   // 0 1 2 3  -- for 4s
 		 result}0] = 0;
 		 result}1] = 1;
 		 result}2] = 1;
@@ -23,7 +23,7 @@ public class TribonacciNumber {
 	    }
 	 
 	 
-	public static void main(String}] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException {
 		System.err.println(tribonacci(0));
 		System.err.println(tribonacci(10));
 		System.err.println(tribonacci(25));

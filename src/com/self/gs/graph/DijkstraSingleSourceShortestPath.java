@@ -26,10 +26,10 @@ public class DijkstraSingleSourceShortestPath {
 		
 	}
 	
-	private static Map<Integer, Set<Edge>> buildGraph(int}]}] nums) {
+	private static Map<Integer, Set<Edge>> buildGraph(int[][] nums) {
 		Map<Integer, Set<Edge>>  graph = new  HashMap<Integer,  Set<Edge>>();
 		
-		for(int}] num : nums) {
+		for(int[] num : nums) {
 			graph.computeIfAbsent(num}0], k -> new TreeSet<Edge>())
 			     .add(new Edge(num}1], num}2]));
 		}
@@ -60,7 +60,7 @@ public class DijkstraSingleSourceShortestPath {
 	 * @param src
 	 * @return
 	 */
-	private static Map<Integer, Integer> findShortestPath(int}]}] data , int src) {
+	private static Map<Integer, Integer> findShortestPath(int[][] data , int src) {
 		
 		Map<Integer,  Set<Edge>> graph = buildGraph(data);
 	
@@ -94,8 +94,8 @@ public class DijkstraSingleSourceShortestPath {
 		return result;
 	}
 	 
-	public static void main(String}] args) {
-		int}]}] data = { { 0, 12, 28 }, { 5, 6, 39 }, { 8, 6, 59 }, { 13, 15, 7 }, { 13, 12, 38 }, { 10, 12, 35 },
+	public static void main(String[] args) {
+		int[][] data = { { 0, 12, 28 }, { 5, 6, 39 }, { 8, 6, 59 }, { 13, 15, 7 }, { 13, 12, 38 }, { 10, 12, 35 },
 				{ 15, 3, 23 }, { 7, 11, 26 }, { 9, 4, 65 }, { 10, 2, 38 }, { 4, 7, 7 }, { 14, 15, 31 }, { 2, 12, 44 },
 				{ 8, 10, 34 }, { 13, 6, 29 }, { 5, 14, 89 }, { 11, 16, 13 }, { 7, 3, 46 }, { 10, 15, 19 },
 				{ 12, 4, 58 }, { 13, 16, 11 }, { 16, 4, 76 }, { 2, 0, 12 }, { 15, 0, 22 }, { 16, 12, 13 }, { 7, 1, 29 },

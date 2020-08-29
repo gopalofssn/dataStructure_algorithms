@@ -5,7 +5,7 @@ import java.util.*;
 	
 public class ValidSudako {
   
-public static boolean isValidSudoku(char}]}] grid) {
+public static boolean isValidSudoku(char[][] grid) {
 	if(grid==null || grid.length ==0 || grid.length!=9 || grid}0].length!=9)
 		return false;
 	Set<String> seen = new HashSet<String>();
@@ -25,9 +25,9 @@ public static boolean isValidSudoku(char}]}] grid) {
 	
 	return true;
 }
-public static void main(String}] args) {
+public static void main(String[] args) {
 	
-	char}]}] board = new char}]}] {
+	char[][] board = new char[][] {
 		 
 		  {'7','3','.','.','.','.','.','.','.'},
 		  {'6','.','.','1','9','5','.','.','.'},
