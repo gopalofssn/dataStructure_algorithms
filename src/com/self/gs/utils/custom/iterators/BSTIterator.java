@@ -1,4 +1,4 @@
-package FaceBook;
+package com.self.gs.utils.custom.iterators;
 
 import java.util.ArrayList;
 import java.util.List;
