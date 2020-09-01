@@ -30,8 +30,9 @@ public class InvertBinaryTree {
 				current.left = current.right;
 				current.right = tmp;
 				
-				if(current.right != null) queue.offer(current.right);
 				if(current.left != null) queue.offer(current.left);
+				if(current.right != null) queue.offer(current.right);
+				
 			}
 		}
 		
@@ -43,13 +44,14 @@ public class InvertBinaryTree {
 		root.left = new TreeNode(2);
 		root.left.left = new TreeNode(22);
 		root.right = new TreeNode(3);
-		root.right.right = new TreeNode(33);
-
-		TreeNode node = CloneBinaryTree.clone(root);
-		System.err.println("Recurssive " + invertBinaryTreeRecurssive(root));
-        System.err.println("Root " + root);
-		System.err.println("Iterative " + invertBinaryTreeIterative(root));
+		root.right.left = new TreeNode(33);
+		System.out.println("Root " + root);
 		
+		TreeNode node = CloneBinaryTree.clone(root);
+		System.out.println("Recurssive " + invertBinaryTreeRecurssive(node));
+        
+		 node = CloneBinaryTree.clone(root);
+        System.out.println("Iterative " + invertBinaryTreeIterative(root));
 	}
 	
 }

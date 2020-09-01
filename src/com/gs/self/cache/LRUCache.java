@@ -2,110 +2,114 @@ package com.gs.self.cache;
 
 import java.util.*;
 
+class DoublyLinkedList {
+	int key;
+	int val;
+	DoublyLinkedList prev;
+	DoublyLinkedList next;
+
+	DoublyLinkedList() {
+	}
+
+	DoublyLinkedList(int key, int val) {
+		this.val = val;
+		this.key = key;
+	}
+}
+
+/*
+  DLL to maintain order 
+  Map to maintain key val pair to perform O(1) get delete etc.
+  Put still O(1)
+ */
 public class LRUCache {
 
+	private DoublyLinkedList head;
+	private DoublyLinkedList tail;
+	private Map<Integer, DoublyLinkedList> cacheHolder; // <key, Node> - to
+														// delete or insert
+														// operation at O(1)
+	private final int capacity;
 
-private Node head;  
-private Node tail; 
-private Map<Integer, Node> cacheHolder; // <key, Node> - to delete or insert operation at O(1)
-private final int capacity;
+	public LRUCache(int capacity) {
+		this.capacity = capacity;
+		cacheHolder = new HashMap<Integer, DoublyLinkedList>(capacity);
+		head = new DoublyLinkedList();
+		tail = new DoublyLinkedList();
+		head.prev = tail;
+		tail.next = head;
+	}
 
-public LRUCache(int capacity) {
-    this.capacity = capacity;
-    cacheHolder = new HashMap<Integer, Node>();
-    head = tail;
-}
+	public void put(int key, int value) {
+		 if(cacheHolder.containsKey(key)){
+			 DoublyLinkedList node = cacheHolder.get(key);
+			 node.val = value;
+			 MoveAsRecentlyUsedNode(node);
+			 return;
+		 }
 
-public int get(int key) {
-  
-  System.err.println("getting key " + key);
-    // check if present
-    if(!cacheHolder.containsKey(key)) return -1;
-    
-    // move node to head
-      // a. tail ?
-      // b. already head?
-      // c. middle ?
-     Node node = cacheHolder.get(key);
-     if(node == tail && node != head){
-       tail = tail.next;
-       tail.prev = null;
-       addToHead(node);
-     }else if(node != head){
-       node.prev.next = node.next;
-       node.next.prev = node.prev;
-       addToHead(node);
-     } 
-     return node.val;
-}
+		 DoublyLinkedList node = new DoublyLinkedList(key, value);
+		 cacheHolder.put(key, node);
+		 addAsHead(node); 
+		 
+		 if(cacheHolder.size() > capacity){
+			 removeTail();
+		 }
+		 
+	}
 
-public void put(int key, int value) {
-  System.err.println("putting key " + key);
- 
-    Node node = new Node(key, value);
-    if(cacheHolder.containsKey(key)) cacheHolder.remove(key);
-    
-    cacheHolder.put(key, node);
-    addToHead(node);// add to map and D LL
-    
-    System.err.println(head);
-    // check evict policy .and remove tail if necessary 
-    if(cacheHolder.size() > capacity){
-      System.err.println("cache limit exceeds ");
-      cacheHolder.remove(tail.key);
-        
-       Node newTail = tail.next;
-       newTail.prev = null;
-       tail = newTail;
-    }
-    System.err.println(cacheHolder.entrySet());
-   System.err.println(head); 
-}
+	
+	private void removeTail() {
+		DoublyLinkedList node = tail.next;
+		
+		tail.next.next = node.next;
+		node.next.prev = tail;
+		
+		int key = node.key;
+		cacheHolder.remove(key);
+		node = null;
+	}
 
-private void addToHead(Node node){
-       if(head == null) {
-         head = node;
-         tail = node;
-         return;
-       }
-       node.prev = head;
-       head.next = node;
-       head = node;
-}
+	public int get(int key) {
+		if(!cacheHolder.containsKey(key)) return -1;
+		
+		 DoublyLinkedList node = cacheHolder.get(key);
+		 int val = node.val;
+		 MoveAsRecentlyUsedNode(node);
+		 return val;
+	}
 
+	private void MoveAsRecentlyUsedNode(DoublyLinkedList node) {
+		DoublyLinkedList nodePrev = node.prev;
+		DoublyLinkedList nodeNext = node.next;
+		nodePrev.next = nodeNext;
+		nodeNext.prev = nodePrev;
+		addAsHead(node);
+	}
+	
+	private void addAsHead(DoublyLinkedList node) {
+		DoublyLinkedList headPrev = head.prev;
+		headPrev.next = node;
+		node.prev = headPrev;
+		
+		node.next = head;
+		head.prev = node;
+		
+	}
 
-  public static void main(String[] args) {
-    // TODO Auto-generated method stub
-    LRUCache cache = new LRUCache(2);
-    cache.put(2, 1);
-    cache.put(1, 1);
-    cache.put(2, 3);
-    cache.put(4, 1);
-    System.err.println(cache.get(1));
-    System.err.println(cache.get(2));
-    
-    /*cache.put(2, 1);
-    System.err.println(cache.get(2));
-    */
-    /*cache.put(2, 1);
-    cache.put(0, 0);
-    cache.put(2, 3); // evicts key 2, 1 combo
-    cache.put(4, 1); // evict 1,1 camboo
-    System.err.println(cache.get(1));
-    System.err.println(cache.get(2));
-    System.err.println(cache.get(4));*/
-    
-    /*
-    cache.put(1 , 1);
-    cache.put(2 , 2);
-    System.err.println(cache.get(1));
-    cache.put(3, 3);
-    System.err.println(cache.get(2));
-    cache.put(4 , 4);
-    System.err.println(cache.get(1));
-    System.err.println(cache.get(3));
-    System.err.println(cache.get(4));*/
-    
-  }
+	public static void main(String[] args) {
+		LRUCache cache = new LRUCache(2);
+		cache.put(2, 1);
+		cache.put(1, 1);
+		cache.put(2, 3);
+		cache.put(4, 1);
+		System.err.println(cache.get(1));
+		System.err.println(cache.get(2));
+
+		 cache.put(2, 1); 
+		 System.err.println(cache.get(2));
+		 System.err.println(cache.get(4));
+
+	}
 
 }

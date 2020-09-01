@@ -1,4 +1,4 @@
-package com.self.gs.trees;
+package com.gs.binarytree;
 import java.util.*;
 public class _133BinaryTreePathSum {
 	
@@ -28,9 +28,9 @@ public class _133BinaryTreePathSum {
       currentResult.removeLast();
     }
     
-  public static void main(String}] args) {
+  public static void main(String[] args) {
 	  String str = "5,4,8,11,X,13,4,7,2,X,X,5,1,1,2";
-	  TreeNode node = SerializeandDeserializeBinaryTree297.deserialize(str);
+	 TreeNode node = BinaryTreeDeserializer.deserializer(str);
 	System.err.println(pathSum(node,22));
 }
 }
