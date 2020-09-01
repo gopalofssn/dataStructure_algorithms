@@ -4,6 +4,11 @@ import java.util.*;
 
 public class ShortestPathAllKeys {
 
+	/*
+	 @ . . . a
+	 . # # # A
+	 . B c C b
+	 */
 public int shortestPathAllKeys(String[] grid) {
         
         Set<Character> expectedKeys = new HashSet<Character>();
@@ -58,17 +63,16 @@ public int shortestPathAllKeys(String[] grid) {
 	        if(c == '#'){
 	            visited[row][col] = true;
 	        }else if(Character.isLowerCase(c)){
-	           visited[row][col] = true;
+	        	visited[row][col] = true;
 	           queue.add(new int[]{row, col});
 	           collectedKeys.add(c);
 	        }else if(Character.isUpperCase(c) && collectedKeys.contains(Character.toLowerCase(c))){
 	        	queue.add(new int[]{row, col});
 	            visited[row][col] = true;
-	        }else{
+	        }else if( c == '.'){
 	          queue.add(new int[]{row, col});
 	          visited[row][col] = true;
 	        }
-	        System.err.println(collectedKeys);
         
     }
 	    
@@ -80,6 +84,9 @@ public int shortestPathAllKeys(String[] grid) {
 		//System.err.println(new ShortestPathAllKeys().shortestPathAllKeys(grid));
 		
 		grid = new String[]{"@Aa"};
+		//System.err.println(new ShortestPathAllKeys().shortestPathAllKeys(grid));
+
+		grid = new String[]{"@...a",".###A",".BcCb"};
 		System.err.println(new ShortestPathAllKeys().shortestPathAllKeys(grid));
 
 	}
