@@ -1,4 +1,4 @@
-package com.gs.geeksforgeeks;
+ackage com.gs.interval;
 
 import java.util.Arrays;
 import java.util.LinkedList;
