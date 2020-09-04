@@ -1,4 +1,4 @@
-package Twitter;
+package com.gs.self.cache;
 
 import java.util.*;
 
@@ -60,7 +60,7 @@ public class  Twitter {
   }
 
 
-  public static void main(String}] args) {
+  public static void main(String[] args) {
     Twitter twitter = new Twitter();
     twitter.postTweet(1, 101);
     twitter.postTweet(1, 102);
