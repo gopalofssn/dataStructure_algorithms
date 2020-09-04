@@ -5,31 +5,34 @@ import com.gs.binarytree.TreeNode;
 public class DeleteNodeInBST {
 	 public TreeNode deleteNode(TreeNode root, int key) {
 	        if(root == null)  return root;
-	        helper(root, key);
+	        helper(root,null ,key, null);
 	        return root;
 	    }
 	    
-	    private void helper(TreeNode node, int key){
+	    private void helper(TreeNode node,TreeNode parent, int key, Boolean isLeft){
 	        if(node == null) return;
 	        if(key == node.val){
-	        	System.out.println("found");
-	            moveRightNodeAsParentNode(node);
+	        	moveValue(node, parent,isLeft);
 	        }else if(key > node.val){
-	            helper(node.right, key);
+	            helper(node.right, node, key, false);
 	        }else{
-	            helper(node.left, key);
+	            helper(node.left, node, key, true);
 	        }
-	        System.out.println(node); 
 	    }
 	    
-	    private void moveRightNodeAsParentNode(TreeNode node){
-	        if(node == null || node.right == null) return;
-	        TreeNode newParentNode = new TreeNode(node.right.val);
-	        newParentNode.left = node.left;
-	        newParentNode.right = node.right;
-	        System.out.println("moved " + node.right.val + ", in the place of " + node.val);
-	        node = newParentNode;
-	        moveRightNodeAsParentNode(node.right);
+	    private void moveValue(TreeNode node, TreeNode parent, Boolean isLeft){
+	    	if(node == null) return;
+	    	if(node.right != null){
+	    		node.val = node.right.val;
+	    		moveValue(node.right, node, false);
+	    	}else if(node.left !=null){
+	    		node.val = node.left.val;
+	    		moveValue(node.right, node, true);
+	    	}else{
+	    		if(isLeft == null) parent = null;
+	    		else if(isLeft) parent.left = null;
+	    		else parent.right = null;
+	    	}
 	    }
 	    
 	    public static void main(String[] args) {
@@ -43,8 +46,9 @@ public class DeleteNodeInBST {
 
 			System.out.println("ROOT  - " + root);
 			
-			root = new DeleteNodeInBST().deleteNode(root, 5);
+			root = new DeleteNodeInBST().deleteNode(root, 2);
 			System.out.println("After Delete  - " + root);
 			
+			System.out.println("After Delete  - " + new DeleteNodeInBST().deleteNode(new TreeNode(1), 1));
 		}
 }
