@@ -5,34 +5,35 @@ import com.gs.binarytree.TreeNode;
 public class DeleteNodeInBST {
 	 public TreeNode deleteNode(TreeNode root, int key) {
 	        if(root == null)  return root;
-	        helper(root,null ,key, null);
+	        if(root.val == key && root.right == null && root.left == null) return null;
+	        helper(root,null, key, null);
 	        return root;
 	    }
 	    
 	    private void helper(TreeNode node,TreeNode parent, int key, Boolean isLeft){
 	        if(node == null) return;
 	        if(key == node.val){
-	        	moveValue(node, parent,isLeft);
+	            move(node, parent, isLeft);
 	        }else if(key > node.val){
-	            helper(node.right, node, key, false);
+	            helper(node.right, node, key,false);
 	        }else{
 	            helper(node.left, node, key, true);
 	        }
 	    }
 	    
-	    private void moveValue(TreeNode node, TreeNode parent, Boolean isLeft){
-	    	if(node == null) return;
-	    	if(node.right != null){
-	    		node.val = node.right.val;
-	    		moveValue(node.right, node, false);
-	    	}else if(node.left !=null){
-	    		node.val = node.left.val;
-	    		moveValue(node.right, node, true);
-	    	}else{
-	    		if(isLeft == null) parent = null;
-	    		else if(isLeft) parent.left = null;
-	    		else parent.right = null;
-	    	}
+	    private void move(TreeNode node, TreeNode parent, Boolean isLeft){
+	         if(node == null) return;
+	         if(node.right != null){
+	             node.val = node.right.val;
+	             move(node.right, node, false);
+	         }else if(node.left != null ){
+	             node.val = node.left.val;
+	             move(node.left, node, true);
+	         }else{
+	             if(isLeft == null) parent = null;
+	             else if(isLeft) parent.left = null;
+	             else parent.right = null;
+	         }
 	    }
 	    
 	    public static void main(String[] args) {
