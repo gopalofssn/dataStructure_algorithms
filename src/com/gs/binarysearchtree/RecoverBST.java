@@ -19,7 +19,7 @@ public class RecoverBST {
 		Stack<NodeParent> stack = new Stack<NodeParent>();
 		stack.push(new NodeParent(node, null));
 		while(!stack.isEmpty()){
-			99
+		
 		}
 	}
 	
