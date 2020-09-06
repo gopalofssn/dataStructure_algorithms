@@ -1,33 +1,17 @@
-package com.gs.self.linkedlist;
+package com.gs.linkedlist;
 
 public class LinkedListReverseEvanNumbers {
-
-  private static class Node{
-    int data;
-    Node next;
-    Node(int x){
-      data = x;
-    } 
-    public String toString() {
-      if(this == null)   return "NULL";
-      return this.data + " ->" + this.next;    
-    } 
-  }
- 
-  
-
+df
   private static void reverse(Node head) {
      
     Node current = head;
     Node prev = null;
     while(current != null) {
-      if(isEven(current.data)) {
+      if(isEven(current.val)) {
         Node[] reversedAndCurrent =  reverseHlper(current);
         if(prev != null) {
           prev.next = reversedAndCurrent[0];
-          
         }
-        
         if(reversedAndCurrent[1] != null) {
           current = reversedAndCurrent[1];
         }else {
@@ -46,7 +30,7 @@ public class LinkedListReverseEvanNumbers {
     
     Node reversed = null;
     Node tmp = current;
-    while(current != null && isEven(current.data )) {
+    while(current != null && isEven(current.val )) {
       Node nextCurrent = current.next;
       current.next = reversed;
       reversed = current;
@@ -74,15 +58,14 @@ public class LinkedListReverseEvanNumbers {
 
   public static void main(String[] args) {
     int[] nums = {1, 2, 8, 9, 12, 16};
-    Node head = buildLinkedList(nums);
+    Node head = LinkedListBuilder.build(nums);
     System.err.println("before reverse" + head);
     
     reverse(head);
     System.err.println("after reverse " + head);
     
     int[] expectedNum = {1, 8, 2, 9, 16, 12};
-    Node expectedHead = buildLinkedList(expectedNum);
-    //System.err.println(expectedHead);
+    Node expectedHead = LinkedListBuilder.build(expectedNum);
     
     System.err.println("compared " + isSame(head, expectedHead));
 
@@ -93,7 +76,7 @@ public class LinkedListReverseEvanNumbers {
   private static boolean isSame(Node node1, Node node2) {
      
     while(node1 !=null && node2 !=null) {
-      if(node1.data != node2.data)
+      if(node1.val != node2.val)
         return false;
       
       node1 = node1.next;
@@ -103,16 +86,5 @@ public class LinkedListReverseEvanNumbers {
     return (node1 == node2);
   }
 
-
-  private static Node buildLinkedList(int[] nums) {
-    Node head = new Node(nums[0]);
-    Node node = head;
-    for(int i = 1; i < nums.length; i++) {
-      Node tmp = new Node(nums[i]);
-      node.next = tmp;
-      node = node.next;
-    }
-    return head;
-  }
 
 }

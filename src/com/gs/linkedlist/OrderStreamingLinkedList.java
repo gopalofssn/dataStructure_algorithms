@@ -1,4 +1,4 @@
-package com.gs.self.linkedlist;
+package com.gs.linkedlist;
 
 import java.util.*;
 
