@@ -3,17 +3,46 @@ package com.gs.linkedlist;
 public class LinkedListReverseEvanNumbers {
 
   private static Node reverse(Node head) {
+	if(head == null) return head;
+	Node current = head;
+	Node prev = null;
+	while(current != null){
+		if(isEven(current.val)){
+			Node tmp = reverseUtils(current);
+			if (prev == null ) head = tmp;
+			else prev.next = tmp;
+		}
+		prev = current;
+		current = current.next;
+	}
 	return head;
   }
 
+  private static Node reverseUtils(Node node) { // 2->8 ....
+	Node prev = null;
+	Node current = node;
+	while(current != null && isEven(current.val)){
+		Node next = current.next;
+		current.next = prev;
+		prev = current; //  8 -> 2 -> null
+		current = next; // 9 -> 12  ->16 ->17
+	}
+	node.next = current; // because node is still pointing 2
+	return prev;
+  }
+
+  private static boolean isEven(int num){
+	  return ( (num & 1) == 0 );
+  }
+  
   public static void main(String[] args) {
-    int[] nums = {1, 2, 8, 9, 12, 16};
+    int[] nums = {1, 2, 8, 9, 12, 16, 17};
     Node head = LinkedListBuilder.build(nums);
     System.out.println("HEAD : " + head);
     head = reverse(head);
     System.out.println("Modified " + head);
     
-    int[] expectedNum = {1, 8, 2, 9, 16, 12};
+    int[] expectedNum = {1, 8, 2, 9, 16, 12, 17};
     Node expected = LinkedListBuilder.build(expectedNum);
     System.out.println("Expected " + expected);
     System.out.println("isSame ? " + isSame(head, expected));
