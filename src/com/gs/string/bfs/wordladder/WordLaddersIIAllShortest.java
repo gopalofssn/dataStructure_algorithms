@@ -25,14 +25,12 @@ public class WordLaddersIIAllShortest {
 	        WordAndLadders element = new WordAndLadders(beginWord);
 	        element.addLadderWord(beginWord);
 	        queue.offer(element);
-	        
 	        Set<String> visited = new HashSet<String>();
 	        Set<String> uniqueWords = new HashSet<String>(wordList);
 	        while(!queue.isEmpty()){
 	            int sz = queue.size();
 	            for(int i = 0; i < sz; i++){
 	                WordAndLadders current = queue.poll();
-	                visited.add(current.word);
 	                if(isSame(current.word, endWord)){
 	                    ladders.add(current.ladder);
 	                }
@@ -50,7 +48,9 @@ public class WordLaddersIIAllShortest {
 	    }
 
 	    private void addToQueue(Queue<WordAndLadders> queue, WordAndLadders current, Set<String> visited, Set<String> uniqueWords){
-	         if(visited.contains(current.word)) return;
+	         
+	    	if(visited.contains(current.word)) return;
+	    	visited.add(current.word);
 	         char[] v = current.word.toCharArray();
 	         for(int i = 0; i < v.length; i++){
 	             for(char c = 'a'; c <= 'z'; c++){
@@ -69,8 +69,10 @@ public class WordLaddersIIAllShortest {
 	    }
 	    
 	public static void main(String[] args) {
-		System.err.println( new WordLaddersIIAllShortest().findLadders("hit", "cog", new ArrayList<String>(Arrays.asList("hot","dot","dog","lot","log","cog"))));
-		
+		List<List<String>>  result = new WordLaddersIIAllShortest().findLadders("hit", "cog", new ArrayList<String>(Arrays.asList("hot","dot","dog","lot","log","cog")));
+		for(List<String> r : result){
+			System.out.println(r);
+		}
 	}
 
 }
