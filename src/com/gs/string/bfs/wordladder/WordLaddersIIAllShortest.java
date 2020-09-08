@@ -1,7 +1,7 @@
 package com.gs.string.bfs.wordladder;
 
 import java.util.*;
-
+//2ND CASE IF NOT WORKING.
 public class WordLaddersIIAllShortest {
 	 private class WordAndLadders{
 	        private String word;
@@ -35,6 +35,7 @@ public class WordLaddersIIAllShortest {
 	                    ladders.add(current.ladder);
 	                }
 	                addToQueue(queue, current, visited, uniqueWords);
+	                visited.add(current.word);
 	            }
 	            if(ladders.size() != 0){
 	                return ladders;
@@ -50,14 +51,15 @@ public class WordLaddersIIAllShortest {
 	    private void addToQueue(Queue<WordAndLadders> queue, WordAndLadders current, Set<String> visited, Set<String> uniqueWords){
 	         
 	    	if(visited.contains(current.word)) return;
-	    	visited.add(current.word);
 	         char[] v = current.word.toCharArray();
 	         for(int i = 0; i < v.length; i++){
 	             for(char c = 'a'; c <= 'z'; c++){
 	                 char tmp = v[i];
 	                 v[i] = c;
 	                 String newWord = String.valueOf(v);
+	                 
 	                 if(uniqueWords.contains(newWord)){
+	                	 if(newWord.equalsIgnoreCase("rex")) System.out.println("rex is added in queue");
 	                     WordAndLadders element = new WordAndLadders(newWord);
 	                     element.addLadderWords(current.ladder);
 	                     element.addLadderWord(newWord) ; 
@@ -70,6 +72,12 @@ public class WordLaddersIIAllShortest {
 	    
 	public static void main(String[] args) {
 		List<List<String>>  result = new WordLaddersIIAllShortest().findLadders("hit", "cog", new ArrayList<String>(Arrays.asList("hot","dot","dog","lot","log","cog")));
+		for(List<String> r : result){
+			System.out.println(r);
+		}
+		
+
+		result = new WordLaddersIIAllShortest().findLadders("red", "tax", new ArrayList<String>(Arrays.asList("ted","tex","red","tax","tad","den","rex","pee")));
 		for(List<String> r : result){
 			System.out.println(r);
 		}
