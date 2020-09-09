@@ -7,7 +7,7 @@ package com.gs.linkedlist.random;
  */
 public class DeepCopyRandomLinkedListO1Space {
 	
-	private static RandomNode deepCopy(RandomNode head) {
+	private RandomNode deepCopy(RandomNode head) {
 		if(head == null) return head;
 		createNodeAndAttachAsNext(head);
 		//System.out.println("after create next node " + head);
@@ -17,7 +17,7 @@ public class DeepCopyRandomLinkedListO1Space {
 	}
 
 	// create next node as dup and attach as next , NOT HOOKED RANDOM YET
-	private static void createNodeAndAttachAsNext(RandomNode node) {
+	private void createNodeAndAttachAsNext(RandomNode node) {
 		while(node != null){
 			RandomNode newNextNode = new RandomNode(node.val, true);
 			RandomNode nodeNext = node.next;
@@ -27,14 +27,15 @@ public class DeepCopyRandomLinkedListO1Space {
 		}
 	}
 
-	private static void hookWithRandomNode(RandomNode node) {
+	private void hookWithRandomNode(RandomNode node) {
 		while(node != null){
-			node.next.random = node.random.next;
+			System.err.println(node.next.val);
+			node.next.random = (node.random != null) ? node.random.next : null;
 			node = node.next.next;
 		}
 	}
 	
-	private static RandomNode pickEvenNodes(RandomNode head) {
+	private RandomNode pickEvenNodes(RandomNode head) {
 		RandomNode odd = head;
 		RandomNode even = head.next;
 		RandomNode evenHead = even;
@@ -49,6 +50,32 @@ public class DeepCopyRandomLinkedListO1Space {
 	}
 
 	public static void main(String[] args) {
+		//testCase1();
+		testCase2();
+	}
+
+	private static void testCase2() {
+		RandomNode node1 = new RandomNode(7);
+		RandomNode node2 = new RandomNode(13);
+		RandomNode node3 = new RandomNode(11);
+		RandomNode node4 = new RandomNode(10);
+		RandomNode node5 = new RandomNode(1);
+		node1.next = node2;
+		node1.random = null;
+		node2.next = node3;
+		node2.random = node1;
+		node3.next = node4;
+		node3.random = node5;
+		node4.next = node5;
+		node4.random = node3;
+		node5.next = null;
+		node5.random = node1;
+		RandomNode head = node1;
+		System.out.println( " Original List " + head);
+		System.out.println( " DeepCopy List " + new DeepCopyRandomLinkedListO1Space().deepCopy(head));
+	}
+
+	private static void testCase1() {
 		RandomNode node1 = new RandomNode(1);
 		RandomNode node2 = new RandomNode(2);
 		RandomNode node3 = new RandomNode(3);
@@ -63,6 +90,6 @@ public class DeepCopyRandomLinkedListO1Space {
 		
 		RandomNode head = node1;
 		System.out.println( " Original List " + head);
-		System.out.println( " DeepCopy List " + deepCopy(head));
+		System.out.println( " DeepCopy List " + new DeepCopyRandomLinkedListO1Space().deepCopy(head));
 	}
 }
