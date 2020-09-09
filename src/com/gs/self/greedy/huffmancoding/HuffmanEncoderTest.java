@@ -3,7 +3,7 @@ package com.gs.self.greedy.huffmancoding;
 
 public class HuffmanEncoderTest {
 
-  public static void main(String}] args) {
+  public static void main(String[] args) {
     String data = "GENELIAANDRYAN";
     System.err.println("onput - " +data);
     EncodedResult encodedResult = HuffmanEncoder.compress(data);

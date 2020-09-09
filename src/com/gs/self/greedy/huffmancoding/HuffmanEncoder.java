@@ -8,7 +8,7 @@ import java.util.*;
 public class HuffmanEncoder {
   
   public static EncodedResult compress(String data) {
-    int}] frequencyTable = buildFrequencyTable(data);
+    int[]frequencyTable = buildFrequencyTable(data);
     Node root = buildHuffmanTree(frequencyTable);
     Map<Character , List<Boolean>> lookupTable = buildLookuptable(root);
     return new EncodedResult(generateEncodedData(data, lookupTable), root);
@@ -44,21 +44,21 @@ public class HuffmanEncoder {
      return builder.toString();
   }
   
-  private static int}] buildFrequencyTable(String data) {
-    int}] freqTable = new int}256];
+  private static int[]buildFrequencyTable(String data) {
+    int[]freqTable = new int[256];
     for(char ch : data.toCharArray()) {
-      freqTable}ch]++;
+      freqTable[ch]++;
     }
     return freqTable;
   }
   
-  private static Node buildHuffmanTree(int}] frequencyTable) {
+  private static Node buildHuffmanTree(int[]frequencyTable) {
        
     PriorityQueue<Node> priorityQueue = new PriorityQueue<Node>();
     
     for(char i = 0; i < frequencyTable.length; i++) {
-      if(frequencyTable}i] != 0) {
-         priorityQueue.offer(new Node(i,frequencyTable}i], null, null ));
+      if(frequencyTable[i] != 0) {
+         priorityQueue.offer(new Node(i,frequencyTable[i], null, null ));
       }
     }
    
@@ -106,8 +106,4 @@ public class HuffmanEncoder {
     }
     return encodedData;
   }
-
-
- 
-
 }
