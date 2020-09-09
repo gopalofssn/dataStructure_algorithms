@@ -7,32 +7,45 @@ public class GraphClone {
 	public Node cloneGraph(Node node) {
         if(node == null) return null;
         Map<Integer, Node> nodeByVal = new HashMap<Integer, Node>();
-        Set<Integer> visited = new HashSet<Integer>();
+        Set<Integer> exploredOrAddedToExplore = new HashSet<Integer>();
         Queue<Node> queue = new LinkedList<Node>();
         queue.offer(node);
-        int val = node.val;
-        Node deepCopy = new Node(val);
-        nodeByVal.put(val, deepCopy);
+        exploredOrAddedToExplore.add(node.val);
+        Node deepCopy = createNodeAndAddToMap(node, nodeByVal);
+        
         while(!queue.isEmpty()){
+        	 System.out.println("queue " + queue);
             int sz = queue.size();
             for(int i = 0; i < sz; i++){
                 Node current = queue.poll();
                 Node currentDeepCopy = nodeByVal.get(current.val);
                 for(Node neighbor : current.neighbors){
-                    Node neighborDeepCopy;
                     if(!nodeByVal.containsKey(neighbor.val)){
-                        neighborDeepCopy = new Node(neighbor.val);
-                        nodeByVal.put(neighbor.val, neighborDeepCopy);
+                        Node tmp = new Node(neighbor.val);
+                        nodeByVal.put(neighbor.val, tmp);
                     }
-                    neighborDeepCopy = nodeByVal.get(neighbor.val);
+                    Node neighborDeepCopy = nodeByVal.get(neighbor.val);
                     currentDeepCopy.neighbors.add(neighborDeepCopy); 
-                    if(!visited.contains(neighbor.val)) queue.offer(neighbor);
+                    if(!exploredOrAddedToExplore.contains(neighbor.val) ){
+                    	queue.offer(neighbor);
+                    	exploredOrAddedToExplore.add(neighbor.val); 
+                    }
+                   
                 }
-                visited.add(current.val);
+               
             }
         }
+        
+        System.err.println(nodeByVal);
         return deepCopy;
     }
+
+	private Node createNodeAndAddToMap(Node node, Map<Integer, Node> nodeByVal) {
+		int val = node.val;
+        Node deepCopy = new Node(val);
+        nodeByVal.put(val, deepCopy);
+		return deepCopy;
+	}
 	
 	public static void main(String[] args) {
 		Node node1 = new Node(1);

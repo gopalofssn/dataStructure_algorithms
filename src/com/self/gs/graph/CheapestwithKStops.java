@@ -16,7 +16,7 @@ public class CheapestwithKStops {
 
 		@Override
 		public String toString() {
-			return "Edge }  destination=" + vertex + ", weight=" + weight + "]";
+			return "Edge [  destination=" + vertex + ", weight=" + weight + "]";
 		}
 
 	}
@@ -77,10 +77,6 @@ public class CheapestwithKStops {
 		 
 		}
 		
-		for(Map.Entry<Integer, Integer> entry : costMap.entrySet()){
-            if(entry.getValue())
-        }
-		
 
 		return  costMap.getOrDefault(dst, -1);
 
@@ -90,8 +86,8 @@ public class CheapestwithKStops {
 		Map<Integer, Set<Edge>> graph = new HashMap<Integer, Set<Edge>>();
 
 		for (int[] flight : flights) {
-			graph.computeIfAbsent(flight}0], k -> new HashSet<Edge>())
-                 .add(new Edge(flight}1], flight}2]));
+			graph.computeIfAbsent(flight[0], k -> new HashSet<Edge>())
+                 .add(new Edge(flight[1], flight[2]));
 		}
 		return graph;
 	}
@@ -101,9 +97,9 @@ public class CheapestwithKStops {
 	 * 
 	 */
 	public static void main(String[] args) {
-		int[][] data = {{0,1,2},{1,2,1},{2,0,10}};
+		int[][] data = {{0,1,100},{0,2,500},{1,2,100}};
 
-		System.err.println(findCheapestPrice(3, data, 1, 2, 1));
+		System.err.println(findCheapestPrice(3, data, 0, 2, 1));
 	}
 
 }
