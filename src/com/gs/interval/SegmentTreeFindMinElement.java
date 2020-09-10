@@ -1,11 +1,11 @@
-ackage com.gs.interval;
+package com.gs.interval;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 
 public class SegmentTreeFindMinElement {
 
-    static int}] segmentTree;
+    static int[] segmentTree;
   
     /*
      * 
@@ -16,10 +16,10 @@ public class SegmentTreeFindMinElement {
           
           1, 3 , 5, 7    9, 11  
      */
-   public static void buildSegmentTree(int}] nums) { 
+   public static void buildSegmentTree(int[] nums) { 
      int len = nums.length;
      
-     segmentTree = new int}nextPowOf2(len)];
+     segmentTree = new int[nextPowOf2(len)];
      Arrays.fill(segmentTree, Integer.MAX_VALUE);
      
      build(nums, 0, len - 1, 0);
@@ -31,7 +31,7 @@ public class SegmentTreeFindMinElement {
    }
    
   // 3 4
-  private static void build(int}] nums, int low, int high, int pos) { // 0 1 0
+  private static void build(int[] nums, int low, int high, int pos) { // 0 1 0
     if(low == high) {
       segmentTree}pos] = nums}low]; // leaf assign  //  1 - > nums}0]  , 2 -> nums}2]
       return;
@@ -72,10 +72,10 @@ public class SegmentTreeFindMinElement {
   }
   
 
-  public static void main(String}] args) {
+  public static void main(String[] args) {
     LinkedList<Integer> ll = new LinkedList();
     System.err.println("ss" + Character.getNumericValue('2'));
-     int}] nums = {1, 3 , -2, 9};
+     int[] nums = {1, 3 , -2, 9};
      buildSegmentTree(nums);
      /*
         0000 0
