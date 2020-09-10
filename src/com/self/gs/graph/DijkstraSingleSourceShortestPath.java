@@ -21,17 +21,22 @@ public class DijkstraSingleSourceShortestPath {
 		
 		@Override
 		public String toString() {
-			return "Edge }destination=" + vertex + ", weight=" + weight + "]";
+			return "Edge [destination=" + vertex + ", weight=" + weight + "]";
 		}
 		
+	}
+	
+	private static class ViaPoint{
+		List<Integer> list = new ArrayList<Integer>();
+		int distance = 0 ;
 	}
 	
 	private static Map<Integer, Set<Edge>> buildGraph(int[][] nums) {
 		Map<Integer, Set<Edge>>  graph = new  HashMap<Integer,  Set<Edge>>();
 		
 		for(int[] num : nums) {
-			graph.computeIfAbsent(num}0], k -> new TreeSet<Edge>())
-			     .add(new Edge(num}1], num}2]));
+			graph.computeIfAbsent(num[0], k -> new TreeSet<Edge>())
+			     .add(new Edge(num[1], num[2]));
 		}
 
 		return graph;
@@ -60,12 +65,12 @@ public class DijkstraSingleSourceShortestPath {
 	 * @param src
 	 * @return
 	 */
-	private static Map<Integer, Integer> findShortestPath(int[][] data , int src) {
+	private static Map<Integer, ViaPoint> findShortestPath(int[][] data , int src) {
 		
 		Map<Integer,  Set<Edge>> graph = buildGraph(data);
 	
 
-		Map<Integer, Integer> result = new HashMap<Integer, Integer>();
+		Map<Integer, ViaPoint> result = new HashMap<Integer, ViaPoint>();
 		
 		PriorityQueue<Vertex> pq = new PriorityQueue<Vertex>();
 		pq.offer(new Vertex(src, 0));
@@ -79,10 +84,13 @@ public class DijkstraSingleSourceShortestPath {
 				int cost = current.cost + edge.weight;
 				
 				if(result.containsKey(edge.vertex)) {
-				   cost = Math.min(cost, result.get(edge.vertex));
+				   cost = Math.min(cost, result.get(edge.vertex).distance);
 				}
-				
-				result.put(edge.vertex, cost);
+				result.computeIfAbsent(edge.vertex, k -> new ViaPoint())
+				      .list.add(current.label);
+				ViaPoint viaPpint = result.get(edge.vertex);
+				viaPpint.list.add(edge.vertex);
+				viaPpint.distance = cost;
 				
 				if(!visited.contains(edge.vertex)) {
 					pq.offer(new Vertex(edge.vertex, cost));
@@ -114,11 +122,36 @@ public class DijkstraSingleSourceShortestPath {
 				{ 12, 6, 24 }, { 9, 15, 94 }, { 5, 7, 77 }, { 4, 10, 18 }, { 7, 2, 11 }, { 9, 5, 41 }, { 9, 20, 4100 } };
 		
 		
-		Map<Integer, Integer> shortest = findShortestPath(data, 1);
-		System.err.println("Shortest from node 1 - " + shortest);
+		Map<Integer, ViaPoint> shortest = findShortestPath(data, 1);
+		System.err.println("Shortest from node 1");
+		for(Map.Entry<Integer, ViaPoint> entry : shortest.entrySet()) {
+			System.err.println(entry.getKey() + " -> " + entry.getValue().distance);
+			System.err.println("via point " + entry.getValue().list);
+		}
 	}
 
+/*
+ Shortest from node 1
+0 -> 30
+1 -> 36
+2 -> 18
+3 -> 45
+4 -> 28
+5 -> 67
+6 -> 53
+7 -> 7
+8 -> 38
+9 -> 52
+10 -> 46
+11 -> 30
+12 -> 48
+13 -> 24
+14 -> 87
+15 -> 31
+16 -> 35
+20 -> 4152
 
+ */
 	
 
 }
