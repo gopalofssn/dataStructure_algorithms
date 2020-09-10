@@ -24,13 +24,13 @@ public class Node {
     
     public String toString() {
     	StringBuilder sb = new StringBuilder();
-    	sb.append(val);
-    	 /* .append(" -> [");
-    	for(Node neighbor : neighbors) {
+    	sb.append(this.val)
+    	  .append(" -> [");
+    	for(Node neighbor : this.neighbors) {
     		sb.append(neighbor.val)
     		  .append(", ");
     	}
-    	sb.append("]");*/
+    	sb.append("]");
     	return sb.toString();
     }
 }

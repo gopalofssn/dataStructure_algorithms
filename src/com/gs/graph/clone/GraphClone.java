@@ -6,46 +6,29 @@ public class GraphClone {
 
 	public Node cloneGraph(Node node) {
         if(node == null) return null;
-        Map<Integer, Node> nodeByVal = new HashMap<Integer, Node>();
-        Set<Integer> exploredOrAddedToExplore = new HashSet<Integer>();
+        Map<Integer, Node> map = new HashMap<Integer, Node>();
         Queue<Node> queue = new LinkedList<Node>();
         queue.offer(node);
-        exploredOrAddedToExplore.add(node.val);
-        Node deepCopy = createNodeAndAddToMap(node, nodeByVal);
+        map.put(node.val, new Node(node.val));
         
         while(!queue.isEmpty()){
-        	 System.out.println("queue " + queue);
             int sz = queue.size();
             for(int i = 0; i < sz; i++){
                 Node current = queue.poll();
-                Node currentDeepCopy = nodeByVal.get(current.val);
                 for(Node neighbor : current.neighbors){
-                    if(!nodeByVal.containsKey(neighbor.val)){
-                        Node tmp = new Node(neighbor.val);
-                        nodeByVal.put(neighbor.val, tmp);
-                    }
-                    Node neighborDeepCopy = nodeByVal.get(neighbor.val);
-                    currentDeepCopy.neighbors.add(neighborDeepCopy); 
-                    if(!exploredOrAddedToExplore.contains(neighbor.val) ){
-                    	queue.offer(neighbor);
-                    	exploredOrAddedToExplore.add(neighbor.val); 
-                    }
-                   
+                  if(!map.containsKey(neighbor.val)) {
+                	 map.put(neighbor.val, new Node(neighbor.val));
+                	 queue.offer(neighbor);
+                  }
+                  map.get(current.val).neighbors.add(map.get(neighbor.val));
                 }
                
             }
         }
         
-        System.err.println(nodeByVal);
-        return deepCopy;
+        return map.get(node.val);
     }
 
-	private Node createNodeAndAddToMap(Node node, Map<Integer, Node> nodeByVal) {
-		int val = node.val;
-        Node deepCopy = new Node(val);
-        nodeByVal.put(val, deepCopy);
-		return deepCopy;
-	}
 	
 	public static void main(String[] args) {
 		Node node1 = new Node(1);
@@ -61,22 +44,32 @@ public class GraphClone {
 		node4.neighbors.add(node1);
 		node4.neighbors.add(node3);
 		Node clone = new GraphClone().cloneGraph(node1);
-		
+	    print("ORIGINAL " , node1);
+		print("CLONE " , clone);
+	}
+
+
+	private static void print(String label, Node node) {
+		System.out.println("*****" + label + "****");
 		Queue<Node> queue = new LinkedList<Node>();
 		Set<Integer> visited = new HashSet<Integer>();
-		queue.offer(clone);
+		queue.offer(node);
+		visited.add(node.val);
 		while(!queue.isEmpty()) {
 			int sz = queue.size();
 			for(int i = 0 ; i < sz; i++) {
 				Node current = queue.poll();
+				System.out.println(current);
 				for(Node neighbor : current.neighbors) {
-		    		if(!visited.contains(neighbor.val)) queue.add(neighbor);
-		    	}
-				System.out.println("visited " + current);
-				visited.add(current.val);
+		    		if(!visited.contains(neighbor.val)) {
+		    			queue.add(neighbor);
+		    			visited.add(neighbor.val);
+		    		}
+		    	}				
 			}
 			
 		}
+		System.out.println("************");
 	}
 
 }
