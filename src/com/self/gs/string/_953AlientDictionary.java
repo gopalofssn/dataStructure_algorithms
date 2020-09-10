@@ -12,7 +12,7 @@ public class _953AlientDictionary {
 			 }
 			  
 			 for(int i = 0; i < words.length - 1; i++) {
-				 if(isBigger(words}i] ,words}i+1] ,orderMap)) {
+				 if(isBigger(words[i] ,words[i+1] ,orderMap)) {
 					 return false;
 				 }
 			 }
@@ -47,11 +47,11 @@ public class _953AlientDictionary {
 		String[] words2 = {"app","apple"};
 		System.err.println(isAlienSorted(words2, order));
 		
-		int m = words2}0].length();
-		int n = words2}1].length();
+		int m = words2[0].length();
+		int n = words2[1].length();
 		for(int i = 0; i < m && i < n; i++) {
-			System.err.println(words2}0].charAt(i) + "," + words2}1].charAt(i) );
-			if(words2}0].charAt(i) != words2}1].charAt(i)) {
+			System.err.println(words2[0].charAt(i) + "," + words2[1].charAt(i) );
+			if(words2[0].charAt(i) != words2[1].charAt(i)) {
 				
 			}
 		}
