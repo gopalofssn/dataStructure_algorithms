@@ -44,7 +44,7 @@ public class _953AlientDictionary {
 		String order = "hlabcdefgijkmnopqrstuvwxyz";
 		System.err.println(isAlienSorted(words, order));
 		
-		String[] words2 = {"app","apple"};
+		String[] words2 = {"apple", "app",};
 		System.err.println(isAlienSorted(words2, order));
 		
 		int m = words2[0].length();

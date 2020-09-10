@@ -1,4 +1,4 @@
-package com.gs.self.ngreedy;
+package com.gs.interval;
 
 import java.util.*;
 
