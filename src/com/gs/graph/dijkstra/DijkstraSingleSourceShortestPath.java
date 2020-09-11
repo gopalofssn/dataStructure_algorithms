@@ -1,4 +1,4 @@
-package com.self.gs.graph;
+package com.gs.graph.dijkstra;
 
 import java.util.*; 
 
