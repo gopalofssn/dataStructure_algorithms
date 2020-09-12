@@ -30,7 +30,7 @@ public class CheapestwithKStops {
             Edge current = minHeap.poll();
             System.out.println("current.city " + current.city + " and total stop" + current.stop);
             visited.add(current.city);
-            if(current.stop >= K) continue;
+            if(current.stop > K) continue;
             int stop = current.stop + 1;
             for( Edge edge : graph.getOrDefault(current.city, Collections.emptyList()) ) {
                 int city = edge.city;
@@ -68,8 +68,16 @@ public class CheapestwithKStops {
 						};
 
 		//System.out.println(new CheapestwithKStops().findCheapestPrice(4, data1, 0, 3, 1));
-		
-		System.out.println(new CheapestwithKStops().findCheapestPrice(5, new int[][]{{0,1,5},{1,2,5},{0,3,2},{3,1,2},{1,4,1},{4,2,1}}, 0, 2, 2));
+		int[][] data2 = {
+				          {0,1,5},
+				          {1,2,5},
+				          {0,3,2},
+				          {3,1,2},
+				          {1,4,1},
+				          {4,2,1}
+				        };
+		System.out.println(new CheapestwithKStops().findCheapestPrice(5, data2, 0, 2, 2)); // 7
+		dd
 	}
 
 }
