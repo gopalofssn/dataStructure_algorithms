@@ -1,9 +1,6 @@
 package dynamic.programming;
 
 import java.util.Arrays;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 public class UglyNumbers {
 
@@ -50,17 +47,11 @@ public class UglyNumbers {
     return num;
   }
 
-  public static void main(String}] args) {
-    
-    //System.err.println(Math.sqrt(19));
-    
-    for(int i = 3; i <= Math.ceil(Math.sqrt(14)); i+=2) {
-      System.err.println(i);
-    }
-    
-  
-    
-  }
+ public static void main(String[] args) {
+	  for(int i = 3; i <= Math.ceil(Math.sqrt(14)); i+=2) {
+	      System.err.println(i);
+	    }
+}
 
   private static void increase(Integer i) {
     i++;
@@ -86,29 +77,29 @@ public class UglyNumbers {
     int index3 = 0;
     int index5 = 0;
 
-    int}] dp = new int}n];
-    dp}0] = 1;
+    int[] dp = new int[n];
+    dp[0] = 1;
  
 
     for (int i = 1; i < n; i++) {
 
-      int min = Math.min(dp}index2] * 2, Math.min(dp}index3] * 3, dp}index5] * 5));
-      dp}i] = min;
+      int min = Math.min(dp[index2] * 2, Math.min(dp[index3] * 3, dp[index5] * 5));
+      dp[i] = min;
 System.err.println(Arrays.toString(dp));
-      if (min == dp}index2] * 2) {
+      if (min == dp[index2] * 2) {
         index2++;
       }
 
-      if (min == dp}index3] * 3) {
+      if (min == dp[index3] * 3) {
         index3++;
       }
 
-      if (min == dp}index5] * 5) {
+      if (min == dp[index5] * 5) {
         index5++;
       }
     }
 
-    return dp}n - 1];
+    return dp[n - 1];
   }
 
 }
