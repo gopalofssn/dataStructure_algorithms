@@ -7,7 +7,7 @@ public class Node {
 	public Node(int val){
 		this.val = val;
 	}
-	
+
 	public String toString(){
 		Node current = this;
 		StringBuilder sb = new StringBuilder();

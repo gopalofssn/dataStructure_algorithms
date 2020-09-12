@@ -1,112 +1,79 @@
 package com.gs.linkedlist;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class OrderStreamingLinkedList {
+	
+	private Node head;
+	private Map<Integer, Node> holder;
+	public OrderStreamingLinkedList(){
+		head = new Node(-1);
+		holder = new TreeMap<Integer, Node>();
+		holder.put(-1 , head);
+	}
+	
+	private void insert(int num) {
+		Node node = new Node(num);
+		if(holder.size() == 1){
+			head.next = node;
+			holder.put(num, node);
+			return;
+		}
+		Set<Integer> keys = holder.keySet();
+		int postion = choosePosition(keys, num);
+		System.out.println("position " + postion);
+		Node current = holder.get(postion);
+		System.out.println(current);
+		Node next = (current.next != null) ? current.next : null;
+		current.next = node;
+		node.next = next;
+		holder.put(num, node);
+		
+	}
+	
+	private Integer choosePosition(Set<Integer> keys, int target) {
+		Integer[] nums = new Integer[keys.size()];
+		keys.toArray(nums);
+		return binarySearch(nums, target);
+	}
 
-  private class Node{
-    int val;
-    Node next;
-    Node(int val){
-      this.val = val;
-    }
-    @Override
-    public String toString() {
-      return val + " -> " + next;
-    }
-    
-  }
-  
-  private Node head;
-  
-  private List<Node> expressLane = new ArrayList<Node>();
-  
-  private void insert(int i) {
-      Node node = new Node(i);
-      if( head == null ) {
-        head = node;
-        return;
-      }
-      
-      Node current = findStartNode(i);
-      System.err.println(" placing " + node.val );
-      Node prev = null;
-      
-      while(current != null) {
-        
-        if(current.val > node.val) {
-          break;
-        }
-        prev = current;
-        current = current.next;
-      }
-      
-      if(prev == null) {
-        node.next = head;
-        head = node;
-      }else {
-        node.next = current;
-        prev.next = node;
-      }
-      
-      
-      if(i % 5 == 0) {
-        expressLane.add(node);
-      }
-      
-  }
-  
-  
-  private Node findStartNode(int i) {
-     
-    int left = 0, right = expressLane.size() - 1;
-    
-    while(left < right) {
-      int mid = (left + right ) / 2;
-      if(expressLane.get(mid).val > i && expressLane.get(mid -1).val < i) {
-        System.err.println("strt pt " + expressLane.get(mid).val);
-        return expressLane.get(mid);
-      }else if(expressLane.get(mid).val > i ) {
-        right = mid - 1;
-      }else {
-        left = mid + 1;
-      }
-    }
-    
-    
-    return head;
-  }
+	private Integer binarySearch(Integer[] nums, int target) {
+		System.out.println("target " + target);
+		if(nums == null) return null;
+		int left = 0;
+		int right = nums.length - 1;
+		while(left <= right){
+			int mid = right - ((right - left) / 2);
+			if(mid > 0 && nums[mid - 1] < target && nums[mid] > target
+					|| mid == 0 && nums[mid] > target){
+				System.out.println("returning pos " + mid);
+				return nums[mid];
+			}else if(nums[mid] < target ){
+				left = mid + 1;
+			}else{
+				right = mid - 1;
+			}
+		}
+		return nums[right];
+	}
 
-ss
-  public static void main(String[] args) {
-    
-    OrderStreamingLinkedList oll = new OrderStreamingLinkedList();
-    
-    for(int i = 1 ; i <= 100 ; i++) {
-      if(i % 5 == 0)
-        oll.insert(i);
-    }
-    oll.print();
-    
-    for(int i = 1 ; i <= 100 ; i++) {
-      if(i % 5 != 0)
-        oll.insert(i);
-    }
-    
-    oll.print();
-    
-     
-  }
-
-
-  private void print() {
-    System.err.println(head);
-    for(Node express : expressLane)
-      System.err.println(express);
-  }
+	private void print() {
+		Node current = head.next;
+		System.out.println(head);
+	}
+	
+	public static void main(String[] args) {
+		int[] numberStream = {7, 8, 4, 1, 2, 3};
+		OrderStreamingLinkedList o = new OrderStreamingLinkedList();
+		for(int num : numberStream){
+			o.insert(num);
+			o.print();
+		}
+	}
 
 
 
-  
 
 }
