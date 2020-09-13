@@ -5,28 +5,28 @@ import java.util.*;
 public class GraphClone {
 
 	public Node cloneGraph(Node node) {
-        if(node == null) return null;
-        Map<Integer, Node> map = new HashMap<Integer, Node>();
-        Queue<Node> queue = new LinkedList<Node>();
-        queue.offer(node);
-        map.put(node.val, new Node(node.val));
-        
-        while(!queue.isEmpty()){
-            int sz = queue.size();
-            for(int i = 0; i < sz; i++){
-                Node current = queue.poll();
-                for(Node neighbor : current.neighbors){
-                  if(!map.containsKey(neighbor.val)) {
-                	 map.put(neighbor.val, new Node(neighbor.val));
-                	 queue.offer(neighbor);
-                  }
-                  map.get(current.val).neighbors.add(map.get(neighbor.val));
-                }
-               
-            }
-        }
-        
-        return map.get(node.val);
+		 if(node == null) return null;
+	        Map<Integer, Node> map = new HashMap<Integer, Node>();
+	        Queue<Node> queue = new LinkedList<Node>();
+	        Node deepCopyNode = new Node(node.val);
+	        map.put(node.val, deepCopyNode);
+	        queue.offer(node);
+	        while(!queue.isEmpty()){
+	            int sz = queue.size();
+	            for(int i = 0; i < sz; i++){
+	                Node current = queue.poll();
+	                Node deepCopyOfCurrent = map.get(current.val);
+	                List<Node> neighbors = (current.neighbors != null) ? current.neighbors : Collections.emptyList();
+	                for(Node neighbor : neighbors){
+	                     if(!map.containsKey(neighbor.val)){
+	                         map.put(neighbor.val, new Node(neighbor.val));
+	                         queue.offer(neighbor);
+	                     }
+	                     deepCopyOfCurrent.neighbors.add(map.get(neighbor.val));
+	                }
+	            }
+	        }
+	        return deepCopyNode;
     }
 
 	
@@ -39,6 +39,7 @@ public class GraphClone {
 		node1.neighbors.add(node4);
 		node2.neighbors.add(node1);
 		node2.neighbors.add(node3);
+		node2.neighbors.add(node4);
 		node3.neighbors.add(node2);
 		node3.neighbors.add(node4);
 		node4.neighbors.add(node1);
