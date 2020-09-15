@@ -2,80 +2,51 @@ package com.self.gs.utils.custom.iterators;
 
 import java.util.*;
 
-public class PeekingIterator<E> implements Iterator<E>{
-	Iterator<E> delegate;
-	E nextVal;
-	
-	public  PeekingIterator(Iterator<E> itr) {
-		this.delegate = itr;
-		nextVal = itr.next();
+public class PeekingIterator implements Iterator<String>{
+	 
+	private Iterator<String> iterator;
+	private String peek;
+	public PeekingIterator(List<String> list) {
+		if(list == null || list.isEmpty()) throw new IllegalArgumentException();
+		this.iterator = list.iterator();
+		this.peek = iterator.next();
 	}
-	
-	public E peek() {
-		
-		if(nextVal == null) {
-			throw new NoSuchElementException();
-		}
-		
-		return nextVal;
+
+	private String peek() {
+		if(peek == null) throw new NoSuchElementException();
+		return peek;
 	}
 	
 	@Override
-	public boolean hasNext() {	
-		return nextVal != null;
+	public boolean hasNext() {
+		return peek != null;
 	}
 
 	@Override
-	public E next() {
-		
-		if(nextVal == null) {
-			throw new NoSuchElementException();
-		}
-		
-		E tmp =  nextVal;
-		
-		if(delegate.hasNext()) {
-		  nextVal = delegate.next();
-		}else {
-		  nextVal = null;
-		}
-		
-		return tmp;
+	public String next() {
+		String next = peek;
+		if(next == null) throw new NoSuchElementException();
+		peek = iterator.hasNext() ? iterator.next() : null;
+		return next;
 	}
-
 	
-	public static void main(String}] args) {
+	
+	public static void main(String[] args) {
 		List<String> lst = new ArrayList<String>(Arrays.asList("1","2","3"));
 		
-		PeekingIterator<String> iterator = new PeekingIterator<String>(lst.iterator());
+		PeekingIterator iterator = new PeekingIterator(lst);
 		
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
+		System.err.println(iterator.hasNext()); // t
+		System.err.println(iterator.peek()); // 1
+		System.err.println(iterator.next()); // 1
+		System.err.println(iterator.peek()); // 2
+		System.err.println(iterator.next()); // 2
 		
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		
-		
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		//System.err.println(iterator.peekNext());
-		//System.err.println(iterator.next());
-		
-		System.err.println(iterator.hasNext());
-
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-
+		System.err.println(iterator.hasNext()); // t
+		System.err.println(iterator.peek()); // 3
+		System.err.println(iterator.hasNext()); // t
+		System.err.println(iterator.next()); // 3
+		//System.err.println(iterator.peek()); // error
+		//System.err.println(iterator.next()); // error
 	}
-	
 }

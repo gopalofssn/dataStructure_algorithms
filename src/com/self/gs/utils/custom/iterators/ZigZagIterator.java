@@ -40,7 +40,7 @@ public class ZigZagIterator<E> implements Iterator<E> {
 		return queue.poll();
 	}
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		List<String> lst1 = new ArrayList<String>(Arrays.asList("1","2","3"));
 		List<String> lst2 = new ArrayList<String>(Arrays.asList("11","22"));
 		ZigZagIterator<String> iterator = new ZigZagIterator<String>(lst1, lst2);

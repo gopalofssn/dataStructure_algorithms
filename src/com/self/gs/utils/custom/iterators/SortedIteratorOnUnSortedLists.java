@@ -38,11 +38,11 @@ public class SortedIteratorOnUnSortedLists<T> {
 
 	public static void main(String... args) {
  
-		List<Integer>}] array = new ArrayList}3];
+		List<Integer>[] array = new ArrayList[3];
 		 
-		array}0] = new ArrayList<Integer>(Arrays.asList(5, 1, 2, 4));
-		array}1]  = new ArrayList<Integer>(Arrays.asList(4, 6, 3));
-		array}2] = new ArrayList<Integer>(Arrays.asList(9, 0, 7));
+		array[0] = new ArrayList<Integer>(Arrays.asList(5, 1, 2, 4));
+		array[1]  = new ArrayList<Integer>(Arrays.asList(4, 6, 3));
+		array[2] = new ArrayList<Integer>(Arrays.asList(9, 0, 7));
 		
 		SortedIteratorOnUnSortedLists<Integer> itr = new SortedIteratorOnUnSortedLists(array);
 
