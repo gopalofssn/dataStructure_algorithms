@@ -1,7 +1,34 @@
 package sequence;
 
 import java.util.ArrayList;
-
+/*
+ a's postions - > [6, 13]
+b's postions - > [8]
+c's postions - > [7]
+d's postions - > [9]
+e's postions - > [10]
+f's postions - > [11]
+g's postions - > [1, 3, 4]
+h's postions - > [0, 2, 5]
+i's postions - > []
+j's postions - > []
+k's postions - > []
+l's postions - > []
+m's postions - > []
+n's postions - > []
+o's postions - > []
+p's postions - > []
+q's postions - > []
+r's postions - > []
+s's postions - > []
+t's postions - > []
+u's postions - > [12]
+v's postions - > []
+w's postions - > []
+x's postions - > []
+y's postions - > []
+z's postions - > [14]
+ */
 public class TPatternS1S2S3ToSnIncoming {
 	
 	private ArrayList<Integer>[] charIndexHolder;
