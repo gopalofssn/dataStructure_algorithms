@@ -2,88 +2,40 @@ package com.self.gs.utils.custom.iterators;
 
 import java.util.*;
 
-public class ZigZagIterator<E> implements Iterator<E> {
+public class ZigZagIterator<T> implements Iterator<T> {
 
-	Queue<E> queue = new LinkedList<E>();
-
-	public ZigZagIterator(List<E> v1, List<E> v2) {
-
-		int i = 0;
-
-		for (i = 0; i < Math.min(v1.size(), v2.size()); i++) {
-			queue.add(v1.get(i));
-			queue.add(v2.get(i));
-		}
-
-		if (v1.size() == v2.size()) {
-			return;
-		} else if (v1.size() > i) {
-			queue.addAll(v1.subList(i, v1.size()));
-			return;
-		} else {
-			queue.addAll(v2.subList(i, v2.size()));
-		}
-
-	}
-
-	public E peek() {
-		return queue.peek();
+	Iterator<T> iterator1;
+	Iterator<T> iterator2;
+	boolean flag;
+	public ZigZagIterator(List<T> v1, List<T> v2) {
+		iterator1 = v1.iterator();
+		iterator2 = v2.iterator();
+		flag = true;
 	}
 
 	@Override
 	public boolean hasNext() {
-		return !queue.isEmpty();
+		return iterator1.hasNext() || iterator2.hasNext();
 	}
 
 	@Override
-	public E next() {
-		return queue.poll();
+	public T next() {
+		if(flag){
+			flag = !flag;
+			return iterator1.hasNext()? iterator1.next() : iterator2.next();
+		}else{
+			flag = !flag;
+			return iterator2.hasNext() ? iterator2.next() : iterator1.next();
+		}
 	}
-
+	
 	public static void main(String[] args) {
-		List<String> lst1 = new ArrayList<String>(Arrays.asList("1","2","3"));
-		List<String> lst2 = new ArrayList<String>(Arrays.asList("11","22"));
+		List<String> lst1 = new ArrayList<String>(Arrays.asList("1", "2", "3", "4", "5"));
+		List<String> lst2 = new ArrayList<String>(Arrays.asList("11", "22"));
 		ZigZagIterator<String> iterator = new ZigZagIterator<String>(lst1, lst2);
-		
-
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		
-		System.err.println(iterator.hasNext());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		System.err.println(iterator.peek());
-		System.err.println(iterator.next());
-		
-		
-		
+		while(iterator.hasNext()){
+			System.out.println(iterator.next()); // 1 11 2 22 3 4 5
+		}
 	}
-
+	
 }
