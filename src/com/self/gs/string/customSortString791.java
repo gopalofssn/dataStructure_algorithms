@@ -28,16 +28,10 @@ public class customSortString791 {
 	     
 	         a b c d e f g h i j k l m n o p q r s t u v w x y z
 	times    1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
-	 
-	 
-	 
 	 */
 	private static String sort(char[] pattern, char[] input) {
-		
-		
 		Map<Character ,Integer> patternMap = new LinkedHashMap<Character , Integer>();
-		int idx = 0;
-		
+		int idx = 0;	
 		for(char p : pattern) {
 			patternMap.put(p, idx++);
 		}

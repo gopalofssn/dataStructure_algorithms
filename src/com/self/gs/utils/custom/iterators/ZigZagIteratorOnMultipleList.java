@@ -35,30 +35,29 @@ public class ZigZagIteratorOnMultipleList<T> implements Iterator<T> {
 	@Override
 	public T next() {
 		if(!hasNext()) throw new NoSuchElementException();
-		checkBoundary();
+		helper();
 		T val = lists.get(currentRow).get(currentCol);
 		currentRow++;
 		currentVisitedCount++;
 		return val;
 	}
 
-	private void checkBoundary() {
-		boundaryHelper();
-		while( lists.get(currentRow) == null 
-				|| lists.get(currentRow).size() == 0 
-				|| lists.get(currentRow).size() <= currentCol){
-			currentRow++;
-			boundaryHelper();
-		}
-	}
-
-	private void boundaryHelper() {
+	private void helper() {
 		if(currentRow >= lists.size()){
 			currentRow = currentRow % lists.size();
 			currentCol++;
 		}
+		while( lists.get(currentRow) == null 
+				|| lists.get(currentRow).size() == 0 
+				|| lists.get(currentRow).size() <= currentCol){
+			currentRow++;
+			if(currentRow >= lists.size()){
+				currentRow = currentRow % lists.size();
+				currentCol++;
+			}
+		}
 	}
-	
+
 	public static void main(String[] args) {
 		List<List<String>> lists = new ArrayList<List<String>>();
 		List<String> lst1 = new ArrayList<String>(Arrays.asList("1", "11", "111", "1111", "11111"));

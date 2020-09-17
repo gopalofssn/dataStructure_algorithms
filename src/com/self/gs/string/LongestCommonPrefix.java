@@ -2,7 +2,20 @@ package com.self.gs.string;
 
 public class LongestCommonPrefix {
 	
-	public static String longestCommonPrefix(String[] strArray) {
+	
+
+	public static void main(String[] args) {
+		String[] strs = new String[] {"flower","flow","flight"};
+		System.err.println(longestCommonPrefix(strs));
+	}
+
+}
+
+
+
+
+/*
+public static String longestCommonPrefix(String[] strArray) {
        StringBuilder sb = new StringBuilder();
        int index = 0;
        for(char c : strArray[0].toCharArray()){
@@ -16,10 +29,4 @@ public class LongestCommonPrefix {
        }
        return sb.toString();
     }
-
-	public static void main(String[] args) {
-		String[] strs = new String[] {"flower","flow","flight"};
-		System.err.println(longestCommonPrefix(strs));
-	}
-
-}
+*/

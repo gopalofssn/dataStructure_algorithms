@@ -30,27 +30,35 @@ s}i] = 'L' or 'R'
 import java.util.Stack;
 
 public class BalancedString1221 {
-  public static void main(String[] args) {
-	  String s = "RLLLLRRRLRL";
-	  System.err.println(balancedString(s) );
-}
+	/*
+	 RLLLLRRRLRL
+	 RL LLLRRR LR L
+	   - totaly 3
+	 */
+	private static int balancedStringCount(String s) {
+		if(s == null || s.isEmpty()){
+			return 0;
+		}
+		Stack<Character> stack = new Stack<Character>();
+		int result = 0;
+		for(char c : s.toCharArray()){
+			if(stack.isEmpty() || stack.peek() == c){
+				stack.push(c);
+			}else{
+				stack.pop();
+			}
+			
+			if(stack.isEmpty()){
+				result++;
+			}
+		}
+		
+		return result;
+	}
 
-private static int balancedString(String s) {
-	  Stack<Character> stack = new Stack<Character>();
-      int res = 0;
-       
-      for(char c : s.toCharArray()) {
-    	  if(stack.isEmpty() || stack.peek() == c) {
-    		  stack.push(c);
-    	  }else {
-    		  stack.pop();
-    	  }
-    	
-    	  if(stack.isEmpty()) {
-    		  res++;
-    	  }
-      }
-      
-    return res;
-}
+  public static void main(String[] args) {
+	  String s = "RLLLLRRRLRLL";
+	  System.err.println(balancedStringCount(s) ); // 3
+  }
+
 }

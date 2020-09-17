@@ -7,7 +7,6 @@ public class FindAllAnagrams {
 	public List<Integer> findAnagrams(String s, String p) {
 		List<Integer> lst = new ArrayList<Integer>();
 		Map<Character, Integer> pMap = buildCharMap(p);
-		System.err.println(pMap);
 		Map<Character, Integer> sMap =  new HashMap<Character, Integer>();
         int l = 0;
         int r = 0;

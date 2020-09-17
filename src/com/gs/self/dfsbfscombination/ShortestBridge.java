@@ -1,9 +1,88 @@
 package com.gs.self.dfsbfscombination;
-    
-import java.util.LinkedList;
-import java.util.Queue;
-    
+
+import java.util.*;
+
 public class ShortestBridge {
+
+
+	private int shortestBridge(int[][] grid) {
+		
+		Queue<int[]> queue = new LinkedList<>();
+		boolean[][] visited = new boolean[grid.length][grid[0].length];
+		outerloop:
+		for(int row = 0; row < grid.length; row++){
+			for(int col = 0; col < grid[0].length; col++){
+				if(grid[row][col] == 1){
+					addToQueue(grid, row, col, queue, visited);
+					break outerloop;
+				}
+			}
+		}
+		
+		return helper(grid, queue, visited);
+	}
+	
+    private int helper(int[][] grid, Queue<int[]> queue, boolean[][] visited) {
+		
+    	int steps = 0;
+    	while(!queue.isEmpty()){
+    		System.out.println("step " + steps);
+    		int sz = queue.size();
+    		for(int i = 0; i < sz; i++){
+    			int[] current = queue.poll();
+    			System.out.println(Arrays.toString(current));
+    			 int[][] directions = { {0, -1} , {0, 1}, {-1, 0}, {1, 0} };
+    			 for(int[] dir : directions){
+    				 int row = current[0] + dir[0];
+    				 int col = current[1] + dir[1];
+    				 if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || visited[row][col]){
+    					 continue;
+    				 }
+    				 if(grid[row][col] == 1){
+    					 return steps;
+    				 }
+    				 queue.offer(new int[]{row, col});
+    				 visited[row][col] = true;
+    			 }
+    		}
+    		steps++;
+    	}
+		return -1;
+	}
+
+	private void addToQueue(int[][] grid, int row, int col, Queue<int[]> queue, boolean[][] visited ) {
+		 if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || visited[row][col] || grid[row][col] != 1){
+			 return;
+		 }
+		 queue.offer(new int[]{row, col});
+		 visited[row][col] = true;
+		 int[][] directions = { {0, -1} , {0, 1}, {-1, 0}, {1, 0} };
+		 for(int[] dir : directions){
+			 addToQueue(grid, row + dir[0], col + dir[1], queue, visited);
+		 } 
+	 }
+
+	public static void main(String[] args) {
+        int[][] A = {
+        		        {0, 0, 1, 0},
+	                    {0, 1, 1, 1},
+	                    {0, 0, 0, 1},
+	                    {1, 0, 0, 0},
+	                    {1, 0, 0, 0}
+                    };
+        
+        System.out.println("Ans - " + new ShortestBridge().shortestBridge(A));
+        
+      }
+
+    }
+
+
+
+
+
+/*
+
   
 	 private class Cell{
 	        int row;
@@ -109,14 +188,4 @@ public class ShortestBridge {
 	        return false;
 	    }
       
-      public static void main(String[] args) {
-        int[][] A = {
-                    {0, 1},
-                    {0, 0},
-                    {1, 0}
-                    };
-        
-        System.err.println("Ans - " + new ShortestBridge().shortestBridge(A));
-        
-      }
-    }
+*/
