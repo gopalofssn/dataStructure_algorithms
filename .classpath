@@ -8,6 +8,7 @@
 	<classpathentry kind="src" path="decoding"/>
 	<classpathentry kind="src" path="word.search.game"/>
 	<classpathentry kind="src" path="binary"/>
+	<classpathentry kind="src" path="graph"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
