@@ -2,7 +2,12 @@ package com.self.gs.string;
 
 public class LongestCommonPrefix {
 	
-	
+
+	private static char[] longestCommonPrefix(String[] strs) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	public static void main(String[] args) {
 		String[] strs = new String[] {"flower","flow","flight"};
@@ -10,6 +15,8 @@ public class LongestCommonPrefix {
 	}
 
 }
+
+
 
 
 

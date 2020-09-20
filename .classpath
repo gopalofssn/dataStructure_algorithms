@@ -7,6 +7,7 @@
 	<classpathentry kind="src" path="highest.avg.student"/>
 	<classpathentry kind="src" path="decoding"/>
 	<classpathentry kind="src" path="word.search.game"/>
+	<classpathentry kind="src" path="binary"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

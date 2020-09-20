@@ -1,4 +1,4 @@
-package backtracking;
+package com.gs.permutation;
 
 import java.util.ArrayList;
 import java.util.List;

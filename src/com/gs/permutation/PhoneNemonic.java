@@ -1,4 +1,4 @@
-package com.self.gs.string;
+package com.gs.permutation;
 
 import java.util.*;
 
@@ -51,7 +51,7 @@ public class PhoneNemonic {
 		return permute;
 	}
 
-	public static void main(String}] args) {
+	public static void main(String[] args) {
 		System.err.println(letterCombinations("235"));
 	}
 }
