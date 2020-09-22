@@ -30,8 +30,7 @@ public class TopologicalSort {
 
 	private static char[] topSort(char[][] grid, final int numberOfVetices) {
 		Map<Character, List<Character>> graph = new HashMap<>();
-	    buildGraphAndReturnNumbersOfEdges(grid ,graph);
-		System.out.println("Graph " + graph.size());
+	    buildGraph(grid ,graph);
 		char[] result = new char[numberOfVetices];
 		int count = (numberOfVetices - 1);
 		Set<Character> visited = new HashSet<Character>();
@@ -57,7 +56,7 @@ public class TopologicalSort {
 		visiting.add(src);
 	}
 
-	private static void buildGraphAndReturnNumbersOfEdges(char[][] grid, Map<Character, List<Character>> graph) {
+	private static void buildGraph(char[][] grid, Map<Character, List<Character>> graph) {
 		for(char[] edge : grid){
 			char src = edge[0];
 			char dest = edge[1];
@@ -84,7 +83,8 @@ public class TopologicalSort {
 							{'H', 'J'},
 							{'H','I'},
 							{'J', 'M'},
-							{'J', 'L'}
+							{'J', 'L'},
+							{'M', 'E'}
 						};
 		System.out.println("Top Sort - " + Arrays.toString( topSort(grid, 13) ));
 	}
