@@ -8,18 +8,21 @@ public class SentenceSimilarity {
 		
 		Map<String , Set<String>> graph = new HashMap<String , Set<String>>();
 		for(String[] pair : pairs) {
-			String rep = pair[0];
-			graph.putIfAbsent(rep, new HashSet<String>());
-			for(int i = 1; i < pair.length; i++) {
-				graph.get(rep).add(pair[i]);
+			Set<String> groupWords = new HashSet<String>();
+			for(int i = 0; i < pair.length; i++) {
+				String word = pair[i];
+				groupWords.add(word);
+				graph.putIfAbsent(word, groupWords);
 			}
 		}
-		
+		System.out.println("graph " + graph);
 		final int LEN = words1.length;
 		for(int i = 0; i < LEN; i++) {
 			String word1 = words1[i];
 			String word2 = words2[i];
-			if()
+			if(!graph.containsKey(word1) && graph.containsKey(word2)) return false;
+			if(graph.containsKey(word1) && !graph.containsKey(word2)) return false;
+			if(!graph.get(word1).contains(word2) || !graph.get(word2).contains(word1)) return false;
 		}
 		
 		return true;
