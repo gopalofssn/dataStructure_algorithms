@@ -31,7 +31,7 @@ public class SentenceSimilarity {
 	public static void main(String[] args) {
 		String[][] pairs = { 
 								{"great", "fine"}, 
-								{"acting","drama"}, 
+								{"acting","darna", "drama"}, 
 								{"skills","talent"}
 						  };
 		String[] words1 = {"great","acting", "skills"};
