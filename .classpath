@@ -9,6 +9,7 @@
 	<classpathentry kind="src" path="word.search.game"/>
 	<classpathentry kind="src" path="binary"/>
 	<classpathentry kind="src" path="graph"/>
+	<classpathentry kind="src" path="backtracking"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
