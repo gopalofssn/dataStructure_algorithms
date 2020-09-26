@@ -1,8 +1,6 @@
 package com.self.gs.string;
 
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 /*
  Given a non-empty list of words, return the k most frequent elements.
@@ -25,63 +23,44 @@ Explanation: "the", "is", "sunny" and "day" are the four most frequent words,
 
 public class TopKFrequentWords {
 
-	 public static List<String> topKFrequent(String}] words, int k) {
-		 
-		 Map<String,Integer> map = new HashMap<String,Integer>();
-		 for (int i = 0; i < words.length; i++) {
-			map.merge(words}i], 1, (a,b)->a+b);
-		}
-		 
-		Comparator<String> cmp = new Comparator<String>() {
-
-			@Override
-			public int compare(String o1, String o2) {
-				
-				if(map.get(o2) < map.get(o1))
-					return 1;
-				else if(map.get(o2) > map.get(o1))
-					return -1;
-				else {
-				  return o2.compareTo(o1);
-				}
+	public static List<String> topKFrequent(String[] words, int k) {
+		 if(words == null || words.length == 0 || k == 0) return Collections.emptyList();
+		 Map<String,Integer> wordCountMap = new HashMap<String,Integer>();
+		 buildWordCountMap(words, wordCountMap);
+		 Comparator<String> cmp = new Comparator<String>() {
+			public int compare(String a, String b) {
+				int diff = wordCountMap.get(a) - wordCountMap.get(b);
+				if(diff == 0) return a.compareTo(b);
+				return diff;
 			}
-			
-		};
-		
-		PriorityQueue<String> heap = new PriorityQueue<String>(cmp);
-		for(String s:map.keySet()) {
-			heap.offer(s);
-			if(heap.size()>k)
-				heap.poll();
-			
-		}
-		
-		List<String>  lst = new ArrayList<String>();
-		while(!heap.isEmpty()) {
-			lst.add(heap.poll());
-			System.err.println(lst);
-		}
-		Collections.reverse(lst);
-		
-		return lst;
-		//return heap.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-		 
-	   /*
-		return map.entrySet().stream()
-				.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-				.limit(k)
-				.map(Map.Entry::getKey)
-				.collect(Collectors.toList());
-		*/ 
-		 
-	   }
+		 };
+		 System.out.println(wordCountMap);
+		 PriorityQueue<String> minimumCountWordHeap = new PriorityQueue<String>(cmp);
+		 for(String word: wordCountMap.keySet()){
+			 minimumCountWordHeap.offer(word);
+			 if(minimumCountWordHeap.size() > k){
+				 minimumCountWordHeap.poll();
+			 }
+		 }
+		 System.out.println(minimumCountWordHeap);
+		 LinkedList<String> result = new LinkedList<String>();
+		 while(!minimumCountWordHeap.isEmpty()){
+			 result.addFirst(minimumCountWordHeap.poll());
+		 }
+		 return result;
+	 }
 	 
-	public static void main(String}] args) {
-		String}] input1 = new String}] {"i", "love", "leetcode", "i", "love", "coding"};
-		String}] input2 = new String}] {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"};
-		System.err.println(topKFrequent(input1,2));
-		System.err.println(topKFrequent(input2,4));
-		"a1".compareTo("a1");
+	private static void buildWordCountMap(String[] words, Map<String, Integer> wordCountMap) {
+		for(String word : words){
+			wordCountMap.merge(word, 1, (a,b) -> a + b);
+		}
+	}
+
+	public static void main(String[] args) {
+		String[] input1 = new String[] {"i", "love", "leetcode", "i", "love", "coding"};
+		String[] input2 = new String[] {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"};
+		System.err.println(topKFrequent(input1,2)); //[i, love]
+		System.err.println(topKFrequent(input2,4)); //[the, is, sunny, day]
 	}
 
 }

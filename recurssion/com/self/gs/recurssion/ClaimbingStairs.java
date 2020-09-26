@@ -34,24 +34,16 @@ import java.util.*;
 public class ClaimbingStairs {
 	
 	static Hashtable<Integer,Integer> cache = new Hashtable<Integer,Integer>();
-	
-	/**
-	 * @param n numbers of stairs
-	 * @return result possible options
-	 */
 	private static int claimbStair(int n) {
-		if(n<=1)
-			return 1;
-		else if(cache.containsKey(n))
-			return cache.get(n);
-		
-		int result = claimbStair(n-1)+claimbStair(n-2);
+		if(n<=1) return 1;
+		else if(cache.containsKey(n)) return cache.get(n);
+		int result = claimbStair(n-1) + claimbStair(n-2);
 		cache.put(n,result);
 		return result;
 	}
 	
    public static void main(String[] args) {
-	System.out.print(claimbStair(7));
+	System.out.print(claimbStair(4));
 }
 
 

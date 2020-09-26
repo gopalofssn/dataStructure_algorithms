@@ -6,29 +6,35 @@ public class WordBreakII {
 
 	 public List<String> wordBreak(String s, List<String> wordDict) {
 	        Set<String> words = new HashSet<String>(wordDict);
-	        List<String> result = new ArrayList<String>();
-	        helper(s, words, new LinkedList<String>(), result);
-	        return result;
+	        return helper(s, words, new LinkedList<String>(), new HashMap<String, List<String>>());
 	    }
 	    
-	    private void helper(String s, Set<String> words, LinkedList<String> current , List<String> result){	
+	    private  List<String> helper(String content, Set<String> words, LinkedList<String> current , Map<String, List<String>> cache){	
+	    	if(cache.containsKey(content)){
+	    		return cache.get(content);
+	    	}else if(content.isEmpty()){
+	    		return new ArrayList<String>(current);
+	    	}
 	    	
-	    	System.err.println(s);
-	        if(s.isEmpty()){
-	            result.add(convertAsString(current));
-	            return;
-	        }
-	        for(int i = 0; i < s.length(); i++){
-	            String word = s.substring(0, i + 1);
+	    	List<String> sentenceList = new ArrayList<String>();
+	        for(int i = 1; i <= content.length(); i++){ // catsanddog, sanddog , dog
+	            String word = content.substring(0, i);//cat , sand, dog
 	            if(words.contains(word)){
-	                current.addLast(word);
-	                helper(s.substring(i + 1), words, current, result);
-	                current.removeLast();
+	            	System.err.println(word);
+	            	String nextContent = content.substring(i);// sanddog, dog , ""
+	            	current.addLast(word);// [cat], [cat , sand] , [cat, sand, dog] 
+	            	List<String> result = helper(nextContent, words, current, cache); 
+	            	sentenceList.add(convertAsString(new ArrayList<String>(result)));
+	            	current.removeLast();
 	            }
-	        }   
+	         }
+        	cache.putIfAbsent(content, new ArrayList<String>());
+        	cache.get(content).addAll(sentenceList);
+	        return cache.get(content);
 	    }
 	    
 	    private String convertAsString(List<String> wordList){
+	    	System.out.println("wordList " + wordList);
 	        StringBuilder sb = new StringBuilder();
 	        for(String word : wordList){
 	            sb.append(word)
@@ -62,7 +68,7 @@ public class WordBreakII {
 
 	    s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 	    String[] wordDict2 = {"a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"};
-	    System.out.println(new WordBreakII().wordBreak(s, new HashSet<String>(Arrays.asList(wordDict2))));
+	  //  System.out.println(new WordBreakII().wordBreak(s, new HashSet<String>(Arrays.asList(wordDict2))));
 
 	}
 

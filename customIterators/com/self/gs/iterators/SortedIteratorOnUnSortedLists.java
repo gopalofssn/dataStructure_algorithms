@@ -1,4 +1,4 @@
-package com.self.gs.utils.custom.iterators;
+package com.self.gs.iterators;
 
 import java.util.ArrayList;
 import java.util.Arrays;

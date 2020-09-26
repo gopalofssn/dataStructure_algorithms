@@ -1,4 +1,4 @@
-package TreeIterator;
+package com.self.gs.iterators;
 
 public class InorderSuccessorBST {
 

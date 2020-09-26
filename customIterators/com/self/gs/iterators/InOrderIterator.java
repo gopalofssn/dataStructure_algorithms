@@ -1,4 +1,4 @@
-package TreeIterator;
+package com.self.gs.iterators;
 
 import java.util.ArrayList;
 import java.util.HashMap;
