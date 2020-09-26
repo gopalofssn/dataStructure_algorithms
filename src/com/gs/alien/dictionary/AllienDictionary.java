@@ -3,10 +3,17 @@ package com.gs.alien.dictionary;
 import java.util.*;
 
 public class AllienDictionary {
-	
+	/*
+	 Questions
+	  - order can have dup char at any place? is it ascii or unicode?
+	     only a-z for now. yes no dup
+	  - does words[] can have null or empty?
+	    yes, 
+	      if null / empty as 1st word , we are still in order.
+	      
+	 */
 	private static boolean isAlienSorted(String[] words, String order) {
 		Map<Character, Integer> charPositionMap = buildCharPositionMap(order);
-		System.out.println(" Char Order by Poistion  Map - " + charPositionMap);
 		for(int i = 1; i < words.length; i++){
 			String prevWord = words[i -1];
 			String currentWord = words[i];
@@ -24,7 +31,8 @@ public class AllienDictionary {
 	 */
 	private static boolean compareWordsByAlienOrder(String prevWord, String currentWord,
 			Map<Character, Integer> charPositionMap) {
-		if(isNullOrEmpty(prevWord) || isNullOrEmpty(currentWord) ) return false;
+		if(isNullOrEmpty(prevWord)) return true;
+		if(isNullOrEmpty(currentWord) ) return false;
 		int prevWordLen = prevWord.length();
 		int currentWordLen = currentWord.length();
 		int min = Math.min(prevWordLen, currentWordLen);
@@ -54,12 +62,13 @@ public class AllienDictionary {
 	}
 
 	public static void main(String[] args) {
-		String[] words = {"leetcode", "hello",};
 		String order = "hlabcdefgijkmnopqrstuvwxyz";
+		String[] words = {null, "hello", "leetcode"}; // true
 		System.out.println(isAlienSorted(words, order));
-		
-		String[] words2 = {"app","apple"};
+		String[] words2 = {"apple", "app"}; //false
 		System.out.println(isAlienSorted(words2, order));
+		String[] words3 = {"app", "", "apple"}; // false , "" is in middle
+		System.out.println(isAlienSorted(words3, order));
 	}
 
 
