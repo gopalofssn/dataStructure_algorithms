@@ -24,18 +24,21 @@ public class CollectPathSumRootToLeaf {
 		 if(isLeaf(node) && node.val == sum){
 			 currentList.addLast(node.val);
 			 result.add(new ArrayList<>(currentList));
+			 currentList.removeLast();
 			 return;
 		 } 
 		 
-		 currentList.add(node.val);
+		 
 		 int nextSum = sum - node.val;
 		 
 		if(node.left != null){
+			currentList.addLast(node.val);
 			 helper(node.left, currentList,result, nextSum);
 			 currentList.removeLast();
 		 }
 		 
 		 if(node.right != null){
+			 currentList.addLast(node.val);
 			 helper(node.right, currentList,result, nextSum);
 			 currentList.removeLast();
 		 }
@@ -84,7 +87,7 @@ public class CollectPathSumRootToLeaf {
 		
 		
 		
-		return null;
+		return new ArrayList<>();
 	}
 
 

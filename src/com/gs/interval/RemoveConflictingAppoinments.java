@@ -8,8 +8,9 @@ import java.util.List;
 public class RemoveConflictingAppoinments {
 
 	private static int[][] removeConflictAppoinement(int[][] appointments) {
-		Comparator<int[]> cmp = ( (a, b) -> (a[0] > b[0]) ? 1 : -1 );
-		Arrays.sort(appointments, cmp);
+		Comparator<int[]> sortByEarlyEnding = ( (a, b) -> (a[1] > b[1]) ? 1 : -1 );
+		Arrays.sort(appointments, sortByEarlyEnding);
+		System.out.println(Arrays.deepToString(appointments));
 		int prev = 0;
 		List<int[]> nonConflictList = new ArrayList<int[]>();
 		nonConflictList.add(appointments[prev]);
@@ -53,7 +54,7 @@ public class RemoveConflictingAppoinments {
 	}
 	
 	public static void main(String[] args) {
-		 int[][] appointments = { {1, 5},{2, 6}, {2,4}, {10, 15}, {5, 6}, {4, 100}};
+		 int[][] appointments = { {1, 5},{2, 3}, {3, 5}, {10, 15}, {5, 6}, {4, 100}};
 		 appointments = removeConflictAppoinement(appointments);
 		 print(appointments);
 	}

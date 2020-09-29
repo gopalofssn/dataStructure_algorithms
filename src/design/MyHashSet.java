@@ -12,8 +12,7 @@ public class MyHashSet {
     }
   }
 
-  private Node}] nodes;
-  private int size;
+  private Node[] nodes;
   private int capacity;
 
   /* your data structure here. */
@@ -28,27 +27,27 @@ public class MyHashSet {
   }
 
   private void initializeNodes() {
-    nodes = new Node}capacity];
+    nodes = new Node[capacity];
   }
 
   public void add(int key) {
     int idx = getIndex(key);
     Node node = new Node(key);
-    if (nodes}idx] == null) {
-      nodes}idx] = node;
+    if (nodes[idx] == null) {
+      nodes[idx] = node;
     } else {
-      node.next = nodes}idx];
-      nodes}idx] = node;
+      node.next = nodes[idx];
+      nodes[idx] = node;
     }
   }
 
   public void remove(int key) {
     int idx = getIndex(key);
-    if (nodes}idx] == null) {
+    if (nodes[idx] == null) {
       return;
     }
 
-    Node current = nodes}idx], prev = null;
+    Node current = nodes[idx], prev = null;
     while (current != null) {
       if (current.val == key) {
         break;
@@ -58,7 +57,7 @@ public class MyHashSet {
     }
 
     if (prev == null) {
-      nodes}idx] = null;
+      nodes[idx] = null;
       return;
     }
 
@@ -69,11 +68,11 @@ public class MyHashSet {
   /** Returns true if this set contains the specified element */
   public boolean contains(int key) {
     int idx = getIndex(key);
-    if (nodes}idx] == null) {
+    if (nodes[idx] == null) {
       return false;
     }
 
-    Node current = nodes}idx];
+    Node current = nodes[idx];
     while (current != null) {
       if (current.val == key) {
         return true;
@@ -88,7 +87,7 @@ public class MyHashSet {
     return key % capacity;
   }
 
-  public static void main(String}] args) {
+  public static void main(String[] args) {
     MyHashSet set = new MyHashSet();
 
     set.add(1);
