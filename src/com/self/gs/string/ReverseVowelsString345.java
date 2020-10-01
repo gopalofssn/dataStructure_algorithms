@@ -1,7 +1,5 @@
 package com.self.gs.string;
 
-import java.util.*;
-
 public class ReverseVowelsString345 {
 
 	private static String reverseVowels(String s) {
@@ -11,17 +9,17 @@ public class ReverseVowelsString345 {
         String vowels = "aeiouAEIOU";
         int l = 0;
         int r = s.length()-1;
-        char}] arr = s.toCharArray();
+        char[] arr = s.toCharArray();
         while(l<r){  
-        	System.err.println(arr}l]);
-        	System.err.println(arr}r]);
-           if(vowels.contains(arr}l]+"") && vowels.contains(arr}r]+"")){
-               char tmp = arr}r];
-               arr}r--] = arr}l];
-               arr}l++] = tmp;
-           } else if (!vowels.contains(arr}l]+"") && vowels.contains(arr}r]+"")){
+        	System.err.println(arr[l]);
+        	System.err.println(arr[r]);
+           if(vowels.contains(arr[l]+"") && vowels.contains(arr[r]+"")){
+               char tmp = arr[r];
+               arr[r--] = arr[l];
+               arr[l++] = tmp;
+           } else if (!vowels.contains(arr[l]+"") && vowels.contains(arr[r]+"")){
                l++;
-           }else if(vowels.contains(arr}l]+"") && !vowels.contains(arr}r]+"")){
+           }else if(vowels.contains(arr[l]+"") && !vowels.contains(arr[r]+"")){
                r--;
            }else{
                r--;
@@ -33,8 +31,8 @@ public class ReverseVowelsString345 {
     }
 	
 	
-	public static void main(String}] args) {
-		System.err.println(reverseVowels("leetcode"));
+	public static void main(String[] args) {
+		System.err.println(reverseVowels("leetcode")); //leotcede
 	}
 
 	

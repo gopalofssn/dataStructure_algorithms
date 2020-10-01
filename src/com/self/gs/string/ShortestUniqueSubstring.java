@@ -1,7 +1,6 @@
 package com.self.gs.string;
 
 import java.util.*;
-import java.util.Map.Entry;
 /*
  Given an array of unique characters arr and a string str, Implement a function getShortestUniqueSubstring that finds the smallest substring of str containing all the characters in arr. Return "" (empty string) if such a substring doesn’t exist.
 
@@ -27,7 +26,7 @@ public class ShortestUniqueSubstring {
    compare two hashmap
    
  */
-   private static String getShortestUniqueSubstring(char}] p, String s) {
+   private static String getShortestUniqueSubstring(char[] p, String s) {
 	   if(p == null || p.length==0 || s==null )
 	        return null;
 	     Map<Character,Integer> pMap = new HashMap<Character,Integer>();
@@ -74,9 +73,9 @@ public class ShortestUniqueSubstring {
 	    }
 	  }
     
-	public static void main(String}] args) {
-		   System.err.println("Result : " + getShortestUniqueSubstring( new char}]{'x','y','z'},"xyaoyzyziyxz"));
-		   System.err.println("Result : " + getShortestUniqueSubstring( new char}]{'x','y','z','y'},"xyaoyzyzy"));
+	public static void main(String[] args) {
+		   System.err.println("Result : " + getShortestUniqueSubstring( new char[]{'x','y','z'},"xyaoyzyziyxz"));
+		   System.err.println("Result : " + getShortestUniqueSubstring( new char[]{'x','y','z','y'},"xyaoyzyzy"));
 	}
 
    
