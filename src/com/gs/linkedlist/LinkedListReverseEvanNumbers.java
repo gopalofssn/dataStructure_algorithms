@@ -28,6 +28,7 @@ public class LinkedListReverseEvanNumbers {
 		current = next; // 9 -> 12  ->16 ->17
 	}
 	node.next = current; // because node is still pointing 2
+	System.out.println("REV : " + prev);
 	return prev;
   }
 
