@@ -35,7 +35,7 @@ public class _437PathSum {
         
     }
     
- public static void main(String}] args) {
+ public static void main(String[] args) {
 	String str = "10,5,-3,3,2,X,11,3,-2,X,1";
 	TreeNode node = SerializeandDeserializeBinaryTree297.deserialize(str);
 	System.err.println(pathSum(node,8));

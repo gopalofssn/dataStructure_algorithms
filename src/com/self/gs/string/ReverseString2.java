@@ -23,41 +23,36 @@ public class ReverseString2 {
     if t is even number , keep as it is in the segment t%2 != 0
     */
     public static String reverseStr(String s, int k) {
-      if(s==null) 
-          return s;
-      int t = (s.length()/k) + (s.length()%k);
-      StringBuilder sb = new StringBuilder();
-      int start = 0, end = 0;
-      for(int i=0;i<t;i++){
-           start = end ; 
-           end = Math.min(s.length(), (i*k+k)) ;   
-          if(i%2==0)
-              sb.append(reverse(s.substring(start,end)));
-          else
-              sb.append(s.substring(start,end));
-      }
-    return sb.toString();
+    	char[] v = s.toCharArray();
+    	int len = s.length();
+    	int maxIteration = (len / k) + 1;
+    	k = Math.min(len, k);
+    	boolean flag = true;
+    	int l = 0;
+    	int r = k - 1;
+    	for(int i = 0; i < maxIteration; i++){
+        	if(flag){
+        		System.out.println("rev.." + l + " " + r);
+        		reverse(v, l, r);
+        	}
+        	flag = !flag;
+        	l += k;
+        	r += k;		
+        	len -= k;
+    	}
+    	
+    	return String.valueOf(v);
     }
-    
-    private static String reverse(String str){
-        if(str==null || str.length()==0)
-            return str;
-        int l = 0;
-        int r = str.length()-1;
-        char}] arr = str.toCharArray();
-        while(l<r){
-            char tmp = arr}l];
-            arr}l++] = arr}r];
-            arr}r--] = tmp;
-            
-        }
-        return String.valueOf(arr);
-    }
-	public static void main(String}] args) {
-		System.err.println(reverseStr("abcdefg",2));
-		String str = "abcdefg";
-		System.err.println(str.substring(5, str.length()));
-
+	private static void reverse(char[] v, int l, int r) {
+		while(l < r){
+			char tmp = v[l];
+			v[l++] = v[r];
+			v[r--] = tmp;
+		}
+	}
+	public static void main(String[] args) {
+		System.out.println(reverseStr("abcdefg",2));
+		System.out.println(reverseStr("abcdefg",9));
 	}
 
 }
