@@ -47,7 +47,6 @@ public class NumbersOfAtoms {
                index++;
                int numCharStartPosition = index;
                while(index < formula.length() && Character.isDigit(formula.charAt(index))){
-                 System.err.println("in");
                    index++;
                }
                System.err.println(numCharStartPosition + ", "+ index );
@@ -112,16 +111,7 @@ public class NumbersOfAtoms {
         }
         return result.toString();
     }
-  public static void main(String}] args) {
-    //Arrays.deepToString(a)
-    int}] nums = {1, 10, 0, 2, 8, 3, 0, 0, 6, 4, 0, 5, 7, 0};
-    //System.out.println(Arrays.deepToString(moveZerosToEnd(nums)));
-    System.out.println(Arrays.toString(nums));
-    
-    //Arrays.deepToString(a)
-    char ch = '9';
-    int i = (int) ch;
-    System.err.println(i);
+  public static void main(String[] args) {
     
     NumbersOfAtoms n = new  NumbersOfAtoms();
    // System.err.println("Mg(OH)2".substring(6,7));
