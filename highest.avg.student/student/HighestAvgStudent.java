@@ -17,6 +17,7 @@ public class HighestAvgStudent {
 		
 		Collection<Student> studentsList = studentByName.values();
 		Student topper = new Student("Dummy");
+		topper.addMark(Integer.MIN_VALUE);
 		for(Student student : studentsList){
 			float topperAvgMark =  topper.averageMark();
 			float studentAvgMark = student.averageMark();
@@ -37,12 +38,12 @@ public class HighestAvgStudent {
 	public static void main(String[] args) {
 		String[][] students = 
 			   { 
-				{"Dave","10"},
-				{"Adam","10"},
-				{"Ben","12"},
+				{"Dave","-10"},
+				{"Adam","-10"},
+				{"Ben","-12"},
 				{"Charles","-11"},
-				{"Ben","8"},
-				{"Evan","8"},
+				{"Ben","-8"},
+				{"Evan","-8"},
 		      };		
 		System.err.println("Highest Avg Student - " + new HighestAvgStudent().highest(students));
 	}

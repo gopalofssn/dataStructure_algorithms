@@ -13,6 +13,7 @@
 	<classpathentry kind="src" path="recursion"/>
 	<classpathentry kind="src" path="customIterators"/>
 	<classpathentry kind="src" path="gift.packing.challenge"/>
+	<classpathentry kind="src" path="claimbing.stairs"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
