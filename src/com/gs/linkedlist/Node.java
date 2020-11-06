@@ -2,7 +2,7 @@ package com.gs.linkedlist;
 
 public class Node {
 	int val;
-	Node next;
+	public Node next;
 
 	public Node(int val){
 		this.val = val;
