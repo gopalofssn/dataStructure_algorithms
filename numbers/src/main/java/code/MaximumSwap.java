@@ -1,4 +1,4 @@
-package improve_coding_skills;
+package code;
 
 /*
  Input: 2736
