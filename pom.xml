@@ -16,7 +16,19 @@
     <modules>
         <module>backtracking</module>
 		<module>binary</module>
+		<module>buffer</module>
+		<module>challenging</module>
+		<module>claimbingstairs</module>
+		<module>customIterators</module>
+		<module>decoding</module>
+		<module>dynamic</module>
 		<module>numbers</module>
+		<module>gift-packing-challenge</module>
+		<module>graph</module>
+		<module>highest-avg-student</module>
+		<module>recursion</module>
+		<module>word-search-game</module>
+		<module>zzzz</module>
     </modules>
  <build>
         <pluginManagement>
