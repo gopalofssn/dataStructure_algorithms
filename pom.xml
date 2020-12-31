@@ -13,9 +13,9 @@
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<java.version>1.8</java.version>
     </properties>
-    <modules><!--
-        <module>buffer</module>
-		<module>dynamic</module>-->
+    <modules>
+        <module>backtracking</module>
+		<module>binary</module>
 		<module>numbers</module>
     </modules>
  <build>
