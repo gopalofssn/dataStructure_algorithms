@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-02-15T10:26:37 EST" name="Default suite" finished-at="2021-02-15T10:26:37 EST" duration-ms="59">
+    <groups>
+    </groups>
+    <test started-at="2021-02-15T10:26:37 EST" name="Default test" finished-at="2021-02-15T10:26:37 EST" duration-ms="59">
+      <class name="com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXORTest">
+        <test-method signature="testEmptyScnerio(com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinder)[pri:0, instance:com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXORTest@484970b0]" started-at="2021-02-15T10:26:37 EST" name="testEmptyScnerio" data-provider="missingMultipleNumbersFinderProviders" finished-at="2021-02-15T10:26:37 EST" duration-ms="7" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXOR@66d3eec0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyScnerio -->
+        <test-method signature="testFirstNumberMissingScnerio(com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinder)[pri:0, instance:com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXORTest@484970b0]" started-at="2021-02-15T10:26:37 EST" name="testFirstNumberMissingScnerio" data-provider="missingMultipleNumbersFinderProviders" finished-at="2021-02-15T10:26:37 EST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXOR@5d0a1059]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFirstNumberMissingScnerio -->
+        <test-method signature="testLastMissingScnerio(com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinder)[pri:0, instance:com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXORTest@484970b0]" started-at="2021-02-15T10:26:37 EST" name="testLastMissingScnerio" data-provider="missingMultipleNumbersFinderProviders" finished-at="2021-02-15T10:26:37 EST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXOR@1de76cc7]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NoSuchFieldException">
+            <message>
+              <![CDATA[No numbers are missing]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoSuchFieldException: No numbers are missing
+at com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXOR.findmissingNumbers(MissingMultipleNumbersFinderUsingXOR.java:17)
+at com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXORTest.testLastMissingScnerio(MissingMultipleNumbersFinderUsingXORTest.java:50)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoSuchFieldException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLastMissingScnerio -->
+        <test-method signature="testMiddleScnerio(com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinder)[pri:0, instance:com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXORTest@484970b0]" started-at="2021-02-15T10:26:37 EST" name="testMiddleScnerio" data-provider="missingMultipleNumbersFinderProviders" finished-at="2021-02-15T10:26:37 EST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXOR@6e0f5f7f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMiddleScnerio -->
+        <test-method signature="testNullScnerio(com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinder)[pri:0, instance:com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXORTest@484970b0]" started-at="2021-02-15T10:26:37 EST" name="testNullScnerio" data-provider="missingMultipleNumbersFinderProviders" finished-at="2021-02-15T10:26:37 EST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXOR@3ee37e5a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNullScnerio -->
+      </class> <!-- com.gs.number.multiple.missing.number.finder.MissingMultipleNumbersFinderUsingXORTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
