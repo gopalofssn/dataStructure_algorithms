@@ -71,7 +71,7 @@ public class BinaryTreePrinter {
             System.out.print(" ");
     }
 
-    private static <T extends Comparable<?>> int maxLevel(TreeNode TreeNode) {
+    private static int maxLevel(TreeNode TreeNode) {
         if (TreeNode == null)
             return 0;
 
